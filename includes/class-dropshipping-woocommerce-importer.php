@@ -372,7 +372,7 @@ if (class_exists('WC_Product_Importer', false)) :
 					array_push($new_product['tag_ids'], $tag);
 					unset($tag);
 				}
-				$result_tag = wp_set_object_terms(!empty($new_product['id'])? $new_product['id'] : 0, $new_product['tag_ids'], 'product_tag', true);
+				wp_set_object_terms(!empty($new_product['id'])? $new_product['id'] : 0, $new_product['tag_ids'], 'product_tag', true);
 
 			$variations = array();
 			$var_attributes = array();
