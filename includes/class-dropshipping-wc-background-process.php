@@ -82,6 +82,7 @@ class Knawat_Dropshipping_WC_Background extends WP_Background_Process {
 			$item['imported'] += count( $results['imported'] );
 			$item['failed']   += count( $results['failed'] );
 			$item['updated']  += count( $results['updated'] );
+			$item['ignored']  += count( $results['ignored'] );
 
 			if( !isset( $params['force_stopped'] ) ){
 				// update option on import finish.
@@ -110,6 +111,7 @@ class Knawat_Dropshipping_WC_Background extends WP_Background_Process {
 			$item['imported'] += count( $results['imported'] );
 			$item['failed']   += count( $results['failed'] );
 			$item['updated']  += count( $results['updated'] );
+			$item['ignored']  += count( $results['ignored'] );
 
 			// Return Update Item to importer
 			return $item;

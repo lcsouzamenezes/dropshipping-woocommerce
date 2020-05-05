@@ -154,7 +154,6 @@ class Knawat_Dropshipping_Woocommerce_API {
 		return $response;
     }
 
-
     /**
     * post function.
     *

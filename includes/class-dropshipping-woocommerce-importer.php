@@ -192,7 +192,7 @@ if (class_exists('WC_Product_Importer', false)) :
 								remove_filter('woocommerce_new_product_data', array($this, 'set_dokan_seller'));
 							} else {
 								$this->params['product_index'] = $index;
-								knawat_dropshipwc_logger("[0_QTY_PRODUCT] SKU:" . $formated_data['sku']);
+								$data['ignored'][] = $formated_data['sku'];
 								continue;
 							}
 						}
@@ -243,11 +243,11 @@ if (class_exists('WC_Product_Importer', false)) :
 
 					return $data;
 				} else {
-					knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR]' . print_r($this->data, true));
+					knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR] ' . $api_url . ' ' . print_r($this->data, true));
 					return array('status' => 'fail', 'message' => __('Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce'));
 				}
 			} else {
-				knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR]' . $this->data->get_error_message());
+				knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR] ' . $api_url . ' ' . $this->data->get_error_message());
 				return array('status' => 'fail', 'message' => $this->data->get_error_message());
 			}
 		}
