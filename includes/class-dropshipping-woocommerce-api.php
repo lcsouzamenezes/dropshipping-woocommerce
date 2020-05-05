@@ -42,6 +42,9 @@ class Knawat_Dropshipping_Woocommerce_API {
 	* @return void
 	*/
 	public function __construct() {
+		// Increase timeout
+		add_filter( 'http_request_timeout', function ( $time ) { return 30; } );
+
 		// Setup Headers
 		global $wp_version;
 		$woo_version = 'NOT_FOUND';
@@ -81,11 +84,10 @@ class Knawat_Dropshipping_Woocommerce_API {
 			$keydata['consumerSecret']	= $consumer_keys['consumer_secret'];
 
 			// Get Store channel
-			$response = wp_remote_post($this->api_url . '/token', array(
+			$response = wp_remote_post( $this->api_url.'/token', array(
 				'body' => $keydata,
-				'timeout' => 20,
-				'headers' => array('User-Agent' => $this->headers['User-Agent'])
-			));
+				'headers' => array( 'User-Agent' => $this->headers['User-Agent'] )
+			) );
 
 			if ( is_wp_error( $response ) ) {
 				return false;
@@ -130,11 +132,10 @@ class Knawat_Dropshipping_Woocommerce_API {
 		$transient_name = 'knawat_mp_cache_' . substr( md5( $url . wp_json_encode( $this->headers ) ), 23 );
 		$response = $cache ? get_transient( $transient_name ) : false;
 
-		if (false === $response) {
-			$response = wp_remote_get($url, array(
-				'timeout' => 20,
+		if ( false === $response ) {
+			$response = wp_remote_get( $url, array(
 				'headers' => $this->headers
-			));
+			) );
 
 			if ( ! is_wp_error( $response ) ) {
 				// In Case return full response
@@ -170,7 +171,6 @@ class Knawat_Dropshipping_Woocommerce_API {
 		$this->headers['Authorization'] = 'Bearer ' . $this->token;
 		$response = wp_remote_post( $url, array(
 			'body'	  => $data,
-			'timeout' => 20,
 			'headers' => $this->headers
 		) );
 
@@ -209,7 +209,6 @@ class Knawat_Dropshipping_Woocommerce_API {
 		$this->headers['Authorization'] = 'Bearer ' . $this->token;
 		$response = wp_remote_request( $url, array(
 			'method'  => 'PUT',
-			'timeout' => 20,
 			'body'	  => $data,
 			'headers' => $this->headers
 		) );
@@ -249,7 +248,7 @@ class Knawat_Dropshipping_Woocommerce_API {
 		$this->headers['Authorization'] = 'Bearer ' . $this->token;
 		$response = wp_remote_request( $url, array(
 			'method'  => 'DELETE',
-			'timeout' => 20,
+			
 			'body'	  => $data,
 			'headers' => $this->headers
 		) );
