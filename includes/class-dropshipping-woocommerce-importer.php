@@ -199,7 +199,10 @@ if (class_exists('WC_Product_Importer', false)) :
 					} else {
 						$this->params['product_index'] = $index;
 						$data['ignored'][] = $formated_data['sku'];
-						//TODO: send delete request to MP API
+
+						// Delete product from my products if not exists into WooCommerce and qty zero in Knawat
+						global $knawat_dropshipwc;
+						$knawat_dropshipwc->common->knawat_delete_mp_product_by_sku( $formated_data['sku'] );
 						continue;
 					}
 				}
