@@ -54,7 +54,6 @@ if( empty( $consumer_keys ) ){
 								$imported = isset( $batch['imported'] ) ? $batch['imported'] : 0;
 								$failed = isset( $batch['failed'] ) ? $batch['failed'] : 0;
 								$updated = isset( $batch['updated'] ) ? $batch['updated'] : 0;
-								$ignored = isset( $batch['ignored'] ) ? $batch['ignored'] : 0;
 							}
 							?>
 							<a class="button button-primary" disabled="disabled">
@@ -70,7 +69,6 @@ if( empty( $consumer_keys ) ){
 								<strong><?php _e( 'Imported:', 'dropshipping-woocommerce' ); ?></strong> <?php printf( __( '%d Products with variations.', 'dropshipping-woocommerce' ), $imported ); ?><br/>
 								<strong><?php _e( 'Updated:', 'dropshipping-woocommerce' ); ?></strong> <?php printf( __( '%d Products with variations.', 'dropshipping-woocommerce' ), $updated ); ?><br/>
 								<strong><?php _e( 'Failed:', 'dropshipping-woocommerce' ); ?></strong> <?php printf( __( '%d Products with variations.', 'dropshipping-woocommerce' ), $failed ); ?><br/>
-								<!--strong><?php _e( 'Ignored:', 'dropshipping-woocommerce' ); ?></!--strong> <?php printf( __( '%d Products with variations.', 'dropshipping-woocommerce' ), $ignored ); ?><br/-->
 							</p>
 							<?php
 						}

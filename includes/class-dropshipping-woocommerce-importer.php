@@ -97,7 +97,6 @@ if (class_exists('WC_Product_Importer', false)) :
 				'imported' => array(),
 				'failed'   => array(),
 				'updated'  => array(),
-				'ignored'  => array(),
 			);
 
 			switch ($this->import_type) {
@@ -198,7 +197,6 @@ if (class_exists('WC_Product_Importer', false)) :
 						remove_filter('woocommerce_new_product_data', array($this, 'set_dokan_seller'));
 					} else {
 						$this->params['product_index'] = $index;
-						$data['ignored'][] = $formated_data['sku'];
 
 						// Delete product from my products if not exists into WooCommerce and qty zero in Knawat
 						global $knawat_dropshipwc;
