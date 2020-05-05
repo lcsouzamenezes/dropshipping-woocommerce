@@ -79,7 +79,8 @@ $dokan_seller = isset( $knawat_options['dokan_seller'] ) ? esc_attr( $knawat_opt
 						43200 => __( '12 Hours','dropshipping-woocommerce' ),
 						32400 => __( '9 Hours','dropshipping-woocommerce' ),
 						21600 => __( '6 Hours','dropshipping-woocommerce' ),
-						10800 => __( '3 Hours','dropshipping-woocommerce' )
+						10800 => __( '3 Hours','dropshipping-woocommerce' ),
+						3600 => __( '1 Hour','dropshipping-woocommerce' )
 					);
 					?>
 					<td>
