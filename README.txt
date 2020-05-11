@@ -9,23 +9,21 @@ WC tested up to: 3.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce store easily from knawat.com and start selling now!
+Are you looking to find the best wooCommerce Dropshipping plugin? to import thousands of products with jew few clicks? Dropshipping and Fulfillment Knawat WooCommerce dropshipping plugin automate the dropshipping on wooCommerce. allows you to Add products to your WooCommerce store easily from knawat.com and start selling now!
 
 == Description ==
 <h3>Knawat WooCommerce DropShipping :</h3>
 
-Knawat WooCommerce DropShipping allows you to Add products to your WooCommerce store easily from knawat.com and start selling now!
-
 <h3>Features:</h3>
 
-* Automatically import Thousands of products directly from Knawat to your website
-* Along with products, you can also import all the product specifications, such as variations, attributes, descriptions, product images.
+* Automatically import Thousands of Dropshpping products directly from Knawat to your wooCommerce Store.
+* with few clicks you can import all the product specifications, variations, attributes, descriptions, and product images.
 * Product availability & Price Sync
-* Support for Multilingual store
+* We offer all the products in different languages so your dropshipping store can serve more buyers. 
 * Automatic order fulfilment
 * Multi-currency support
-* Sell then buy the product
-* No Geological Limits (worldwide shipping)
+* We love dropshipping, you will not pay the price of the product until a buyer buy it from your store. 
+* Knawat offers worldwide shipping. 
 * [More features]( https://knawat.com/features/ )
 
 [youtube https://www.youtube.com/watch?v=MXwKwZ6qJZw]
