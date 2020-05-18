@@ -58,7 +58,7 @@ $dokan_seller = isset( $knawat_options['dokan_seller'] ) ? esc_attr( $knawat_opt
 						<?php _e( 'Products Batch Size:','dropshipping-woocommerce' ); ?>
 					</th>
 					<td>
-						<input class="product_batch regular-text" name="knawat[product_batch]" type="number" value="<?php echo $product_batch; ?>" min="1" max="1000"/>
+						<input class="product_batch regular-text" name="knawat[product_batch]" type="number" value="<?php echo $product_batch; ?>" min="5" max="100"/>
 						<p class="description" id="product_batch-description">
 							<?php
 							_e( 'Products batch size for import products from knawat.com', 'dropshipping-woocommerce' );
