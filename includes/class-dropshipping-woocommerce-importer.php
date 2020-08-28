@@ -359,6 +359,28 @@ if (class_exists('WC_Product_Importer', false)) :
 					}
 				}
 			}
+			$new_product['tags'] = array();
+			if ($active_plugins['qtranslate-x'] && !empty($active_langs)){
+				foreach($product->categories as $category){
+					foreach($active_langs as $active_lang){
+						if(isset($category->name->$active_lang)){
+							$tag .= '[:' . $active_lang . ']' . $category->name->$active_lang;
+						}
+					}
+					if($tag != ''){
+						$tag .= '[:]';
+					}
+					array_push($new_product['tags'], $tag);
+					unset($tag);
+				}
+			}else{
+				foreach($product->categories as $category){
+					$tag .= isset($category->name->$default_lang)? sanitize_text_field($category->name->$default_lang) : '';
+					array_push($new_product['tags'], $tag);
+					unset($tag);
+				}
+			}
+			wp_set_object_terms(!empty($new_product['id'])? $new_product['id'] : 0, $new_product['tags'], 'product_tag', true);
 
 			$variations = array();
 			$var_attributes = array();
