@@ -1,36 +1,35 @@
 === Knawat WooCommerce DropShipping ===
 Contributors: knawat,dharm1025,esl4m,firstanonymous
-Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace, Appmaker
+Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, dropshipping, knawat, knawat dropshipping, multivendor marketplace, Dokan, Multi seller, Marketplace, Appmaker
 Requires PHP: 5.3
 Requires at least: 4.0
 Tested up to: 5.3.2
 Stable tag: 2.0.7
 WC tested up to: 3.8.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: Copyright Knawat
 
-Are you looking to find the best wooCommerce Dropshipping plugin? to import thousands of products with jew few clicks? Dropshipping and Fulfillment Knawat WooCommerce dropshipping plugin automate the dropshipping on wooCommerce. allows you to Add products to your WooCommerce store easily from knawat.com and start selling now!
+Are you looking to find the best WooCommerce Dropshipping plugin? to import thousands of products with jew few clicks? Dropshipping and Fulfillment Knawat WooCommerce dropshipping plugin automates the dropshipping on wooCommerce. allows you to add products to your WooCommerce store easily from knawat.com and start selling now!
 
 == Description ==
 <h3>Knawat WooCommerce DropShipping :</h3>
 
 <h3>Features:</h3>
 
-* Automatically import Thousands of Dropshpping products directly from Knawat to your wooCommerce Store.
+* Automatically import Thousands of Dropshipping products directly from Knawat to your wooCommerce Store.
 * with few clicks you can import all the product specifications, variations, attributes, descriptions, and product images.
 * Product availability & Price Sync
 * We offer all the products in different languages so your dropshipping store can serve more buyers. 
-* Automatic order fulfilment
+* Automatic order fulfillment
 * Multi-currency support
-* We love dropshipping, you will not pay the price of the product until a buyer buy it from your store. 
+* We love dropshipping, you will not pay the price of the product until a buyers buy it from your store. 
 * Knawat offers worldwide shipping. 
-* [More features]( https://knawat.com/features/ )
+* [More features]( https://knawat.com/features/?utm_source=plugins&utm_medium=referral&utm_campaign=wordpress )
 
 [youtube https://www.youtube.com/watch?v=MXwKwZ6qJZw]
 
 = Contributing =
-* You can contribute to development of the plugin on [Github][1].
-* If you have found a bug/issue or have a feature request, then create issue on [Github][1].
+* You can contribute to the development of the plugin on [Github][1].
+* If you have found a bug/issue or have a feature request, then create an issue on [Github][1].
 * Want to add a new language to Knawat WooCommerce DropShipping? Swell! You can contribute via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/dropshipping-woocommerce).
 
 [1]: https://github.com/Knawat/dropshipping-woocommerce/
@@ -65,13 +64,13 @@ Are you looking to find the best wooCommerce Dropshipping plugin? to import thou
 * ADDED: Support for WCFM Marketplace latest version.
 
 = 2.0.5 =
-* Tested with latest versions of both Wordpress 5.3 and WooCommece 3.7.1.
+* Tested with latest versions of both WordPress 5.3 and WooCommece 3.7.1.
 
 = 2.0.4 =
 * ADDED: Support for Appmaker.xyz Plugin.
 
 = 2.0.3 =
-* FIX: Background import products was broken.
+* FIX: Background import products broken.
 
 = 2.0.2 =
 * IMPROVEMENT: Some Improvements.
@@ -95,7 +94,7 @@ Are you looking to find the best wooCommerce Dropshipping plugin? to import thou
 * ADDED: New button to force pull all products.
 * ADDED: Instantly update product qty & price before order placed.
 * ADDED: Background Order Synchronization with Knawat.
-* ADDED: Knawat Order Status for know status of order at Knawat.
+* ADDED: Knawat Order Status for know status from Knawat.
 * ADDED: Support for Autoupdate Order Tracking Number and Carrier Data to Order once Order Shipped.
 * ADDED: Option for Track Order at Front-end Order Screen.
 * ADDED: Added Support for Dokan Multivendor Marketplace Plugin.
@@ -107,7 +106,7 @@ Are you looking to find the best wooCommerce Dropshipping plugin? to import thou
 * ADDED: Order splits based on Knawat and non-knawat product for better order handling.
 * ADDED: Dashboard widget for display Knawat status ( Sell and profit)
 * ADDED: Functionality for Multiple Dropshippers ( Local DS and Default DS)
-* ADDED: Knawat produc cost field in product variation edit screen
+* ADDED: Knawat product cost field in product variation edit screen
 * IMPROVEMENT: Some Improvements
 * FIXED: some bug fixes.
 
@@ -122,8 +121,7 @@ Are you looking to find the best wooCommerce Dropshipping plugin? to import thou
 * Initial Version.
 
 == Frequently Asked Questions ==
-1. Q: How to contribute ?
-    A: Please join us [here](https://github.com/Knawat/dropshipping-woocommerce)
 
-== Upgrade Notice == 
-1.
+=How to contribute?=
+
+Join us on [GitHub](https://github.com/Knawat/dropshipping-woocommerce).
