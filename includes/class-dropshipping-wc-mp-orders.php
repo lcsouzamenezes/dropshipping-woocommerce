@@ -260,7 +260,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 
 		$new_order['payment_method'] = $payment_method;
 
-		// Add Email and phone into Shipping.
+		// If shipping is not available take billing address
 		if( !isset( $new_order['shipping']['first_name'] ) || empty( $new_order['shipping']['first_name'] ) ){
 			$shipping_fields = array( 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'country', 'email', 'phone' );
 			foreach ($shipping_fields as $shipping_field) {
@@ -269,6 +269,12 @@ class Knawat_Dropshipping_WC_MP_Orders {
 				}
 			}
 		}
+
+		// If city is not available add state value
+		if (empty($new_order['shipping']['city'])) {
+            $new_order['shipping']['city'] = empty($new_order['shipping']['state']) ? $new_order['billing']['state'] : $new_order['shipping']['state'];
+        }
+
 		// Replace OrderKey with order Number for better readability in Odoo & AgileCRM
 		$new_order['order_key'] = $new_order['number'];
 
