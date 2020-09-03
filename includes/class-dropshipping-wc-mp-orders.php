@@ -272,7 +272,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 
 		// If city is not available add state value
 		if (empty($new_order['shipping']['city'])) {
-            $new_order['shipping']['city'] = empty($new_order['shipping']['state']) ? $new_order['billing']['state'] : $new_order['shipping']['state'];
+            $new_order['shipping']['city'] = $new_order['shipping']['state'];
         }
 
 		// Replace OrderKey with order Number for better readability in Odoo & AgileCRM
