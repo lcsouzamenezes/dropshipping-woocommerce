@@ -1,29 +1,27 @@
 === Knawat WooCommerce DropShipping ===
 Contributors: knawat,dharm1025,esl4m,firstanonymous
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace, Appmaker
-Requires PHP: 5.3
+Requires PHP: 7.0
 Requires at least: 4.0
-Tested up to: 5.4.2
+Tested up to: 5.1.1
 Stable tag: 2.1.1
-WC tested up to: 4.2.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+WC tested up to: 4.5.0
 
 == Description ==
 
 ===Knawat WooCommerce DropShipping:===
 
-Are you looking to find the best WooCommerce Dropshipping plugin? to import thousands of products with jew few clicks? Dropshipping and Fulfillment Knawat WooCommerce dropshipping plugin automates the dropshipping on wooCommerce. allows you to add products to your WooCommerce store easily from knawat.com and start selling now!	
+Are you looking to find the best WooCommerce Dropshipping plugin? to import thousands of products with just a few clicks? Dropshipping and Fulfillment Knawat WooCommerce dropshipping plugin automates the dropshipping on WooCommerce. allows you to add products to your WooCommerce store easily from knawat.com and start selling now!	
 
 [youtube https://www.youtube.com/watch?v=MXwKwZ6qJZw]
 
 ==Features==
 
-We ship to every corner around the globe. Sell your products to customers around the world, Knawat will pack and ship orders directly to your customer doorstep with your invoice with your brand name. Automatic updating prices and stock level. Focus your efforts on selling not on stock management. Stock levels and product prices are automatically updated in real-time with the suppliers’ system.
+We ship to every corner around the globe. Sell your products to customers around the world, Knawat will pack and ship orders directly to your customer doorstep with your invoice and your brand name. Automatic updating prices and stock level. Focus your efforts on selling not on stock management. Stock levels and product prices are automatically updated in real-time with the suppliers’ system.
 
 ===Multilingual Content===
 
-Our translation team working on product description translating it to four dıfferent languages (English, Arabic, and Turkish), and localized to dıfferent cultures. Reach your target customers with the right content.
+Our translation team working on product description translating it to three different languages (English, Arabic, and Turkish), and localized to different cultures. Reach your target customers with the right content.
 
 ===Easily import products to your store===
 
@@ -39,7 +37,7 @@ Knawat app will automatically update product prices and stock levels to give you
 
 ===Automated fulfill orders===
 
-When you confirm an order, we will bring the order from the supplier warehouse, pack it, ship it with your invoice to your customer doorstep.
+When you confirm an order, we will bring the order from the supplier warehouse, pack it, and ship it with your invoice to your customer's doorstep.
 
 ===Shipment tracking===
 
@@ -49,7 +47,7 @@ Automatically updating shipment tracking number into your store
 
 = Contributing =
 
-* We love reporting issues and suggest feature, join us on [Github][https://github.com/Knawat/dropshipping-woocommerce/].
+* We love reporting issues and suggesting features, join us on [Github][https://github.com/Knawat/dropshipping-woocommerce/].
 * Help translate this plugin [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/dropshipping-woocommerce).
 
 == Installation ==
