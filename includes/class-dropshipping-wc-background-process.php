@@ -65,7 +65,10 @@ class Knawat_Dropshipping_WC_Background extends WP_Background_Process {
 			update_option( $error_option, $error_log );
 		}
 		// Logs import data
-		knawat_dropshipwc_logger( '[IMPORT_STATS_IMPORTER]'.print_r( $results, true ), 'info' );
+		knawat_dropshipwc_logger( '[IMPORT_STATS_IMPORTER]'.print_r(
+			array_filter($results, function($var) {
+				return count($var) !== 0;
+			}), true ), 'info' );
 
 		$is_stop_import = get_transient('knawat_stop_import');
 		if( $is_stop_import === 'product_import' ){

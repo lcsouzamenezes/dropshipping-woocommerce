@@ -121,135 +121,133 @@ if (class_exists('WC_Product_Importer', false)) :
 					break;
 			}
 
-			if (!is_wp_error($this->data)) {
-				$response = $this->data;
-				if (isset($response->products) || ('single' === $this->import_type && isset($response->product))) {
+			if (is_wp_error($this->data)) {
+				knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR] ' . $api_url . ' ' . $this->data->get_error_message());
+				return array('status' => 'fail', 'message' => $this->data->get_error_message());
+			} else if (!isset($this->data->products) && !('single' === $this->import_type && isset($this->data->product))) {
+				knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR] ' . $api_url . ' ' . print_r($this->data, true));
+				return array('status' => 'fail', 'message' => __('Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce'));
+			}
 
-					$products = array();
-					if ('single' === $this->import_type) {
-						if (isset($response->product->status) && 'failed' == $response->product->status) {
-							$error_message = isset($response->product->message) ? $response->product->message : __('Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce');
-							return array('status' => 'fail', 'message' => $error_message);
-						}
-						$products[] = $response->product;
-					} else {
-						$products = $response->products;
+			$response = $this->data;
+			$products = array();
+			if ('single' === $this->import_type) {
+				if (isset($response->product->status) && 'failed' == $response->product->status) {
+					$error_message = isset($response->product->message) ? $response->product->message : __('Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce');
+					return array('status' => 'fail', 'message' => $error_message);
+				}
+				$products[] = $response->product;
+			} else {
+				$products = $response->products;
+			}
+
+			// Handle errors
+			if (isset($products->code) || !is_array($products)) {
+				return array('status' => 'fail', 'message' => __('Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce'));
+			}
+
+			// Update Product totals.
+			$this->params['products_total'] = count($products);
+			if (empty($products)) {
+				$this->params['is_complete'] = true;
+				return $data;
+			}
+
+			foreach ($products as $index => $product) {
+
+				if ($index <= $this->params['product_index']) {
+					continue;
+				}
+
+				$formated_data = $this->get_formatted_product($product);
+				$variations = $formated_data['variations'];
+				unset($formated_data['variations']);
+
+				// Prevent new import for 0 qty products.
+				$total_qty = 0;
+				if (!empty($variations)) {
+					foreach ($variations as $vars) {
+						$total_qty += isset($vars['stock_quantity']) ? $vars['stock_quantity'] : 0;
 					}
+				}
 
-					// Handle errors
-					if (isset($products->code) || !is_array($products)) {
-						return array('status' => 'fail', 'message' => __('Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce'));
-					}
-
-					// Update Product totals.
-					$this->params['products_total'] = count($products);
-					if (empty($products)) {
-						$this->params['is_complete'] = true;
-						return $data;
-					}
-
-					foreach ($products as $index => $product) {
-
-						if ($index <= $this->params['product_index']) {
-							continue;
-						}
-
-						$formated_data = $this->get_formatted_product($product);
-						$variations = $formated_data['variations'];
-						unset($formated_data['variations']);
-
-						// Prevent new import for 0 qty products.
-						$total_qty = 0;
-						if (!empty($variations)) {
-							foreach ($variations as $vars) {
-								$total_qty += isset($vars['stock_quantity']) ? $vars['stock_quantity'] : 0;
-							}
-						}
-
-						if (isset($formated_data['id']) && !$this->params['force_update']) {
-							// Fake it
-							$result = array('id' => $formated_data['id'], 'updated' => true);
-							if (isset($formated_data['raw_attributes']) && !empty($formated_data['raw_attributes'])) {
-								foreach ($formated_data['raw_attributes'] as $attkey => $attvalue) {
-									if (!empty($attvalue['taxonomy'])) {
-										$options = $this->get_existing_attribute_values($formated_data['id'], $attvalue['name']);
-										if (!empty($attvalue['value'])) {
-											foreach ($attvalue['value'] as $opt) {
-												if (!in_array($opt, $options)) {
-													$options[] = $opt;
-												}
-											}
+				if (isset($formated_data['id']) && !$this->params['force_update']) {
+					// Fake it
+					$result = array('id' => $formated_data['id'], 'updated' => true);
+					if (isset($formated_data['raw_attributes']) && !empty($formated_data['raw_attributes'])) {
+						foreach ($formated_data['raw_attributes'] as $attkey => $attvalue) {
+							if (!empty($attvalue['taxonomy'])) {
+								$options = $this->get_existing_attribute_values($formated_data['id'], $attvalue['name']);
+								if (!empty($attvalue['value'])) {
+									foreach ($attvalue['value'] as $opt) {
+										if (!in_array($opt, $options)) {
+											$options[] = $opt;
 										}
-										$formated_data['raw_attributes'][$attkey]['value'] = $options;
 									}
 								}
-								$result = $this->process_item($formated_data);
-							}
-						} else {
-							if ($total_qty > 0) {
-								add_filter('woocommerce_new_product_data', array($this, 'set_dokan_seller'));
-								$result = $this->process_item($formated_data);
-								remove_filter('woocommerce_new_product_data', array($this, 'set_dokan_seller'));
-							} else {
-								$this->params['product_index'] = $index;
-								knawat_dropshipwc_logger("[0_QTY_PRODUCT] SKU:" . $formated_data['sku']);
-								continue;
+								$formated_data['raw_attributes'][$attkey]['value'] = $options;
 							}
 						}
-						if (is_wp_error($result)) {
-							$result->add_data(array('data' => $formated_data));
-							$data['failed'][] = $result;
-						} else {
-							if ($result['updated']) {
-								$data['updated'][] = $result['id'];
-							} else {
-								$data['imported'][] = $result['id'];
-							}
-							$product_id = $result['id'];
-							if (!empty($variations)) {
-
-								foreach ($variations as $vindex => $variation) {
-									$variation['parent_id'] = $product_id;
-									add_filter('woocommerce_new_product_variation_data', array($this, 'set_dokan_seller'));
-									$variation_result = $this->process_item($variation);
-									remove_filter('woocommerce_new_product_variation_data', array($this, 'set_dokan_seller'));
-									if (is_wp_error($variation_result)) {
-										$variation_result->add_data(array('data' => $formated_data));
-										$variation_result->add_data(array('variation' => 1));
-										$data['failed'][] = $variation_result;
-									}
-								}
-							}
-						}
+						$result = $this->process_item($formated_data);
+					}
+				} else {
+					if ($total_qty > 0) {
+						add_filter('woocommerce_new_product_data', array($this, 'set_dokan_seller'));
+						$result = $this->process_item($formated_data);
+						remove_filter('woocommerce_new_product_data', array($this, 'set_dokan_seller'));
+					} else {
 						$this->params['product_index'] = $index;
 
-						if ($this->params['prevent_timeouts'] && ($this->time_exceeded() || $this->memory_exceeded())) {
-							break;
+						// Delete product from my products if not exists into WooCommerce and qty zero in Knawat
+						global $knawat_dropshipwc;
+						$knawat_dropshipwc->common->knawat_delete_mp_product_by_sku( $formated_data['sku'] );
+						continue;
+					}
+				}
+				if (is_wp_error($result)) {
+					$result->add_data(array('data' => $formated_data));
+					$data['failed'][] = $result;
+				} else {
+					if ($result['updated']) {
+						$data['updated'][] = $result['id'];
+					} else {
+						$data['imported'][] = $result['id'];
+					}
+					$product_id = $result['id'];
+					if (!empty($variations)) {
+
+						foreach ($variations as $vindex => $variation) {
+							$variation['parent_id'] = $product_id;
+							add_filter('woocommerce_new_product_variation_data', array($this, 'set_dokan_seller'));
+							$variation_result = $this->process_item($variation);
+							remove_filter('woocommerce_new_product_variation_data', array($this, 'set_dokan_seller'));
+							if (is_wp_error($variation_result)) {
+								$variation_result->add_data(array('data' => $formated_data));
+								$variation_result->add_data(array('variation' => 1));
+								$data['failed'][] = $variation_result;
+							}
 						}
 					}
-
-					/*if( $this->params['products_total'] === 0 ){
-					$this->params['is_complete'] = true;
-				}elseif( ( $this->params['products_total'] < $this->params['limit'] ) && ( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ) ){
-					$this->params['is_complete'] = true;
-				}else{
-					$this->params['is_complete'] = false;
-				}*/
-					if ($this->params['products_total'] === 0) {
-						$this->params['is_complete'] = true;
-					} else {
-						$this->params['is_complete'] = false;
-					}
-
-					return $data;
-				} else {
-					knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR]' . print_r($this->data, true));
-					return array('status' => 'fail', 'message' => __('Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce'));
 				}
-			} else {
-				knawat_dropshipwc_logger('[GET_PRODUCTS_FROM_API_ERROR]' . $this->data->get_error_message());
-				return array('status' => 'fail', 'message' => $this->data->get_error_message());
+				$this->params['product_index'] = $index;
+
+				if ($this->params['prevent_timeouts'] && ($this->time_exceeded() || $this->memory_exceeded())) {
+					break;
+				}
 			}
+
+			/*if( $this->params['products_total'] === 0 ){
+				$this->params['is_complete'] = true;
+			}elseif( ( $this->params['products_total'] < $this->params['limit'] ) && ( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ) ){
+				$this->params['is_complete'] = true;
+			}else{
+				$this->params['is_complete'] = false;
+			}*/
+			
+			$this->params['is_complete'] = $this->params['products_total'] === 0;
+
+			return $data;
+			
 		}
 
 		public function get_formatted_product($product)
