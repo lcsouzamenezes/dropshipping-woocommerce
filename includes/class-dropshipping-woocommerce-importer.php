@@ -361,10 +361,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				}
 			}
 			$new_product['tags'] = array();
-			$z                   = 1;
-			$cat                 = $new_terms = array();
 			$cat_id              = null;
-			error_log( json_encode( $product ) );
 			if ( $active_plugins['qtranslate-x'] && ! empty( $active_langs ) ) {
 				foreach ( $product->categories as $category ) {
 					foreach ( $active_langs as $active_lang ) {
