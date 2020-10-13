@@ -5,308 +5,30 @@ msgstr ""
 "Project-Id-Version: Knawat WooCommerce DropShipping 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dropshipping-"
 "woocommerce\n"
-"POT-Creation-Date: 2018-09-06 13:22:08+00:00\n"
+"POT-Creation-Date: 2020-09-16 15:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-09-07 14:00+0300\n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.1.1\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2020-09-16 15:23+0000\n"
+"Language-Team: العربية\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Last-Translator: مدير المتجر\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "Language: ar\n"
+"X-Loco-Version: 2.4.3; wp-5.4.2"
 
-#: dropshipping-woocommerce.php:91 dropshipping-woocommerce.php:98
+#: dropshipping-woocommerce.php:105 dropshipping-woocommerce.php:112
 msgid "Cheatin&#8217; huh?"
 msgstr "هل تحاول التحايل؟"
 
-#: dropshipping-woocommerce.php:235
+#: dropshipping-woocommerce.php:251
 msgid "Knawat DropShipping"
 msgstr "قنوات دروب شيبنج"
 
-#: dropshipping-woocommerce.php:240
+#: dropshipping-woocommerce.php:256
 msgid "Knawat DropShipping (Saudi Arabia)"
 msgstr "قنوات دروب شيبنج (المملكة العربية السعودية)"
-
-#: includes/class-dropshipping-wc-cron.php:42
-msgid "Knawat Order Sync Interval"
-msgstr "الفاصل الزمني لمزامنة الطلبات مع قنوات"
-
-#: includes/class-dropshipping-wc-mp-orders.php:97
-#: includes/class-dropshipping-wc-mp-orders.php:109
-#: includes/class-dropshipping-wc-mp-orders.php:166
-#: includes/class-dropshipping-wc-mp-orders.php:178
-msgid "Order synchronize fail. order id: #%d"
-msgstr "فشل مزامنة الطلب. رقم الطلب: #% d"
-
-#: includes/class-dropshipping-wc-mp-orders.php:328
-msgid "Some orders are not sycronized with knawat.com. Please"
-msgstr "بعض الطلبات ليست متزامنة مع knawat.com. رجاءً"
-
-#: includes/class-dropshipping-wc-mp-orders.php:329
-msgid "synchronize it now"
-msgstr "المزامنة الآن"
-
-#: includes/class-dropshipping-wc-mp-orders.php:375
-msgid "Nonce failed. Please try again."
-msgstr "فشل nonce. الرجاء المحاولة مره أخرى."
-
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:37
-msgid "Knawat status"
-msgstr "حالة قنوات"
-
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:40
-msgid "Latest News from Knawat"
-msgstr "آخر الأخبار من قنوات"
-
-#. translators: %s: net sales
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:147
-msgid "%s net sales this month"
-msgstr "%s صافي مبيعات هذا الشهر"
-
-#. translators: %s: net profit
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:163
-msgid "%s net profit this month"
-msgstr "%s صافي الربح هذا الشهر"
-
-#. translators: 1: top seller product title 2: top seller quantity
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:184
-msgid "%1$s top seller this month (sold %2$d)"
-msgstr "%1$s البائع الأعلى هذا الشهر (تباع% 2 $ d)"
-
-#. translators: %s: order count
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:237
-msgid "<strong>%s order</strong> awaiting processing"
-msgid_plural "<strong>%s orders</strong> awaiting processing"
-msgstr[0] "<strong>%s طلب</strong> بإنتظار الإجراء"
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-#. translators: %s: order count
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:248
-msgid "<strong>%s order</strong> on-hold"
-msgid_plural "<strong>%s orders</strong> on-hold"
-msgstr[0] "<strong>طلب %s</strong> قيد الانتظار"
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-#. translators: %s: order count
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:307
-msgid "<strong>%s product</strong> low in stock"
-msgid_plural "<strong>%s products</strong> low in stock"
-msgstr[0] "<strong>%s منتج</strong> منخفض في المخزون"
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-#. translators: %s: order count
-#: includes/class-dropshipping-woocommerce-admin-dashboard.php:318
-msgid "<strong>%s product</strong> out of stock"
-msgid_plural "<strong>%s products</strong> out of stock"
-msgstr[0] "<strong>%s منتج</strong> نفذ من المخزون"
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-#: includes/class-dropshipping-woocommerce-admin.php:79
-#: includes/class-dropshipping-woocommerce-admin.php:102
-msgid "Knawat Dropshipping"
-msgstr "قنوات دروب شيبنج"
-
-#: includes/class-dropshipping-woocommerce-admin.php:79
-msgid "Dropshipping"
-msgstr "دروب شيبنج"
-
-#: includes/class-dropshipping-woocommerce-admin.php:121
-#: templates/admin/dropshipping-woocommerce-import.php:22
-msgid "Product Import"
-msgstr "استيراد المنتجات"
-
-#: includes/class-dropshipping-woocommerce-admin.php:125
-#: templates/admin/dropshipping-woocommerce-settings.php:14
-msgid "Settings"
-msgstr "الإعدادات"
-
-#: includes/class-dropshipping-woocommerce-admin.php:178
-msgid "Knawat Orders"
-msgstr "طلبات قنوات"
-
-#: includes/class-dropshipping-woocommerce-admin.php:256
-msgid "Knawat Products"
-msgstr "منتجات قنوات"
-
-#: includes/class-dropshipping-woocommerce-admin.php:307
-msgid " Rate %1$s Dropshipping Woocommerce%2$s %3$s"
-msgstr " تقييم  %1$s قنوات ووكومرس دروب شيبنج %2$s %3$s"
-
-#: includes/class-dropshipping-woocommerce-admin.php:391
-msgid "Manual import started successfully."
-msgstr "بدا الإستيراد اليدوي بنجاح."
-
-#: includes/class-dropshipping-woocommerce-admin.php:399
-msgid "Something went wrong during start manual import."
-msgstr "حدث شيء خاطئ اثناء بدء الاستيراد اليدوي."
-
-#: includes/class-dropshipping-woocommerce-admin.php:408
-msgid "Order(s) has been synchronized successfully."
-msgstr "تمت مزامنة الطلبات بنجاح."
-
-#: includes/class-dropshipping-woocommerce-admin.php:414
-msgid "Something went wrong during order synchronization, please try again."
-msgstr "حدث خطا اثناء مزامنة الطلبات ، الرجاء المحاولة مره أخرى."
-
-#: includes/class-dropshipping-woocommerce-admin.php:457
-msgid "Import has been stopped successfully."
-msgstr "تم إيقاف الاستيراد بنجاح."
-
-#: includes/class-dropshipping-woocommerce-admin.php:486
-msgid "Knawat Order Status:"
-msgstr "حاله طلب قنوات:"
-
-#: includes/class-dropshipping-woocommerce-admin.php:501
-msgid "Knawat Status"
-msgstr "حالة قنوات"
-
-#. translators: %s: currency symbol
-#: includes/class-dropshipping-woocommerce-admin.php:554
-msgid "Knawat Cost (%s)"
-msgstr "تكلفة قنوات (%s)"
-
-#: includes/class-dropshipping-woocommerce-admin.php:611
-msgid "Dropshipper"
-msgstr "دروبشيبر"
-
-#: includes/class-dropshipping-woocommerce-admin.php:614
-msgid "Select Dropshipper for this Product variantion."
-msgstr "أختر الدروبشيبر من أجل نوع هذا المنتج"
-
-#: includes/class-dropshipping-woocommerce-admin.php:622
-msgid "Stock quantity (Dropshipper)"
-msgstr "كمية المخزون (الدروبشيبر)"
-
-#: includes/class-dropshipping-woocommerce-admin.php:624
-msgid "Enter a quantity of product variant for selected dropshipper."
-msgstr "أدخل كمية نوع المنتج للدروبشيبر الذي تم اختياره"
-
-#: includes/class-dropshipping-woocommerce-admin.php:678
-msgid ""
-"Before you start importing products, it's better to set default category for "
-"import Knawat Products. You can set it from <strong>Products > Categories.</"
-"strong>  ex: New arrivals, or something else as you want."
-msgstr ""
-"قبل البدء باستيراد المنتجات، يُفضّل أن تقوم بضبط الفئة الافتراضية للمنتجات "
-"التي ستقوم باستيرادها من قنوات. بإمكانك القيام بإعداد ذلك من "
-"<strong>المنتجات > الفئات</strong> مثال: وصل حديثاً، أو غير ذلك كما تريد."
-
-#: includes/class-dropshipping-woocommerce-admin.php:678
-msgid "Dismiss this notice."
-msgstr "تجاهل هذه الملاحظة."
-
-#: includes/class-dropshipping-woocommerce-api.php:122
-#: includes/class-dropshipping-woocommerce-api.php:167
-#: includes/class-dropshipping-woocommerce-api.php:206
-#: includes/class-dropshipping-woocommerce-api.php:246
-msgid ""
-"Access token not found for API. Please make sure your store is connected to "
-"knawat.com"
-msgstr ""
-"لم يتم العثور على رمز الوصول من أجل ال API. يرجى التحقق من ربط متجرك مع "
-"Knawat.com"
-
-#: includes/class-dropshipping-woocommerce-common.php:117
-msgid "Another product import is in process already."
-msgstr "هناك عملية استيراد منتجات أخرى قيد التنفيذ بالفعل."
-
-#: includes/class-dropshipping-woocommerce-common.php:166
-msgid "Settings has been saved successfully."
-msgstr "تم حفظ الإعدادت بنجاح."
-
-#: includes/class-dropshipping-woocommerce-common.php:283
-msgid ""
-"Your connection with knawat.com has been disconnected. Please check and "
-"verify your knawat consumer keys from"
-msgstr ""
-"تم قطع اتصالك مع knawat.com. يرجى التحقق من consumer keys الخاصة بمتجرك"
-
-#: includes/class-dropshipping-woocommerce-common.php:284
-msgid "<strong>Knawat Dropshipping</strong> > <strong>Settings</strong>."
-msgstr "<strong>قنوات دروب شيبنج</strong> > <strong>الإعدادت</strong>."
-
-#: includes/class-dropshipping-woocommerce-common.php:410
-msgid ""
-"The product will be imported again from Knawat, if you don't want this "
-"product, then delete it permanently."
-msgstr ""
-"سيتم استيراد هذا المنتج مرة أخرى من Knawat ، إذا كنت لا تريد هذا المنتج ، قم "
-"بحذفه نهائياً من سلة المهملات."
-
-#: includes/class-dropshipping-woocommerce-importer.php:106
-msgid "Please provide product sku."
-msgstr "يرجى التزويد برمز المنتج."
-
-#: includes/class-dropshipping-woocommerce-importer.php:122
-#: includes/class-dropshipping-woocommerce-importer.php:132
-#: includes/class-dropshipping-woocommerce-importer.php:222
-msgid ""
-"Something went wrong during get data from Knawat MP API. Please try again "
-"later."
-msgstr ""
-"حدث خطأ ما أثناء الحصول على البيانات من Knawat MP API. الرجاء معاودة "
-"المحاولة في وقت لاحق."
-
-#: includes/class-dropshipping-woocommerce-orders.php:294
-msgid "Order &ndash; %s"
-msgstr "طلب  &ndash; %s"
-
-#: includes/class-dropshipping-woocommerce-orders.php:294
-msgctxt "Order date parsed by strftime"
-msgid "%b %d, %Y @ %I:%M %p"
-msgstr "%b %d, %Y @ %I:%M %p"
-
-#: includes/class-dropshipping-woocommerce-orders.php:721
-msgctxt "Admin: Order table column"
-msgid "Suborders"
-msgstr "الطلبات الفرعية"
-
-#: includes/class-dropshipping-woocommerce-orders.php:811
-msgid "Suborders"
-msgstr "الطلبات الفرعية"
-
-#: includes/class-dropshipping-woocommerce-orders.php:813
-msgid "Parent order"
-msgstr "الطلب الأب"
-
-#: includes/class-dropshipping-woocommerce-orders.php:819
-msgid "Knawat Dropshipper"
-msgstr "قنوات دروبشيبر"
-
-#: includes/class-dropshipping-woocommerce-orders.php:864
-msgid "Return to main order"
-msgstr "العودة إلى الطلب الرئيسي"
-
-#: includes/class-dropshipping-woocommerce-orders.php:1062
-msgid "Mark main order completed when all suborders are completed."
-msgstr ""
-"قم بتغيير حالة الطلب الرئيسي إلى مكتمل عند ما تكتمل كل الطلبات الفرعية."
-
-#: includes/class-dropshipping-woocommerce-orders.php:1068
-msgid "Mark main order refunded when all suborders are refunded."
-msgstr "قم بتعيين الطلب الرئيسي إلى مستردّ عندما تكون الطلبات الفرعية مستردّة"
-
-#: includes/class-dropshipping-woocommerce-orders.php:1448
-msgid "%1$s stock reduced for \"%2$s\" from %3$s to %4$s."
-msgstr "%1$s المخزون نقص لـ \"%2$s\" من %3$s إلى %4$s."
 
 #: includes/class-dropshipping-woocommerce-pdf-invoice.php:48
 msgid "Something went wrong during PDF generation."
@@ -323,6 +45,384 @@ msgstr "لم يتم تثبيت الإضافة Woocommerce PDF Invoice ."
 #: includes/class-dropshipping-woocommerce-pdf-invoice.php:91
 msgid "Invoice for the selected order(s) could not be generated"
 msgstr "تعذر إنشاء فاتورة للطلب المحدد (الطلبات المختارة)"
+
+#: includes/class-dropshipping-woocommerce-common.php:127
+msgid "Another product import is in process already."
+msgstr "هناك عملية استيراد منتجات أخرى قيد التنفيذ بالفعل."
+
+#: includes/class-dropshipping-woocommerce-common.php:187
+msgid "Settings has been saved successfully."
+msgstr "تم حفظ الإعدادت بنجاح."
+
+#: includes/class-dropshipping-woocommerce-common.php:306
+msgid ""
+"Your connection with knawat.com has been disconnected. Please check and "
+"verify your knawat consumer keys from"
+msgstr ""
+"تم قطع اتصالك مع knawat.com. يرجى التحقق من consumer keys الخاصة بمتجرك"
+
+#: includes/class-dropshipping-woocommerce-common.php:307
+msgid "<strong>Knawat Dropshipping</strong> > <strong>Settings</strong>."
+msgstr "<strong>قنوات دروب شيبنج</strong> > <strong>الإعدادت</strong>."
+
+#: includes/class-dropshipping-woocommerce-common.php:434
+msgid ""
+"The product will be imported again from Knawat, if you don't want this "
+"product, then delete it permanently."
+msgstr ""
+"سيتم استيراد هذا المنتج مرة أخرى من Knawat ، إذا كنت لا تريد هذا المنتج ، قم "
+"بحذفه نهائياً من سلة المهملات."
+
+#: includes/knawat-merlin-config.php:29
+msgid "Knawat Setup"
+msgstr "ضبط قنوات"
+
+#: includes/knawat-merlin-config.php:30
+#, php-format
+msgid "%s%s Knawat &lsaquo; Knawat Setup %s"
+msgstr "%s%s قنوات &lsaquo; ضبط قنوات %s"
+
+#: includes/knawat-merlin-config.php:32
+msgid "Return to the dashboard"
+msgstr "العودة إلى الإعدادات"
+
+#: includes/knawat-merlin-config.php:34
+msgid "Skip"
+msgstr "تخطي"
+
+#: includes/knawat-merlin-config.php:35 includes/knawat-merlin-config.php:39
+msgid "Next"
+msgstr "التالي"
+
+#: includes/knawat-merlin-config.php:36
+msgid "Start"
+msgstr "ابدأ"
+
+#: includes/knawat-merlin-config.php:37
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: includes/knawat-merlin-config.php:38 includes/knawat-merlin-config.php:40
+#: includes/lib/knawat-merlin/knawat-merlin.php:787
+msgid "Install"
+msgstr "تنصيب"
+
+#: includes/knawat-merlin-config.php:41
+#: includes/lib/knawat-merlin/knawat-merlin.php:793
+msgid "Activate"
+msgstr "تفعيل"
+
+#: includes/knawat-merlin-config.php:43
+#, php-format
+msgid "Welcome to %s"
+msgstr "مرحباً ب %s"
+
+#: includes/knawat-merlin-config.php:44
+msgid "Hi. Welcome back"
+msgstr "أهلاً بك مرة أخرى"
+
+#: includes/knawat-merlin-config.php:45
+msgid ""
+"This wizard will connect your store with Knawat and install plugins. It is "
+"optional & should take only a few minutes."
+msgstr ""
+"سيقوم هذا المعالج بتوصيل متجرك بـ Knawat وتثبيت الإضافات. إنه اختياري ويجب "
+"أن يستغرق بضع دقائق فقط."
+
+#: includes/knawat-merlin-config.php:46
+msgid ""
+"You may have already run this knawat setup wizard. If you would like to "
+"proceed anyway, click on the \"Start\" button below."
+msgstr ""
+"ربما تكون قد قمت بتشغيل معالج إعداد knawat بالفعل. إذا كنت تريد المتابعة على "
+"أي حال ، فانقر فوق الزر \"ابدأ\" أدناه."
+
+#: includes/knawat-merlin-config.php:49
+msgid "Connect Your store with Knawat"
+msgstr "ربط متجرك مع قنوات"
+
+#: includes/knawat-merlin-config.php:50
+msgid "You're good to go!"
+msgstr "أنت على ما يرام للإنطلاق"
+
+#: includes/knawat-merlin-config.php:51
+msgid "Please insert Knawat Knawat Consumer Key and Secret."
+msgstr "الرجاء إدخال Knawat consumer key & secret."
+
+#: includes/knawat-merlin-config.php:52
+msgid "Your store has already connected to Knawat."
+msgstr "إن متجرك مرتبط مع قنوات بالفعل."
+
+#: includes/knawat-merlin-config.php:53
+msgid "Learn about child themes"
+msgstr "تعلم عن الثيم الطفل."
+
+#: includes/knawat-merlin-config.php:55
+msgid "Install Plugins"
+msgstr "تنصيب الإضافة."
+
+#: includes/knawat-merlin-config.php:56
+msgid "You're up to speed!"
+msgstr "أنت على أحسن حال!"
+
+#: includes/knawat-merlin-config.php:57
+msgid ""
+"Let’s install some essential WordPress plugins to get your site up to speed."
+msgstr "دعنا نركب بعض الإضافات الأساسية في WordPress لتسريع موقعك."
+
+#: includes/knawat-merlin-config.php:58
+msgid ""
+"The required WordPress plugins are all installed and up to date. Press "
+"\"Next\" to continue the setup wizard."
+msgstr ""
+"جميع الإضافات المطلوبة في WordPress مثبتة وحديثة. اضغط على \"التالي\" "
+"لمتابعة معالج الإعداد."
+
+#: includes/knawat-merlin-config.php:59
+msgid "Advanced"
+msgstr "متقدّم"
+
+#: includes/knawat-merlin-config.php:62
+msgid "All done. Have fun!"
+msgstr "كله تمام. إستمتع!"
+
+#: includes/knawat-merlin-config.php:63
+msgid "Your store has been all set up."
+msgstr "تم إعداد متجرك بالكامل."
+
+#: includes/knawat-merlin-config.php:64
+msgid "Extras"
+msgstr "الإضافات"
+
+#: includes/knawat-merlin-config.php:65
+msgid "Start Adding Products"
+msgstr "بدء اضافة المنتجات."
+
+#: includes/knawat-merlin-config.php:67
+#, php-format
+msgid "<a href=\"https://knawat.com/\" target=\"_blank\">%s</a>"
+msgstr "<a href=\"https://knawat.com/ar/\" target=\"_blank\">%s</a>"
+
+#: includes/knawat-merlin-config.php:68
+#, php-format
+msgid "<a href=\"https://help.knawat.com/hc/en-us/\" target=\"_blank\">%s</a>"
+msgstr "<a href=\"https://help.knawat.com/hc/ar/\" target=\"_blank\">%s</a>"
+
+#: includes/knawat-merlin-config.php:69
+#, php-format
+msgid "\" target=\"_blank\">%s</a>"
+msgstr ""
+
+#: includes/class-dropshipping-woocommerce-orders.php:299
+#, php-format
+msgid "Order &ndash; %s"
+msgstr "طلب  &ndash; %s"
+
+#: includes/class-dropshipping-woocommerce-orders.php:299
+msgctxt "Order date parsed by strftime"
+msgid "%b %d, %Y @ %I:%M %p"
+msgstr "%b %d, %Y @ %I:%M %p"
+
+#: includes/class-dropshipping-woocommerce-orders.php:726
+msgctxt "Admin: Order table column"
+msgid "Suborders"
+msgstr "الطلبات الفرعية"
+
+#: includes/class-dropshipping-woocommerce-orders.php:816
+msgid "Suborders"
+msgstr "الطلبات الفرعية"
+
+#: includes/class-dropshipping-woocommerce-orders.php:818
+msgid "Parent order"
+msgstr "الطلب الأب"
+
+#: includes/class-dropshipping-woocommerce-orders.php:824
+msgid "Knawat Dropshipper"
+msgstr "قنوات دروبشيبر"
+
+#: includes/class-dropshipping-woocommerce-orders.php:869
+msgid "Return to main order"
+msgstr "العودة إلى الطلب الرئيسي"
+
+#: includes/class-dropshipping-woocommerce-orders.php:1067
+msgid "Mark main order completed when all suborders are completed."
+msgstr ""
+"قم بتغيير حالة الطلب الرئيسي إلى مكتمل عند ما تكتمل كل الطلبات الفرعية."
+
+#: includes/class-dropshipping-woocommerce-orders.php:1073
+msgid "Mark main order refunded when all suborders are refunded."
+msgstr "قم بتعيين الطلب الرئيسي إلى مستردّ عندما تكون الطلبات الفرعية مستردّة"
+
+#: includes/class-dropshipping-woocommerce-orders.php:1456
+#, php-format
+msgid "%1$s stock reduced for \"%2$s\" from %3$s to %4$s."
+msgstr "%1$s المخزون نقص لـ \"%2$s\" من %3$s إلى %4$s."
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:37
+msgid "Knawat status"
+msgstr "حالة قنوات"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:40
+msgid "Latest News from Knawat"
+msgstr "آخر الأخبار من قنوات"
+
+#. %s: net sales
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:147
+#, php-format
+msgid "%s net sales this month"
+msgstr "%s صافي مبيعات هذا الشهر"
+
+#. %s: net profit
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:163
+#, php-format
+msgid "%s net profit this month"
+msgstr "%s صافي الربح هذا الشهر"
+
+#. 1: top seller product title 2: top seller quantity
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:184
+#, php-format
+msgid "%1$s top seller this month (sold %2$d)"
+msgstr "%1$s البائع الأعلى هذا الشهر (تباع% 2 $ d)"
+
+#. %s: order count
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:237
+#, php-format
+msgid "<strong>%s order</strong> awaiting processing"
+msgid_plural "<strong>%s orders</strong> awaiting processing"
+msgstr[0] "<strong>%s طلب</strong> بإنتظار الإجراء"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#. %s: order count
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:248
+#, php-format
+msgid "<strong>%s order</strong> on-hold"
+msgid_plural "<strong>%s orders</strong> on-hold"
+msgstr[0] "<strong>طلب %s</strong> قيد الانتظار"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#. %s: order count
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:307
+#, php-format
+msgid "<strong>%s product</strong> low in stock"
+msgid_plural "<strong>%s products</strong> low in stock"
+msgstr[0] "<strong>%s منتج</strong> منخفض في المخزون"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#. %s: order count
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:318
+#, php-format
+msgid "<strong>%s product</strong> out of stock"
+msgid_plural "<strong>%s products</strong> out of stock"
+msgstr[0] "<strong>%s منتج</strong> نفذ من المخزون"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: includes/class-dropshipping-woocommerce-api.php:123
+#: includes/class-dropshipping-woocommerce-api.php:167
+#: includes/class-dropshipping-woocommerce-api.php:206
+#: includes/class-dropshipping-woocommerce-api.php:246
+msgid ""
+"Access token not found for API. Please make sure your store is connected to "
+"knawat.com"
+msgstr ""
+"لم يتم العثور على رمز الوصول من أجل ال API. يرجى التحقق من ربط متجرك مع "
+"Knawat.com"
+
+#: includes/knawat-required-plugins.php:27
+msgid "WooCoomerce"
+msgstr "ووكومرس"
+
+#: includes/knawat-required-plugins.php:33
+msgid "WooCommerce PDF Invoices & Packing Slips"
+msgstr ""
+
+#: includes/knawat-required-plugins.php:39
+msgid "Featured Image by URL"
+msgstr "صورة مميزة حسب الرابط"
+
+#: includes/knawat-required-plugins.php:48
+msgid "WooCommerce Currency Switcher"
+msgstr ""
+
+#: includes/knawat-required-plugins.php:56
+msgid "qTranslate X"
+msgstr ""
+
+#: includes/knawat-required-plugins.php:83
+#, php-format
+msgid "Knawat Dropshipping requires the following plugin: %1$s."
+msgid_plural "Knawat Dropshipping requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: includes/knawat-required-plugins.php:89
+#, php-format
+msgid "Knawat Dropshipping recommends the following plugin: %1$s."
+msgid_plural "Knawat Dropshipping recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: includes/class-dropshipping-woocommerce-importer.php:112
+msgid "Please provide product sku."
+msgstr "يرجى التزويد برمز المنتج."
+
+#: includes/class-dropshipping-woocommerce-importer.php:129
+#: includes/class-dropshipping-woocommerce-importer.php:137
+#: includes/class-dropshipping-woocommerce-importer.php:149
+msgid ""
+"Something went wrong during get data from Knawat MP API. Please try again "
+"later."
+msgstr ""
+"حدث خطأ ما أثناء الحصول على البيانات من Knawat MP API. الرجاء معاودة "
+"المحاولة في وقت لاحق."
+
+#: includes/class-dropshipping-woocommerce-importer.php:564
+msgid ""
+"Variation cannot be imported: Missing parent ID or parent does not exist yet."
+msgstr ""
+
+#: includes/class-dropshipping-woocommerce-webhook.php:110
+#, php-format
+msgid "Knawat Order created (%s)"
+msgstr "تم إنشاء طلب قنوات (%s)"
+
+#: includes/class-dropshipping-woocommerce-webhook.php:111
+#, php-format
+msgid "Knawat Order updated (%s)"
+msgstr "تم تحديث طلب قنوات (%s)"
+
+#: includes/class-dropshipping-woocommerce-webhook.php:112
+#, php-format
+msgid "Knawat Order deleted (%s)"
+msgstr "تم حذف طلب قنوات (%s)"
+
+#: includes/class-dropshipping-woocommerce-webhook.php:113
+#, php-format
+msgid "Knawat Order restored (%s)"
+msgstr "تم استعادة طلب قنوات (%s)"
 
 #: includes/class-dropshipping-woocommerce-shipment-tracking.php:43
 msgid "Knawat Shipment Tracking"
@@ -368,175 +468,338 @@ msgstr "يوم - شهر - سنة"
 msgid "Save Tracking"
 msgstr "حفظ التتبُّع"
 
-#: includes/class-dropshipping-woocommerce-webhook.php:110
-msgid "Knawat Order created (%s)"
-msgstr "تم إنشاء طلب قنوات (%s)"
+#: includes/class-dropshipping-wc-cron.php:42
+msgid "Knawat Order Sync Interval"
+msgstr "الفاصل الزمني لمزامنة الطلبات مع قنوات"
 
-#: includes/class-dropshipping-woocommerce-webhook.php:111
-msgid "Knawat Order updated (%s)"
-msgstr "تم تحديث طلب قنوات (%s)"
+#: includes/class-dropshipping-woocommerce-admin.php:79
+#: includes/class-dropshipping-woocommerce-admin.php:102
+msgid "Knawat Dropshipping"
+msgstr "قنوات دروب شيبنج"
 
-#: includes/class-dropshipping-woocommerce-webhook.php:112
-msgid "Knawat Order deleted (%s)"
-msgstr "تم حذف طلب قنوات (%s)"
+#: includes/class-dropshipping-woocommerce-admin.php:79
+msgid "Dropshipping"
+msgstr "دروب شيبنج"
 
-#: includes/class-dropshipping-woocommerce-webhook.php:113
-msgid "Knawat Order restored (%s)"
-msgstr "تم استعادة طلب قنوات (%s)"
+#: includes/class-dropshipping-woocommerce-admin.php:121
+#: templates/admin/dropshipping-woocommerce-import.php:20
+msgid "Product Import"
+msgstr "استيراد المنتجات"
 
-#: includes/knawat-merlin-config.php:29
-msgid "Knawat Setup"
-msgstr "ضبط قنوات"
+#: includes/class-dropshipping-woocommerce-admin.php:125
+#: templates/admin/dropshipping-woocommerce-settings.php:17
+msgid "Settings"
+msgstr "الإعدادات"
 
-#: includes/knawat-merlin-config.php:30
-msgid "%s%s Knawat &lsaquo; Knawat Setup %s"
-msgstr "%s%s قنوات &lsaquo; ضبط قنوات %s"
+#: includes/class-dropshipping-woocommerce-admin.php:178
+msgid "Knawat Orders"
+msgstr "طلبات قنوات"
 
-#: includes/knawat-merlin-config.php:32
-msgid "Return to the dashboard"
-msgstr "العودة إلى الإعدادات"
+#: includes/class-dropshipping-woocommerce-admin.php:256
+msgid "Knawat Products"
+msgstr "منتجات قنوات"
 
-#: includes/knawat-merlin-config.php:34
-msgid "Skip"
-msgstr "تخطي"
+#: includes/class-dropshipping-woocommerce-admin.php:307
+#, php-format
+msgid " Rate %1$s Dropshipping Woocommerce%2$s %3$s"
+msgstr " تقييم  %1$s قنوات ووكومرس دروب شيبنج %2$s %3$s"
 
-#: includes/knawat-merlin-config.php:35 includes/knawat-merlin-config.php:39
-msgid "Next"
-msgstr "التالي"
+#: includes/class-dropshipping-woocommerce-admin.php:391
+msgid "Manual import started successfully."
+msgstr "بدا الإستيراد اليدوي بنجاح."
 
-#: includes/knawat-merlin-config.php:36
-msgid "Start"
-msgstr "ابدأ"
+#: includes/class-dropshipping-woocommerce-admin.php:399
+msgid "Something went wrong during start manual import."
+msgstr "حدث شيء خاطئ اثناء بدء الاستيراد اليدوي."
 
-#: includes/knawat-merlin-config.php:37
-msgid "Cancel"
-msgstr "إلغاء"
+#: includes/class-dropshipping-woocommerce-admin.php:408
+msgid "Order(s) has been synchronized successfully."
+msgstr "تمت مزامنة الطلبات بنجاح."
 
-#: includes/knawat-merlin-config.php:38 includes/knawat-merlin-config.php:40
-#: includes/lib/knawat-merlin/knawat-merlin.php:787
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2810
-msgid "Install"
-msgstr "تنصيب"
+#: includes/class-dropshipping-woocommerce-admin.php:414
+msgid "Something went wrong during order synchronization, please try again."
+msgstr "حدث خطا اثناء مزامنة الطلبات ، الرجاء المحاولة مره أخرى."
 
-#: includes/knawat-merlin-config.php:41
-#: includes/lib/knawat-merlin/knawat-merlin.php:793
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2819
-msgid "Activate"
-msgstr "تفعيل"
+#: includes/class-dropshipping-woocommerce-admin.php:457
+msgid "Import has been stopped successfully."
+msgstr "تم إيقاف الاستيراد بنجاح."
 
-#: includes/knawat-merlin-config.php:43
-msgid "Welcome to %s"
-msgstr "مرحباً ب %s"
+#: includes/class-dropshipping-woocommerce-admin.php:486
+msgid "Knawat Order Status:"
+msgstr "حاله طلب قنوات:"
 
-#: includes/knawat-merlin-config.php:44
-msgid "Hi. Welcome back"
-msgstr "أهلاً بك مرة أخرى"
+#: includes/class-dropshipping-woocommerce-admin.php:501
+msgid "Knawat Status"
+msgstr "حالة قنوات"
 
-#: includes/knawat-merlin-config.php:45
+#: includes/class-dropshipping-woocommerce-admin.php:552
+msgid "Knawat Cost ($)"
+msgstr ""
+
+#: includes/class-dropshipping-woocommerce-admin.php:607
+msgid "Dropshipper"
+msgstr "دروبشيبر"
+
+#: includes/class-dropshipping-woocommerce-admin.php:610
+msgid "Select Dropshipper for this Product variantion."
+msgstr "أختر الدروبشيبر من أجل نوع هذا المنتج"
+
+#: includes/class-dropshipping-woocommerce-admin.php:618
+msgid "Stock quantity (Dropshipper)"
+msgstr "كمية المخزون (الدروبشيبر)"
+
+#: includes/class-dropshipping-woocommerce-admin.php:620
+msgid "Enter a quantity of product variant for selected dropshipper."
+msgstr "أدخل كمية نوع المنتج للدروبشيبر الذي تم اختياره"
+
+#: includes/class-dropshipping-woocommerce-admin.php:680
 msgid ""
-"This wizard will connect your store with Knawat and install plugins. It is "
-"optional & should take only a few minutes."
+"Before you start importing products, it's better to set default category for "
+"import Knawat Products. You can set it from <strong>Products > Categories."
+"</strong>  ex: New arrivals, or something else as you want."
 msgstr ""
-"سيقوم هذا المعالج بتوصيل متجرك بـ Knawat وتثبيت الإضافات. إنه اختياري ويجب "
-"أن يستغرق بضع دقائق فقط."
+"قبل البدء باستيراد المنتجات، يُفضّل أن تقوم بضبط الفئة الافتراضية للمنتجات "
+"التي ستقوم باستيرادها من قنوات. بإمكانك القيام بإعداد ذلك من <strong>"
+"المنتجات > الفئات</strong> مثال: وصل حديثاً، أو غير ذلك كما تريد."
 
-#: includes/knawat-merlin-config.php:46
+#: includes/class-dropshipping-woocommerce-admin.php:680
+msgid "Dismiss this notice."
+msgstr "تجاهل هذه الملاحظة."
+
+#: includes/class-dropshipping-wc-mp-orders.php:97
+#: includes/class-dropshipping-wc-mp-orders.php:109
+#: includes/class-dropshipping-wc-mp-orders.php:166
+#: includes/class-dropshipping-wc-mp-orders.php:178
+#, php-format
+msgid "Order synchronize fail. order id: #%d"
+msgstr "فشل مزامنة الطلب. رقم الطلب: #% d"
+
+#: includes/class-dropshipping-wc-mp-orders.php:259
+msgid "(Knawat Payment Method)"
+msgstr ""
+
+#: includes/class-dropshipping-wc-mp-orders.php:348
+msgid "Some orders are not sycronized with knawat.com. Please"
+msgstr "بعض الطلبات ليست متزامنة مع knawat.com. رجاءً"
+
+#: includes/class-dropshipping-wc-mp-orders.php:349
+msgid "synchronize it now"
+msgstr "المزامنة الآن"
+
+#: includes/class-dropshipping-wc-mp-orders.php:395
+msgid "Nonce failed. Please try again."
+msgstr "فشل nonce. الرجاء المحاولة مره أخرى."
+
+#: templates/admin/dropshipping-woocommerce-import.php:11
+#, php-format
 msgid ""
-"You may have already run this knawat setup wizard. If you would like to "
-"proceed anyway, click on the \"Start\" button below."
+"Please insert Knawat Consumer Key and Consumer Secret in <a href=\"%s\">"
+"Settings</a> tab."
 msgstr ""
-"ربما تكون قد قمت بتشغيل معالج إعداد knawat بالفعل. إذا كنت تريد المتابعة على "
-"أي حال ، فانقر فوق الزر \"ابدأ\" أدناه."
+"يرجى إدخال قنوات Consumer Key و Consumer Secret في نافذة <a href=\"%s\">"
+"الإعدادات</a>."
 
-#: includes/knawat-merlin-config.php:49
-msgid "Connect Your store with Knawat"
-msgstr "ربط متجرك مع قنوات"
-
-#: includes/knawat-merlin-config.php:50
-msgid "You're good to go!"
-msgstr "أنت على ما يرام للإنطلاق"
-
-#: includes/knawat-merlin-config.php:51
-msgid "Please insert Knawat Knawat Consumer Key and Secret."
-msgstr "الرجاء إدخال Knawat consumer key & secret."
-
-#: includes/knawat-merlin-config.php:52
-msgid "Your store has already connected to Knawat."
-msgstr "إن متجرك مرتبط مع قنوات بالفعل."
-
-#: includes/knawat-merlin-config.php:53
-msgid "Learn about child themes"
-msgstr "تعلم عن الثيم الطفل."
-
-#: includes/knawat-merlin-config.php:55
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:335
-msgid "Install Plugins"
-msgstr "تنصيب الإضافة."
-
-#: includes/knawat-merlin-config.php:56
-msgid "You're up to speed!"
-msgstr "أنت على أحسن حال!"
-
-#: includes/knawat-merlin-config.php:57
+#: templates/admin/dropshipping-woocommerce-import.php:21
 msgid ""
-"Let’s install some essential WordPress plugins to get your site up to speed."
-msgstr "دعنا نركب بعض الإضافات الأساسية في WordPress لتسريع موقعك."
+"Plugin auto import/update products from knawat.com in background on regular "
+"interval. But, if you want then you can manually start import."
+msgstr ""
+"تقوم الإضافة باستيراد/تحديث المنتجات من Knawat.com بشكل أوتوماتيكي حسب "
+"الفاصل الزمني الذي تم ضبطه. لكن، بإمكانك أيضاً بدء استيراد يدوي متى أردت."
 
-#: includes/knawat-merlin-config.php:58
+#: templates/admin/dropshipping-woocommerce-import.php:28
+msgid "Start product import"
+msgstr "ابدأ استيراد المنتجات"
+
+#: templates/admin/dropshipping-woocommerce-import.php:36
+#: templates/admin/dropshipping-woocommerce-import.php:42
+#: templates/admin/dropshipping-woocommerce-import.php:60
+msgid "Start Import"
+msgstr "ابدأ الاستيراد"
+
+#: templates/admin/dropshipping-woocommerce-import.php:45
 msgid ""
-"The required WordPress plugins are all installed and up to date. Press \"Next"
-"\" to continue the setup wizard."
+"You're not connected to a knawat.com, please make a connection for start "
+"import."
+msgstr "أنت لست متصل مع Knawat.com ، يرجى التحقق من الربط لبدء الاستيراد."
+
+#: templates/admin/dropshipping-woocommerce-import.php:62
+msgid "Are you sure? do you really want to stop import?"
+msgstr "هل أنت متأكد؟ هل تريد إيقاف الاستيراد الحالي بالفعل؟"
+
+#: templates/admin/dropshipping-woocommerce-import.php:63
+msgid "Stop Import"
+msgstr "إيقاف الإستيراد"
+
+#: templates/admin/dropshipping-woocommerce-import.php:66
+msgid ""
+"Product import is In-progress already. you can't start import now. Please "
+"find current import status below."
 msgstr ""
-"جميع الإضافات المطلوبة في WordPress مثبتة وحديثة. اضغط على \"التالي\" "
-"لمتابعة معالج الإعداد."
+"هناك عملية استيراد منتجات قيد التقدم بالفعل. لا يمكنك البدء في الاستيراد "
+"الآن. يرجى الاطلاع على حالة الاستيراد الحالية أدناه."
 
-#: includes/knawat-merlin-config.php:59
-msgid "Advanced"
-msgstr "متقدّم"
+#: templates/admin/dropshipping-woocommerce-import.php:69
+msgid "Imported:"
+msgstr "تمت الإضافة:"
 
-#: includes/knawat-merlin-config.php:62
-msgid "All done. Have fun!"
-msgstr "كله تمام. إستمتع!"
+#: templates/admin/dropshipping-woocommerce-import.php:69
+#: templates/admin/dropshipping-woocommerce-import.php:70
+#: templates/admin/dropshipping-woocommerce-import.php:71
+#, php-format
+msgid "%d Products with variations."
+msgstr "%d منتج متعدد الأنواع مع أنواعه."
 
-#: includes/knawat-merlin-config.php:63
-msgid "Your store has been all set up."
-msgstr "تم إعداد متجرك بالكامل."
+#: templates/admin/dropshipping-woocommerce-import.php:70
+msgid "Updated:"
+msgstr "تم التحديث:"
 
-#: includes/knawat-merlin-config.php:64
-msgid "Extras"
-msgstr "الإضافات"
+#: templates/admin/dropshipping-woocommerce-import.php:71
+msgid "Failed:"
+msgstr "فشل:"
 
-#: includes/knawat-merlin-config.php:65
-msgid "Start Adding Products"
-msgstr "بدء اضافة المنتجات."
+#: templates/admin/dropshipping-woocommerce-settings.php:18
+msgid ""
+"Note: Only orders in Processing status will be sent to Knawat to processs."
+msgstr "ملاحظة: سيتم إرسال الطلبات قيد المعالجة فقط إلى قنوات ليتم تنفيذها. "
 
-#: includes/knawat-merlin-config.php:67
-msgid "<a href=\"https://knawat.com/\" target=\"_blank\">%s</a>"
-msgstr "<a href=\"https://knawat.com/ar/\" target=\"_blank\">%s</a>"
+#: templates/admin/dropshipping-woocommerce-settings.php:19
+msgid ""
+"You need a Knawat consumer key and consumer secret for import products into "
+"your store from knawat.com"
+msgstr ""
+"تحتاج إلى قنوات consumer key  و consumer secret من أجل استيراد المنتجات إلى "
+"متجرك من Knawat.com"
 
-#: includes/knawat-merlin-config.php:68
-msgid "<a href=\"https://help.knawat.com/hc/en-us/\" target=\"_blank\">%s</a>"
-msgstr "<a href=\"https://help.knawat.com/hc/ar/\" target=\"_blank\">%s</a>"
-
-#: includes/knawat-required-plugins.php:27
-msgid "WooCoomerce"
-msgstr "ووكومرس"
-
-#: includes/knawat-required-plugins.php:33
-msgid "WooCommerce PDF Invoices & Packing Slips"
+#: templates/admin/dropshipping-woocommerce-settings.php:27
+#: includes/lib/knawat-merlin/knawat-merlin.php:665
+msgid "Knawat Consumer Key"
 msgstr ""
 
-#: includes/knawat-required-plugins.php:39
-msgid "Featured Image by URL"
-msgstr "صورة مميزة حسب الرابط"
-
-#: includes/knawat-required-plugins.php:48
-msgid "WooCommerce Currency Switcher"
+#: templates/admin/dropshipping-woocommerce-settings.php:36
+msgid ""
+"You can get your Knawat Consumer Key from your <strong>Dashboard > Store "
+"settings</strong>"
 msgstr ""
 
-#: includes/knawat-required-plugins.php:56
-msgid "qTranslate X"
+#: templates/admin/dropshipping-woocommerce-settings.php:37
+#: templates/admin/dropshipping-woocommerce-settings.php:56
+msgid "click to see the image"
 msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:46
+#: includes/lib/knawat-merlin/knawat-merlin.php:670
+msgid "Knawat Consumer Secret"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:55
+msgid ""
+"You can get your Knawat Consumer Secret from your <strong>Dashboard > Store "
+"settings</strong>"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:65
+msgid "Products Batch Size:"
+msgstr "حجم حقبة المنتجات:"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:71
+msgid "Products batch size for import products from knawat.com"
+msgstr "حجم كل حقبة من المنتجات التي سيتم استيرادها من Knawat.com"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:79
+msgid "Categorize Products"
+msgstr "تصنيف المنتجات"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:88
+msgid "Select yes to fetch product categories"
+msgstr "إختر نعم لإدخال اقسام المنتجات بشكل أوتوماتيكى"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:96
+msgid "Orders Synchronization Interval:"
+msgstr "الفاصل الزمني لمزامنة الطلبات مع قنوات"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:101
+msgid "48 Hours"
+msgstr "48 ساعة"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:102
+msgid "24 Hours"
+msgstr "24 ساعة"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:103
+msgid "12 Hours"
+msgstr "12 ساعة"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:104
+msgid "9 Hours"
+msgstr "9 ساعات"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:105
+msgid "6 Hours"
+msgstr "6 ساعات"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:106
+msgid "3 Hours"
+msgstr "3 ساعات"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:107
+msgid "1 Hour"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:120
+msgid "Select interval for synchronization orders with Knawat"
+msgstr "اختر الفاصل الزمني لمزامنة الطلبات مع قنوات"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:129
+msgid "Dokan Seller"
+msgstr "بائع دكان"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:139
+msgid "Select Dokan Seller"
+msgstr "اختر بائع دكان"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:145
+msgid "Select dokan seller for import Knawat products under it."
+msgstr "اختر بائع دكان الذي سيكون معين لمنتجات قنوات."
+
+#: templates/admin/dropshipping-woocommerce-settings.php:155
+msgid "Knawat Connection status"
+msgstr "حالة الربط مع قنوات."
+
+#: templates/admin/dropshipping-woocommerce-settings.php:162
+msgid "Connected"
+msgstr "مرتبط"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:168
+msgid "Not connected"
+msgstr "غير مرتبط"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:172
+msgid "Please verify your knawat consumer keys."
+msgstr "يرجى التأكد من قنوات consumer key الخاص بك."
+
+#: templates/admin/dropshipping-woocommerce-settings.php:187
+msgid "Save Settings"
+msgstr "حفظ الإعدادت"
+
+#: templates/myaccount/shipment-tracking.php:11
+msgid "Tracking Information"
+msgstr "معلومات التتبّع"
+
+#: templates/myaccount/shipment-tracking.php:17
+#: templates/myaccount/shipment-tracking.php:30
+msgid "Provider"
+msgstr "المزود"
+
+#: templates/myaccount/shipment-tracking.php:20
+#: templates/myaccount/shipment-tracking.php:33
+msgid "Tracking Number"
+msgstr "رقم التتبع:"
+
+#: templates/myaccount/shipment-tracking.php:23
+#: templates/myaccount/shipment-tracking.php:36
+msgid "Date"
+msgstr "التاريخ"
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:111
 msgid "Knawat"
@@ -573,23 +836,10 @@ msgid ""
 msgstr "يرجى إدخال قنوات Consumer Key  و Secret. بإمكانك جلب هذه المعلومات من"
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:657
-#: templates/admin/dropshipping-woocommerce-settings.php:32
-#: templates/admin/dropshipping-woocommerce-settings.php:49
 msgid "from here"
 msgstr "هنا"
 
-#: includes/lib/knawat-merlin/knawat-merlin.php:665
-#: templates/admin/dropshipping-woocommerce-settings.php:24
-msgid "Knawat Consumer Key"
-msgstr ""
-
-#: includes/lib/knawat-merlin/knawat-merlin.php:670
-#: templates/admin/dropshipping-woocommerce-settings.php:41
-msgid "Knawat Consumer Secret"
-msgstr ""
-
 #: includes/lib/knawat-merlin/knawat-merlin.php:790
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2816
 msgid "Update"
 msgstr "تحديث"
 
@@ -626,601 +876,19 @@ msgstr "الرجاء إدخال Knawat consumer key."
 msgid "Please Insert Knawat Cosumer Secret."
 msgstr "الرجاء إدخال Knawat consumer secret."
 
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:334
-msgid "Install Required Plugins"
-msgstr "تنصيب الإضافات المطلوبة"
-
-#. translators: %s: plugin name.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:337
-msgid "Installing Plugin: %s"
-msgstr "يتم تنصيب الإضافة %s"
-
-#. translators: %s: plugin name.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:339
-msgid "Updating Plugin: %s"
-msgstr "يتم تحديث الإضافة %s"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:340
-msgid "Something went wrong with the plugin API."
-msgstr "حدث خطأ مع API الإضافة."
-
-#. translators: 1: plugin name(s).
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:377
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] "يتم التنصيب"
-msgstr[1] "يتم التنصيب"
-msgstr[2] "يتم التنصيب"
-msgstr[3] "يتم التنصيب"
-msgstr[4] "يتم التنصيب"
-msgstr[5] "يتم التنصيب"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:382
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] "يتم التحديث"
-msgstr[1] "يتم التحديث"
-msgstr[2] "يتم التحديث"
-msgstr[3] "يتم التحديث"
-msgstr[4] "يتم التحديث"
-msgstr[5] "يتم التحديث"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:387
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] "يتم التفعيل"
-msgstr[1] "يتم التفعيل"
-msgstr[2] "يتم التفعيل"
-msgstr[3] "يتم التفعيل"
-msgstr[4] "يتم التفعيل"
-msgstr[5] "يتم التفعيل"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:392
-msgid "Return to Required Plugins Installer"
-msgstr "ارجع الى مثبت الاضافات المطلوبة"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:393
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:920
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2626
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3673
-msgid "Return to the Dashboard"
-msgstr "العودة إلى الإعدادات"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:394
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3252
-msgid "Plugin activated successfully."
-msgstr "تم تفعيل الإضافة بنجاح."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:395
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3045
-msgid "The following plugin was activated successfully:"
-msgstr "تم تفعيل الإضافة التالية بنجاح."
-
-#. translators: 1: plugin name.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:397
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "لم يتم اتخاذ أي إجراء. الإضافة %1$s  كانت مفعلة بالفعل."
-
-#. translators: 1: plugin name.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:399
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"لم يتم تفعيل الإضافة. إصدار أعلى من %s مطلوبة من أجل هذه الثيم. يرجى تحديث "
-"الإضافة."
-
-#. translators: 1: dashboard link.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:401
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "تم تنصيب و تفعيل كل الإضافات بشكل صحيح. %1$s"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:402
-msgid "Dismiss this notice"
-msgstr "تجاهل هذه الملاحظة"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:403
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-"هناك واحد أو أكثر من المكونات الإضافية المطلوبة أو الموصى بها لتثبيتها أو "
-"تحديثها أو تنشيطها."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:404
-msgid "Please contact the administrator of this site for help."
-msgstr "يرجى الاتصال بمسؤول الموقع للحصول على المساعدة."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:607
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr "يجب تحديث هذه الإضافة ليتوافق مع ثيم الموقع."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:608
-msgid "Update Required"
-msgstr "تحديث مطلوب"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:725
-msgid "Set the parent_slug config variable instead."
-msgstr "قم بتعيين parent_slug config variable بدلاً."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1027
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-"لا تحتوي حزمة المكوِّن الإضافي عن بعد على مجلد مع البادئة المرغوبة ، ولم تعمل "
-"إعادة التسمية."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1027
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1030
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-"يرجى الاتصال بمبرمج الإضافة واطلب منهم عمل إضافتهم وفقًا لإرشادات WordPress."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1030
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-"تتكون حزمة الإضافة عن بعد من أكثر من ملف واحد ، ولكن لا يتم حزم الملفات في "
-"مجلد."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1214
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3041
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr "و"
-
-#. translators: %s: version number
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2075
-msgid "TGMPA v%s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2366
-msgid "Required"
-msgstr "مطلوب"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2369
-msgid "Recommended"
-msgstr "مستحسن"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2385
-msgid "WordPress Repository"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2388
-msgid "External Source"
-msgstr "مصدر خارجي"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2391
-msgid "Pre-Packaged"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2408
-msgid "Not Installed"
-msgstr "غير مثبت"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2412
-msgid "Installed But Not Activated"
-msgstr "منصًّب و لكن غير منشًّط"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2414
-msgid "Active"
-msgstr "فعال"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2420
-msgid "Required Update not Available"
-msgstr "التحديث المطلوب غير متاح"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2423
-msgid "Requires Update"
-msgstr "تحديث مطلوب"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2426
-msgid "Update recommended"
-msgstr "يستحسن التحديث"
-
-#. translators: 1: install status, 2: update status
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2435
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr "%1$s, %2$s"
-
-#. translators: 1: number of plugins.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2481
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] "كل <span class=\"count\">(%s)</span>"
-msgstr[1] "كل <span class=\"count\">(%s)</span>"
-msgstr[2] "كل <span class=\"count\">(%s)</span>"
-msgstr[3] "كل <span class=\"count\">(%s)</span>"
-msgstr[4] "كل <span class=\"count\">(%s)</span>"
-msgstr[5] "كل <span class=\"count\">(%s)</span>"
-
-#. translators: 1: number of plugins.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2485
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] "لتنصيب <span class=\"count\">(%s)</span>"
-msgstr[1] "لتنصيب <span class=\"count\">(%s)</span>"
-msgstr[2] "لتنصيب <span class=\"count\">(%s)</span>"
-msgstr[3] "لتنصيب <span class=\"count\">(%s)</span>"
-msgstr[4] "لتنصيب <span class=\"count\">(%s)</span>"
-msgstr[5] "لتنصيب <span class=\"count\">(%s)</span>"
-
-#. translators: 1: number of plugins.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2489
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] "تحديث متوفر <span class=\"count\">(%s)</span>"
-msgstr[1] "تحديث متوفر <span class=\"count\">(%s)</span>"
-msgstr[2] "تحديث متوفر <span class=\"count\">(%s)</span>"
-msgstr[3] "تحديث متوفر <span class=\"count\">(%s)</span>"
-msgstr[4] "تحديث متوفر <span class=\"count\">(%s)</span>"
-msgstr[5] "تحديث متوفر <span class=\"count\">(%s)</span>"
-
-#. translators: 1: number of plugins.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2493
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] "لتفعيل <span class=\"count\">(%s)</span>"
-msgstr[1] "<span class=\"count\">(%s)</span>"
-msgstr[2] "<span class=\"count\">(%s)</span>"
-msgstr[3] "<span class=\"count\">(%s)</span>"
-msgstr[4] "<span class=\"count\">(%s)</span>"
-msgstr[5] "<span class=\"count\">(%s)</span>"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2575
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr "غير معروف"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2583
-msgid "Installed version:"
-msgstr "الإصدار المثبًّت:"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2591
-msgid "Minimum required version:"
-msgstr "أقلّ إصدار مطلوب:"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2603
-msgid "Available version:"
-msgstr "الإصدار المتوفّر:"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2626
-msgid "No plugins to install, update or activate."
-msgstr "لا توجد إضافات لتثبيت أو تحديث أو تنشيط."
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2640
-msgid "Plugin"
-msgstr "الإضافة"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2641
-msgid "Source"
-msgstr "المصدر"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2642
-msgid "Type"
-msgstr "النوع"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2646
-msgid "Version"
-msgstr "الإصدار"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2647
-msgid "Status"
-msgstr "الحالة"
-
-#. translators: %2$s: plugin name in screen reader markup
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2696
-msgid "Install %2$s"
-msgstr "تنصيب %2$s"
-
-#. translators: %2$s: plugin name in screen reader markup
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2701
-msgid "Update %2$s"
-msgstr "تحديث %2$s"
-
-#. translators: %2$s: plugin name in screen reader markup
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2707
-msgid "Activate %2$s"
-msgstr "تفعيل %2$s"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2777
-msgid "Upgrade message from the plugin author:"
-msgstr "ترقية الرسالة من مؤلف الإضافة:"
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2850
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2852
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2893
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2895
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3001
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3027
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3251
-msgid "Plugin activation failed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3591
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#. translators: 1: plugin name, 2: error message.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3594
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3596
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3600
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
-msgid "Show Details"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
-msgid "Hide Details"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3603
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3605
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3608
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3611
-msgid "All installations have been completed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3613
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/lib/wp-background-processing/wp-background-process.php:425
-msgid "Every %d Minutes"
-msgstr "كل %d دقيقة"
-
-#: templates/admin/dropshipping-woocommerce-import.php:10
-msgid ""
-"Please insert Knawat Consumer Key and Consumer Secret in <a href=\"%s"
-"\">Settings</a> tab."
-msgstr ""
-"يرجى إدخال قنوات Consumer Key و Consumer Secret في نافذة <a href=\"%s"
-"\">الإعدادات</a>."
-
-#: templates/admin/dropshipping-woocommerce-import.php:23
-msgid ""
-"Plugin auto import/update products from knawat.com in background on regular "
-"interval. But, if you want then you can manually start import."
-msgstr ""
-"تقوم الإضافة باستيراد/تحديث المنتجات من Knawat.com بشكل أوتوماتيكي حسب "
-"الفاصل الزمني الذي تم ضبطه. لكن، بإمكانك أيضاً بدء استيراد يدوي متى أردت."
-
-#: templates/admin/dropshipping-woocommerce-import.php:30
-msgid "Start product import"
-msgstr "ابدأ استيراد المنتجات"
-
-#: templates/admin/dropshipping-woocommerce-import.php:38
-#: templates/admin/dropshipping-woocommerce-import.php:44
-#: templates/admin/dropshipping-woocommerce-import.php:62
-msgid "Start Import"
-msgstr "ابدأ الاستيراد"
-
-#: templates/admin/dropshipping-woocommerce-import.php:47
-msgid ""
-"You're not connected to a knawat.com, please make a connection for start "
-"import."
-msgstr "أنت لست متصل مع Knawat.com ، يرجى التحقق من الربط لبدء الاستيراد."
-
-#: templates/admin/dropshipping-woocommerce-import.php:64
-msgid "Are you sure? do you really want to stop import?"
-msgstr "هل أنت متأكد؟ هل تريد إيقاف الاستيراد الحالي بالفعل؟"
-
-#: templates/admin/dropshipping-woocommerce-import.php:65
-msgid "Stop Import"
-msgstr "إيقاف الإستيراد"
-
-#: templates/admin/dropshipping-woocommerce-import.php:68
-msgid ""
-"Product import is In-progress already. you can't start import now. Please "
-"find current import status below."
-msgstr ""
-"هناك عملية استيراد منتجات قيد التقدم بالفعل. لا يمكنك البدء في الاستيراد "
-"الآن. يرجى الاطلاع على حالة الاستيراد الحالية أدناه."
-
-#: templates/admin/dropshipping-woocommerce-import.php:71
-msgid "Imported:"
-msgstr "تمت الإضافة:"
-
-#: templates/admin/dropshipping-woocommerce-import.php:71
-#: templates/admin/dropshipping-woocommerce-import.php:72
-#: templates/admin/dropshipping-woocommerce-import.php:73
-msgid "%d Products with variations."
-msgstr "%d منتج متعدد الأنواع مع أنواعه."
-
-#: templates/admin/dropshipping-woocommerce-import.php:72
-msgid "Updated:"
-msgstr "تم التحديث:"
-
-#: templates/admin/dropshipping-woocommerce-import.php:73
-msgid "Failed:"
-msgstr "فشل:"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:15
-msgid ""
-"Note: Only orders in Processing status will be sent to Knawat to processs."
-msgstr "ملاحظة: سيتم إرسال الطلبات قيد المعالجة فقط إلى قنوات ليتم تنفيذها. "
-
-#: templates/admin/dropshipping-woocommerce-settings.php:16
-msgid ""
-"You need a Knawat consumer key and consumer secret for import products into "
-"your store from knawat.com"
-msgstr ""
-"تحتاج إلى قنوات consumer key  و consumer secret من أجل استيراد المنتجات إلى "
-"متجرك من Knawat.com"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:31
-msgid "You can get your Knawat Consumer Key"
-msgstr "تستطيع أخذ قنوات Consumer Key الخاص بك"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:48
-msgid "You can get your Knawat Consumer Secret"
-msgstr "تستطيع أخذ قنوات Consumer Secret الخاص بك"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:58
-msgid "Products Batch Size:"
-msgstr "حجم حقبة المنتجات:"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:64
-msgid "Products batch size for import products from knawat.com"
-msgstr "حجم كل حقبة من المنتجات التي سيتم استيرادها من Knawat.com"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:72
-msgid "Orders Synchronization Interval:"
-msgstr "الفاصل الزمني لمزامنة الطلبات مع قنوات"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:77
-msgid "48 Hours"
-msgstr "48 ساعة"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:78
-msgid "24 Hours"
-msgstr "24 ساعة"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:79
-msgid "12 Hours"
-msgstr "12 ساعة"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:80
-msgid "9 Hours"
-msgstr "9 ساعات"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:81
-msgid "6 Hours"
-msgstr "6 ساعات"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:82
-msgid "3 Hours"
-msgstr "3 ساعات"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:95
-msgid "Select interval for synchronization orders with Knawat"
-msgstr "اختر الفاصل الزمني لمزامنة الطلبات مع قنوات"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:104
-msgid "Dokan Seller"
-msgstr "بائع دكان"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:114
-msgid "Select Dokan Seller"
-msgstr "اختر بائع دكان"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:120
-msgid "Select dokan seller for import Knawat products under it."
-msgstr "اختر بائع دكان الذي سيكون معين لمنتجات قنوات."
-
-#: templates/admin/dropshipping-woocommerce-settings.php:130
-msgid "Knawat Connection status"
-msgstr "حالة الربط مع قنوات."
-
-#: templates/admin/dropshipping-woocommerce-settings.php:137
-msgid "Connected"
-msgstr "مرتبط"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:143
-msgid "Not connected"
-msgstr "غير مرتبط"
-
-#: templates/admin/dropshipping-woocommerce-settings.php:147
-msgid "Please verify your knawat consumer keys."
-msgstr "يرجى التأكد من قنوات consumer key الخاص بك."
-
-#: templates/admin/dropshipping-woocommerce-settings.php:162
-msgid "Save Settings"
-msgstr "حفظ الإعدادت"
-
-#: templates/myaccount/shipment-tracking.php:11
-msgid "Tracking Information"
-msgstr "معلومات التتبّع"
-
-#: templates/myaccount/shipment-tracking.php:17
-#: templates/myaccount/shipment-tracking.php:30
-msgid "Provider"
-msgstr "المزود"
-
-#: templates/myaccount/shipment-tracking.php:20
-#: templates/myaccount/shipment-tracking.php:33
-msgid "Tracking Number"
-msgstr "رقم التتبع:"
-
-#: templates/myaccount/shipment-tracking.php:23
-#: templates/myaccount/shipment-tracking.php:36
-msgid "Date"
-msgstr "التاريخ"
-
-#. Plugin Name of the plugin/theme
-#. Description of the plugin/theme
+#. Name of the plugin
+#. Description of the plugin
 msgid "Knawat WooCommerce DropShipping"
 msgstr "قنوات ووكومرس دروب شيبنج"
 
-#. Plugin URI of the plugin/theme
+#. URI of the plugin
 msgid "https://wordpress.org/plugins/dropshipping-woocommerce/"
 msgstr "https://ar.wordpress.org/plugins/dropshipping-woocommerce/"
 
-#. Author of the plugin/theme
+#. Author of the plugin
 msgid "Knawat Team"
 msgstr "فريق قنوات"
 
-#. Author URI of the plugin/theme
+#. Author URI of the plugin
 msgid "https://github.com/Knawat"
 msgstr "https://github.com/Knawat"
