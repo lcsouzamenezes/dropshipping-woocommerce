@@ -1,4 +1,4 @@
-<p align="center"><a href="https://knawat.com/"><img src="https://knawat.com/wp-content/uploads/2017/10/253_77.png" alt="Knawat"></a></p>
+<p align="center"><a href="https://www.knawat.com/?utm_source=github.com&utm_medium=social&utm_campaign=The%20WC%20Plugin"><img src="https://knawat.com/wp-content/uploads/2017/10/253_77.png" alt="Knawat"></a></p>
 
 [![Join the chat at https://gitter.im/Knawat/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Knawat/Lobby)
 
@@ -19,6 +19,6 @@ Support requests in issues on this repository will be closed on sight.
 If you have a patch or have stumbled upon an issue with Knawat WooCommerce plugin core, you can contribute this back to the code. Please create a pull request.
 
 ## Check also
-* [Knawat RESTful API](https://mp.knawat.io)
-* [Magento 2 Module](https://github.com/Knawat/knawat-dropshipping-magento2)
-* [OpenCart Module](https://github.com/Knawat/knawat-dropshipping-opencart)
+* [Knawat RESTful API](https://docs.knawat.io)
+* [Magento 2 Module](https://marketplace.magento.com/knawat-module-dropshipping.html)
+* [OpenCart Module](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36071&filter_search=knawat)
