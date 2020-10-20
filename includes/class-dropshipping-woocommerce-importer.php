@@ -89,13 +89,14 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 		public function import() {
 
+			$api_url = '';
 			$this->start_time = time();
 			$data             = array(
 				'imported' => array(),
 				'failed'   => array(),
 				'updated'  => array(),
 			);
-
+			
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
