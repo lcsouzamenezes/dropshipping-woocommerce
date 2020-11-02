@@ -516,7 +516,11 @@ class Knawat_Dropshipping_Woocommerce_Orders {
      * @return type
      */
     public function knawat_dropshipwc_create_sub_order_coupon( $parent_order, $order_id, $product_ids ) {
-        $used_coupons = $parent_order->get_used_coupons();
+        if ( version_compare( WC_VERSION, '3.7', '<' ) ) {
+            $used_coupons = $parent_order->get_used_coupons();
+        }else{
+            $used_coupons = $parent_order->get_coupon_codes();
+        }
         
         if ( ! count( $used_coupons ) ) {
             return;
