@@ -1311,17 +1311,21 @@ class Knawat_Dropshipping_Woocommerce_Orders {
 				if( empty( $product_id ) || $product_id == 0 ){
 					$product_id = $item->get_product_id();
 				}
-				$knawat_cost = get_post_meta( $product_id, '_knawat_cost', true );
-				$item_id = $item->get_id();
-				$item_quantity = $item->get_quantity();
-				$total_cost = $knawat_cost * $item_quantity;
-
-				$order_total_cost += $total_cost;
-
-				if( $knawat_cost > 0 && $item_id > 0 ){
-					wc_update_order_item_meta( $item_id, '_knawat_item_cost', wc_format_decimal( $knawat_cost, 4 ) );
-					wc_update_order_item_meta( $item_id, '_knawat_item_total_cost', wc_format_decimal( $total_cost, 4 ) );
-				}
+                $knawat_cost = get_post_meta( $product_id, '_knawat_cost', true );
+                if ( !is_numeric( $knawat_cost ) ){
+                    $order_total_cost += 0;
+                }else{
+                    $item_id = $item->get_id();
+                    $item_quantity = $item->get_quantity();
+                    $total_cost = $knawat_cost * $item_quantity;
+    
+                    $order_total_cost += $total_cost;
+    
+                    if( $knawat_cost > 0 && $item_id > 0 ){
+                        wc_update_order_item_meta( $item_id, '_knawat_item_cost', wc_format_decimal( $knawat_cost, 4 ) );
+                        wc_update_order_item_meta( $item_id, '_knawat_item_total_cost', wc_format_decimal( $total_cost, 4 ) );
+                    } 
+                }
 			}
         }
         // update the order total cost
