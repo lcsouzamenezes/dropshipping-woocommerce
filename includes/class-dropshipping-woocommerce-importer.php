@@ -89,13 +89,14 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 		public function import() {
 
+			$api_url = '';
 			$this->start_time = time();
 			$data             = array(
 				'imported' => array(),
 				'failed'   => array(),
 				'updated'  => array(),
 			);
-
+			
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
@@ -396,7 +397,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					}
 
 					array_push( $new_product['tags'], $tag );
-					unset( $tag );
+					$tag = '';
 				}
 			} else {
 				foreach ( $product->categories as $category ) {
@@ -422,7 +423,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					}
 
 					array_push( $new_product['tags'], $tag );
-					unset( $tag );
+					$tag = '';
 				}
 			}
 			wp_set_object_terms( ! empty( $new_product['id'] ) ? $new_product['id'] : 0, $new_product['tags'], 'product_tag', true );
