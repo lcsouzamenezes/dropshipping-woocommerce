@@ -21,7 +21,7 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 
 
 	public $adminpage_url;
-	
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -66,6 +66,12 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 
 		// Pull Order information from knawat.com
 		add_action( 'current_screen', array( $this, 'knawat_dropshipwc_update_knawat_order' ), 99 );
+
+		// Sync Single and product list from knawat
+		add_action('add_meta_boxes_product', array( $this, 'knawat_dropshipwc_add_update_metabox' ) );
+		add_action( 'admin_post_update_knawat_product', array( $this, 'knawat_dropshipwc_update_product' ), 99 );
+		add_filter( 'bulk_actions-edit-product', array($this, 'knawat_dropshipwc_bulk_actions'), 99);
+		add_filter( 'handle_bulk_actions-edit-product', array($this, 'knawat_dropshipwc_update_bulk_products'), 10, 3);
 	}
 
 	/**
@@ -259,7 +265,7 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 		return $views;
 	}
 
-	/** 
+	/**
 	 * Add `posts_where` filter if knawat products need to filter
 	 *
 	 * @since 1.0
@@ -270,7 +276,7 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 	    if( 'product' != $typenow ){
 	        return;
 	    }
-	    
+
 	    if ( isset( $_GET[ 'knawat_products' ] ) && !empty( $_GET[ 'knawat_products' ] ) && trim( $_GET[ 'knawat_products' ] ) == 1 ){
 	    	add_filter( 'posts_where' , array( $this, 'knawat_dropshipwc_posts_where_knawat_products') );
 	    }
@@ -284,7 +290,7 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 	 * @return string $where Modified Where condition of SQL statement for products query
 	 */
 	function knawat_dropshipwc_posts_where_knawat_products( $where ){
-	    global $wpdb;       
+	    global $wpdb;
 	    if ( isset( $_GET[ 'knawat_products' ] ) && !empty( $_GET[ 'knawat_products' ] ) && trim( $_GET[ 'knawat_products' ] ) == 1 ){
 	        $where .= " AND ID IN ( SELECT post_id FROM $wpdb->postmeta WHERE meta_key='dropshipping' AND meta_value='knawat' )";
 	    }
@@ -330,9 +336,9 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 		);
 		wp_localize_script( 'dropshipping-woocommerce', 'kdropshipping_object', $params );
 		wp_enqueue_script( 'dropshipping-woocommerce' );
-		
+
 	}
-	
+
 	/**
 	 * Load Admin Styles.
 	 *
@@ -416,6 +422,23 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 				<?php
 			}
 		}
+
+		if ( isset( $_GET['knawat_update_done'] ) && !empty( $_GET['knawat_update_done'] ) ) {
+			$update_count = sanitize_text_field($_GET['knawat_update_done']);
+			?>
+			<div class="notice notice-success is-dismissible">
+				<p><?php esc_attr_e( "{$update_count} Knawat product(s) has been updated successfully.","dropshipping-woocommerce" ); ?></p>
+			</div>
+			<?php
+		}
+
+		if ( isset( $_GET['knawat_product_sync'] ) && !empty( $_GET['knawat_product_sync'] ) ) {
+			?>
+			<div class="notice notice-success is-dismissible">
+				<p><?php esc_attr_e( "Knawat product has been updated successfully.","dropshipping-woocommerce" ); ?></p>
+			</div>
+			<?php
+		}
 	}
 
 	/**
@@ -487,7 +510,7 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 				<span><?php echo ucfirst( $knawat_order_status ); ?></span>
 			</p>
 			<?php
-		}		
+		}
 	}
 
 	/**
@@ -718,5 +741,85 @@ class Knawat_Dropshipping_Woocommerce_Admin {
 			// Fire Pull Order hook.
 			do_action( 'knawat_dropshipwc_run_pull_orders' );
 		}
+	}
+
+	/**
+	 * Add update product metabox in product edit page
+	 *
+	 * @return void.
+	 */
+	public function knawat_dropshipwc_add_update_metabox(){
+		global $post;
+		if (knawat_dropshipwc_is_knawat_product($post->ID)){
+			add_meta_box('knawatproduct_metabox',
+				__('Knawat Dropshipping', 'dropshipping-woocommerce'),
+				array($this, 'knawat_dropshipwc_render_update_metabox'),
+				'product',
+				'side',
+				'high'
+			);
+		}
+	}
+
+	/**
+	 * Render metabox for update knawat product.
+	 */
+	public function knawat_dropshipwc_render_update_metabox($post){
+		$url = wp_nonce_url(admin_url('admin-post.php?action=update_knawat_product&product_id='.$post->ID), 'update_knawat_product_action', 'update_knawat_product_nonce');
+		?>
+		<dev id="knawatproduct-metabox-content">
+			<strong><?php _e('Update Knawat Product', 'dropshipping-woocommerce'); ?></strong>
+			<p><?php _e('Warning: any changes made to the product will be overwritten', 'dropshipping-woocommerce'); ?></p>
+
+			<a class="button button-secondary button-large" href="<?php echo $url; ?>">
+				<?php _e('Get From Knawat', 'dropshipping-woocommerce'); ?>
+			</a>
+		<?php
+	}
+
+	/**
+	 * Sync product from knawat
+	 */
+	public function knawat_dropshipwc_update_product(){
+		if ( ! empty($_GET) && wp_verify_nonce($_GET['update_knawat_product_nonce'], 'update_knawat_product_action' ) ) {
+			$product_id = (int) $_GET['product_id'];
+			if ( !empty( $product_id ) ) {
+				$product = new WC_Product( $product_id );
+				$sku     = $product->get_sku();
+				if( $sku != '' ){
+					global $knawat_dropshipwc;
+					$knawat_dropshipwc->common->knawat_dropshipwc_import_product_by_sku( $sku, true );
+					$edit_product = add_query_arg( array(
+						'knawat_product_sync' => '1',
+						'post' => $product_id,
+						'action' => 'edit'
+					), admin_url( 'post.php' ));
+					wp_safe_redirect($edit_product);
+					exit();
+				}
+			}
+			die( __('Invalid request.', 'dropshipping-woocommerce' ) );
+		} else {
+			die( __('You have not access to doing this operations.', 'dropshipping-woocommerce' ) );
+		}
+	}
+
+	public function knawat_dropshipwc_bulk_actions( $bulk_actions ){
+		$bulk_actions['knawat_update'] = __('Knawat Update', 'dropshipping-woocommerce' );
+		return $bulk_actions;
+	}
+
+	public function knawat_dropshipwc_update_bulk_products($redirect, $doaction, $object_ids){
+		//remove query args from URL first
+		$redirect = remove_query_arg(array('knawat_update_done'), $redirect);
+		//Update Products from Knawat MP
+		if ($doaction == 'knawat_update'){
+			foreach( $object_ids as $post_id){
+				global $knawat_dropshipwc;
+				$knawat_dropshipwc->common->knawat_dropshipwc_async_product_update_by_id($post_id, true);
+			}
+			$redirect = add_query_arg('knawat_update_done', count($object_ids), $redirect);
+		}
+		return $redirect;
 	}
 }
