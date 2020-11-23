@@ -21,7 +21,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		// Do anything Here. 
+		// Do anything Here.
 		add_action( 'knawat_dropshipwc_run_product_import', array( $this, 'knawat_dropshipwc_backgorund_product_importer' ) );
 		add_action( 'admin_init', array( $this, 'handle_knawat_settings_submit' ), 99 );
 		add_action( 'woocommerce_add_to_cart', array( $this, 'knawat_dropshipwc_add_to_cart' ), 10, 2 );
@@ -222,7 +222,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 *
 	 * @since 2.0.0
 	 */
-	public function knawat_dropshipwc_async_product_update_by_id( $product_id ) {
+	public function knawat_dropshipwc_async_product_update_by_id( $product_id, $force_update = false ) {
 
 		if ( empty( $product_id ) ) {
 			return;
@@ -241,7 +241,11 @@ class Knawat_Dropshipping_Woocommerce_Common {
 
 		// Async Product Update.
 		$async_request = new Knawat_Dropshipping_WC_Async_Request();
-		$async_request->data( array( 'sku' => $sku ) );
+		$data = array( 'sku' => $sku );
+		if ($force_update) {
+			$data['force_update'] = $force_update;
+		}
+		$async_request->data( $data );
 		$async_request->dispatch();
 	}
 
