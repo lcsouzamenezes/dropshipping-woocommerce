@@ -167,7 +167,9 @@ class Knawat_Dropshipping_Woocommerce_Common {
 			if ( isset( $knawatds_options['categorize_products'] ) ) {
 				if ( $knawatds_options['categorize_products'] == 'yes' ) {
 					$current_options['categorize_products'] = 'yes';
-				} else {
+				} else if( $knawatds_options['categorize_products'] == 'yes_as_tags' ){
+					$current_options['categorize_products'] = 'yes_as_tags';
+				}else {
 					$current_options['categorize_products'] = 'no';
 				}
 			}

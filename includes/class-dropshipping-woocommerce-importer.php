@@ -379,19 +379,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						$tag .= '[:]';
 					}
 					
-					if ( $categorize_products == 'yes' ) {
-						$term 		 = term_exists( sanitize_title( $tag ), 'product_cat' );
+					if ( $categorize_products == 'yes_as_tags' ) {
 						$product_tag = term_exists( sanitize_title( $tag ), 'product_tag' );
-
-						if ( $term == 0 && $term == null ) {
-							if ( $cat_id ) {
-								$new_term = wp_insert_term( $tag, 'product_cat', array(
-									'parent' => end( $cat_id )
-								));
-							} else {
-								$new_term = wp_insert_term( $tag, 'product_cat' );
-							}
-						}
 
 						if ( $product_tag == 0 && $product_tag == null ) {
 							if ( $tag_id ) {
@@ -402,13 +391,27 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 								$new_tag = wp_insert_term( $tag, 'product_tag' );
 							}
 						}
+						
+						$tag_ids[] 		= !empty($product_tag['term_id']) ? $product_tag['term_id'] : $new_tag['term_id'];
 					}
-					
-					$tag = '';
-					$category_ids[] = !empty($term['term_id']) ? $term['term_id'] : $new_term['term_id'];
-					$tag_ids[] 		= !empty($product_tag['term_id']) ? $product_tag['term_id'] : $new_tag['term_id'];
-				}
 
+					if ( $categorize_products == 'yes' ) {
+						$term 		 = term_exists( sanitize_title( $tag ), 'product_cat' );
+
+						if ( $term == 0 && $term == null ) {
+							if ( $cat_id ) {
+								$new_term = wp_insert_term( $tag, 'product_cat', array(
+									'parent' => end( $cat_id )
+								));
+							} else {
+								$new_term = wp_insert_term( $tag, 'product_cat' );
+							}
+						}
+						$category_ids[] = !empty($term['term_id']) ? $term['term_id'] : $new_term['term_id'];
+					}
+					$tag = '';
+				}
+			
 				$new_product['category_ids'] = $category_ids;
 				$new_product['tag_ids']		 = $tag_ids;
 
@@ -416,19 +419,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				foreach ( $product->categories as $category ) {
 					$tag .= isset( $category->name->$default_lang ) ? sanitize_text_field( $category->name->$default_lang ) : '';
 
-					if ( $categorize_products == 'yes' ) {
-						$term 		 = term_exists( sanitize_title( $tag ), 'product_cat' );
+					if ( $categorize_products == 'yes_as_tags' ) {
 						$product_tag = term_exists( sanitize_title( $tag ), 'product_tag' );
-
-						if ( $term == 0 && $term == null ) {
-							if ( $cat_id ) {
-								$new_term = wp_insert_term( $tag, 'product_cat', array(
-									'parent' => end( $cat_id )
-								) );
-							} else {
-								$new_term = wp_insert_term( $tag, 'product_cat' );
-							}	
-						}
 
 						if ( $product_tag == 0 && $product_tag == null ) {
 							if ( $tag_id ) {
@@ -439,12 +431,30 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 								$new_tag = wp_insert_term( $tag, 'product_tag' );
 							}
 						}
+
+						$tag_ids[] 		= !empty($product_tag['term_id']) ? $product_tag['term_id'] : $new_tag['term_id'];
+					}
+
+					if ( $categorize_products == 'yes' ) {
+						$term 		 = term_exists( sanitize_title( $tag ), 'product_cat' );
+
+						if ( $term == 0 && $term == null ) {
+							if ( $cat_id ) {
+								$new_term = wp_insert_term( $tag, 'product_cat', array(
+									'parent' => end( $cat_id )
+								));
+							} else {
+								$new_term = wp_insert_term( $tag, 'product_cat' );
+							}
+						}
+						$category_ids[] = !empty($term['term_id']) ? $term['term_id'] : $new_term['term_id'];
 					}
 
 					$tag = '';
 					$category_ids[] = !empty($term['term_id']) ? $term['term_id'] : $new_term['term_id'];
-					$tag_ids[] 		= !empty($product_tag['term_id']) ? $product_tag['term_id'] : $product_tag['term_id'];
+
 				}
+
 				$new_product['category_ids'] = $category_ids;
 				$new_product['tag_ids']		 = $tag_ids;
 			}
