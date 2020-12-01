@@ -164,13 +164,12 @@ class Knawat_Dropshipping_Woocommerce_Common {
 				$current_options['product_batch'] = sanitize_text_field( $knawatds_options['product_batch'] );
 			}
 
+			
 			if ( isset( $knawatds_options['categorize_products'] ) ) {
 				if ( $knawatds_options['categorize_products'] == 'yes' ) {
 					$current_options['categorize_products'] = 'yes';
-				} else if( $knawatds_options['categorize_products'] == 'yes_as_tags' ){
-					$current_options['categorize_products'] = 'yes_as_tags';
 				}else {
-					$current_options['categorize_products'] = 'no';
+					$current_options['categorize_products'] = sanitize_text_field( $knawatds_options['categorize_products']);
 				}
 			}
 
