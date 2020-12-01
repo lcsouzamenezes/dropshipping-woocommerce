@@ -209,13 +209,14 @@ class Knawat_Dropshipping_WC_MP_Orders {
 		$order   = isset( $result->data ) ? $result->data : array();
 		$order_whitelist_fields = array( 'id', 'parent_id', 'number', 'order_key', 'created_via', 'currency', 'discount_total', 'discount_tax', 'shipping_total', 'shipping_tax', 'cart_tax','total','total_tax','prices_include_tax', 'customer_note', 'transaction_id', 'status', 'line_items', 'billing', 'shipping', 'pdf_invoice_url', 'pdf_invoice_url_rtl' );
 		$item_whitelist_fields = array( 'id', 'sku', 'quantity' );
+		$order_whitelist_flipped = array_flip($order_whitelist_fields);
+		$item_whitelist_flipped = array_flip($item_whitelist_fields);
 		$new_order = array();
 
 		$search_order  = array( 'line_items', 'pdf_invoice_url', 'pdf_invoice_url_rtl', 'customer_note' );
 		$replace_order = array( 'items', 'invoice_url', 'invoice_url_rtl', 'notes' );
 		foreach ( $order as $key => $value ) {
-			if ( in_array( $key, $order_whitelist_fields ) ) {
-
+			if (isset($order_whitelist_flipped[$key])){
 				$key = str_replace( $search_order, $replace_order, $key );
 				$new_order[ $key ] = $value;
 			}
@@ -231,7 +232,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 				}
 				$product_id = $new_order['items'][ $itemkey ]['id'];
 				foreach ( $item as $ikey => $ivalue ) {
-					if ( ! in_array( $ikey, $item_whitelist_fields ) ) {
+					if ( ! isset( $item_whitelist_flipped[$ikey] ) ) {
 						unset( $new_order['items'][ $itemkey ][ $ikey ] );
 					}
 				}
