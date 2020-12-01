@@ -364,8 +364,6 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			}
 			$knawat_options      = knawat_dropshipwc_get_options();
 			$categorize_products = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
-			$cat_id              = null;
-			$tag_id              = null;
 			$tag 				 = '';
 			
 			if ( $active_plugins['qtranslate-x'] && ! empty( $active_langs ) ) {
@@ -406,7 +404,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					if ( $categorize_products == 'yes_as_tags' ) {
 						$tag_ids[] = $this->set_product_taxonomy( $tag , 'product_tag' , $category->id , $parentId );
 					}
-					
+
 					if ( $categorize_products == 'yes' ) {
 						$category_ids[] = $this->set_product_taxonomy( $tag , 'product_cat' , $category->id , $parentId );
 					}
