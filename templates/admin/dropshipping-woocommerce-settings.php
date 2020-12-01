@@ -81,7 +81,8 @@ $dokan_seller        = isset( $knawat_options['dokan_seller'] ) ? esc_attr( $kna
                 <td>
                     <select name="knawat[categorize_products]" required="required">
                         <option value="no" <?php selected( 'no', $categorize_products, true ) ?>><?php esc_html_e('No'); ?></option>
-                        <option value="yes" <?php selected( 'yes', $categorize_products, true ) ?>><?php esc_html_e('Yes'); ?></option>
+                        <option value="yes" <?php selected( 'yes', $categorize_products, true ) ?>><?php esc_html_e('Yes (Product Category)'); ?></option>
+                        <option value="yes_as_tags" <?php selected( 'yes_as_tags', $categorize_products, true ) ?>><?php esc_html_e('Yes (Product Tag)'); ?></option>
                     </select>
                     <p class="description" id="product_batch-description">
 						<?php

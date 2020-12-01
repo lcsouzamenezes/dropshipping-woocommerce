@@ -142,6 +142,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$products[] = $response->product;
 			} else {
 				$products = $response->products;
+
 			}
 
 			// Handle errors
@@ -281,7 +282,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			} else {
 				$new_product['sku'] = $product->sku;
 			}
-
+			
 			if ( ! $product_id || $this->params['force_update'] ) {
 
 				if ( isset( $product->variations ) && ! empty( $product->variations ) ) {
@@ -363,11 +364,11 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			}
 			$knawat_options      = knawat_dropshipwc_get_options();
 			$categorize_products = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
-			$new_product['tags'] = array();
-			$cat_id              = null;
-			$tag = '';
+			$tag 				 = '';
+			
 			if ( $active_plugins['qtranslate-x'] && ! empty( $active_langs ) ) {
-				foreach ( $product->categories as $category ) {
+				
+				foreach ( $product->categories as $key => $category ) {
 					foreach ( $active_langs as $active_lang ) {
 						if ( isset( $category->name->$active_lang ) ) {
 							$tag .= '[:' . $active_lang . ']' . $category->name->$active_lang;
@@ -376,58 +377,45 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					if ( $tag != '' ) {
 						$tag .= '[:]';
 					}
+					global $wpdb;
+					
+					$parentId = isset($category->parentId) ? $category->parentId : '';
 
-					if ( $categorize_products == 'yes' ) {
-						$term = term_exists( sanitize_title( $tag ), 'product_cat' );
-						if ( $term === 0 && $term === null ) {
-							if ( $cat_id ) {
-								$new_term = wp_insert_term( $tag, 'product_cat', array(
-									'parent' => end( $cat_id )
-								) );
-							} else {
-								$new_term = wp_insert_term( $tag, 'product_cat' );
-							}
-							if ( ! is_wp_error( $new_term ) ) {
-								$term_obj = get_term_by( 'id', $new_term['term_id'] );
-								$cat_id   = wp_set_post_terms( ! empty( $new_product['id'] ) ? $new_product['id'] : 0, $term_obj->slug, 'product_cat', true );
-							}
-						} else {
-							$cat_id = wp_set_post_terms( ! empty( $new_product['id'] ) ? $new_product['id'] : 0, $tag, 'product_cat', true );
-						}
+					if ( $categorize_products == 'yes_as_tags' ) {
+						$tag_ids[] 		= $this->set_product_taxonomy( $tag , 'product_tag' , $category->id , $parentId );
 					}
 
-					array_push( $new_product['tags'], $tag );
+					if ( $categorize_products == 'yes' ) {
+						$category_ids[] = $this->set_product_taxonomy( $tag , 'product_cat' , $category->id , $parentId );
+					}
+
 					$tag = '';
 				}
+			
+				$new_product['category_ids'] = $category_ids;
+				$new_product['tag_ids']		 = $tag_ids;
+
 			} else {
 				foreach ( $product->categories as $category ) {
 					$tag .= isset( $category->name->$default_lang ) ? sanitize_text_field( $category->name->$default_lang ) : '';
 
-					if ( $categorize_products == 'yes' ) {
-						$term = term_exists( sanitize_title( $tag ), 'product_cat' );
-						if ( $term === 0 && $term === null ) {
-							if ( $cat_id ) {
-								$new_term = wp_insert_term( $tag, 'product_cat', array(
-									'parent' => end( $cat_id )
-								) );
-							} else {
-								$new_term = wp_insert_term( $tag, 'product_cat' );
-							}
-							if ( ! is_wp_error( $new_term ) ) {
-								$term_obj = get_term_by( 'id', $new_term['term_id'] );
-								$cat_id   = wp_set_post_terms( ! empty( $new_product['id'] ) ? $new_product['id'] : 0, $term_obj->slug, 'product_cat', true );
-							}
-						} else {
-							$cat_id = wp_set_post_terms( ! empty( $new_product['id'] ) ? $new_product['id'] : 0, $tag, 'product_cat', true );
-						}
+					$parentId = isset($category->parentId) ? $category->parentId : '';
+
+					if ( $categorize_products == 'yes_as_tags' ) {
+						$tag_ids[] = $this->set_product_taxonomy( $tag , 'product_tag' , $category->id , $parentId );
 					}
 
-					array_push( $new_product['tags'], $tag );
+					if ( $categorize_products == 'yes' ) {
+						$category_ids[] = $this->set_product_taxonomy( $tag , 'product_cat' , $category->id , $parentId );
+					}
+
 					$tag = '';
 				}
-			}
-			wp_set_object_terms( ! empty( $new_product['id'] ) ? $new_product['id'] : 0, $new_product['tags'], 'product_tag', true );
 
+				$new_product['category_ids'] = $category_ids;
+				$new_product['tag_ids']		 = $tag_ids;
+			}
+			
 			$variations     = array();
 			$var_attributes = array();
 			if ( isset( $product->variations ) && ! empty( $product->variations ) ) {
@@ -533,6 +521,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			return $new_product;
 		}
+
 
 		/**
 		 * Set variation data.
@@ -785,6 +774,46 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			}
 
 			return $formated_value;
+		}
+
+
+		/**
+		 * Set product category and tags.
+		 * 
+		 * @param string $taxonomy_type product taxonomy type 
+		 * @param string $tag product taxonomy name 
+		 * @param int $tax_id use for as tax id
+		 * @param int $parent_id use for as parent id
+		 * 
+		 * @return string 
+		 * @since 2.0.7
+		 */
+
+		public function set_product_taxonomy( $tag , $taxonomy_type , $tax_id , $parent_id ){
+
+			$product_taxonomy = term_exists( sanitize_title( $tag ), $taxonomy_type );
+
+			if ( $product_taxonomy == 0 && $product_taxonomy == null ) {
+
+				$new_id = wp_insert_term( $tag, $taxonomy_type );
+
+				update_term_meta($new_id['term_id'], 'tax_api_id' , $tax_id);
+
+				if(!empty($parent_id)){
+					global $wpdb;
+					$parentsID = $wpdb->get_row("SELECT * FROM `wp_termmeta` WHERE `meta_key` LIKE 'tax_api_id' AND `meta_value` = " . $parent_id);
+
+					if(!empty($parentsID->term_id)){
+						$update = wp_update_term($new_id['term_id'], $taxonomy_type , array(
+							'parent' => $parentsID->term_id,
+						));
+					}
+				}
+			}
+
+			$taxonomy_ids = !empty($product_taxonomy['term_id']) ? $product_taxonomy['term_id'] : $new_id['term_id'];
+
+			return $taxonomy_ids;
 		}
 	}
 
