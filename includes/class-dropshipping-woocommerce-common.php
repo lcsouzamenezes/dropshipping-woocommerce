@@ -24,7 +24,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 		// Do anything Here.
 		add_action( 'knawat_dropshipwc_run_product_import', array( $this, 'knawat_dropshipwc_backgorund_product_importer' ) );
 		add_action( 'admin_init', array( $this, 'handle_knawat_settings_submit' ), 99 );
-		add_action( 'admin_init', array( $this, 'resync_knawat_products' ), 99 );
+		add_action( 'admin_post_resyncs_knawat_products', array( $this, 'resync_knawat_products' ), 99 );
 		add_action( 'woocommerce_add_to_cart', array( $this, 'knawat_dropshipwc_add_to_cart' ), 10, 2 );
 		add_action( 'woocommerce_before_single_product', array( $this, 'knawat_dropshipwc_before_single_product' ) );
 		add_action( 'knawat_dropshipwc_validate_access_token', array( $this, 'validate_access_token' ) );
@@ -34,7 +34,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 		add_action( 'before_delete_post', array( $this, 'knawat_delete_product_on_mp' ) );
 		add_action( 'wp_trash_post', array( $this, 'knawat_show_notice_for_delete' ) );
 	}
-
+	
 	/**
 	 * Check is WooCommerce Activate or not.
 	 *
@@ -193,11 +193,14 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 * @since    2.7.0
 	 */
 	public function resync_knawat_products() {
+		global $knawatdswc_success, $knawat_dropshipwc;
 		$query_string = $_GET;
-		if ( isset( $query_string['resync'] ) && $query_string['resync'] == 'yes' ) {
+		if( wp_verify_nonce( sanitize_key( $query_string['product_sync'] ), 'knawat_product_sync_action') ){
 			update_option( 'knawat_last_imported','1483300000000');
 			do_action( 'knawat_dropshipwc_validate_access_token' );
-			$knawatdswc_success[] = __( 'Sync has been reset successfully.', 'dropshipping-woocommerce' );
+			$redirect_url = esc_url_raw( add_query_arg( array( 'tab' => 'settings' ), admin_url('admin.php?page=knawat_dropship')));
+			wp_safe_redirect(  $redirect_url );
+			exit();
 		}
 	}
 
@@ -600,10 +603,14 @@ function knawat_dropshipwc_get_activated_plugins() {
  * 
  * @return int $products_count The total number of products
  */
-function knawat_dropshipwc_get_products_count( $timestamp ){
+function knawat_dropshipwc_get_products_count( $timestamp , $hideOutOfStock = 'yes'){
 	// MP request to get total count of synced products with $timestamp
 	$mp_api = new Knawat_Dropshipping_Woocommerce_API();
-	$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp);
+	if($hideOutOfStock == 'yes'){
+		$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp);
+	}else{
+		$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp.'&hideOutOfStock=1');
+	}
 	$products_count = $data->total;
 	return $products_count;
 }
