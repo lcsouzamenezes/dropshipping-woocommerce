@@ -11,7 +11,18 @@ $token_status        = isset( $knawat_options['token_status'] ) ? esc_attr( $kna
 $product_batch       = isset( $knawat_options['product_batch'] ) ? esc_attr( $knawat_options['product_batch'] ) : 25;
 $categorize_products = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
 $dokan_seller        = isset( $knawat_options['dokan_seller'] ) ? esc_attr( $knawat_options['dokan_seller'] ) : - 1;
+$sync_url            = wp_nonce_url(admin_url('?page=knawat_dropship&tab=settings&resync=yes'), 'dropshipping-woocommerce', 'product_sync');
+
+$knawat_options['last_imported'] = get_option('knawat_last_imported', false);
+$last_update        = isset($knawat_options['last_imported']) ? intval(esc_attr( $knawat_options['last_imported'] )) * 1000 : 0;
+$reset_time         = 1483300000000;
+
+if ($token_status === 'valid'):
+    $products_synced     = knawat_dropshipwc_get_products_count($last_update);
+	$products_count      = knawat_dropshipwc_get_products_count($reset_time);
+endif;
 ?>
+
 <div class="knawat_dropshipwc_settings">
 
     <h3><?php esc_attr_e( 'Settings', 'dropshipping-woocommerce' ); ?></h3>
@@ -187,5 +198,22 @@ $dokan_seller        = isset( $knawat_options['dokan_seller'] ) ? esc_attr( $kna
 			<?php wp_nonce_field( 'knawatds_setting_form_nonce_action', 'knawatds_setting_form_nonce' ); ?>
             <input type="submit" class="button-primary knawatds_submit_button" style="" value="<?php esc_attr_e( 'Save Settings', 'dropshipping-woocommerce' ); ?>"/>
         </div>
+
+        <table class="form-table">
+            <tbody>
+                <tr class="knawat_dropshipwc_row">
+                    <th scope="row">
+                        <?php _e( '<strong>Products Synced</strong>', 'dropshipping-woocommerce' ); ?>
+                    </th>
+                    <td>
+                        <meter id="last-update-knawat" value="<?php echo $products_count-$products_synced; ?>" min="0" max="<?php echo $products_count; ?>" style="height: 35px; width: 815px;"></meter>
+                        
+                        <p> <?php _e('You have <strong>'.$products_count.' product(s) </strong>, '.$products_count.' of them in-stock, Already '.$products_count.' are done syncing.');?>  </p>
+
+                        <p> <?php _e('if some of your products didn\'t get updated, you may need to <a href="'.$sync_url.'">Sync All</a>, but it\'ll take less a ten to fifteen minutes approx to update all prices and stock.');?> </p>
+                     </td>
+                </tr>
+            </tbody>
+        </table>
     </form>
 </div>

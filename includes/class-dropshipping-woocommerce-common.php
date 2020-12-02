@@ -24,6 +24,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 		// Do anything Here.
 		add_action( 'knawat_dropshipwc_run_product_import', array( $this, 'knawat_dropshipwc_backgorund_product_importer' ) );
 		add_action( 'admin_init', array( $this, 'handle_knawat_settings_submit' ), 99 );
+		add_action( 'admin_init', array( $this, 'resync_knawat_products' ), 99 );
 		add_action( 'woocommerce_add_to_cart', array( $this, 'knawat_dropshipwc_add_to_cart' ), 10, 2 );
 		add_action( 'woocommerce_before_single_product', array( $this, 'knawat_dropshipwc_before_single_product' ) );
 		add_action( 'knawat_dropshipwc_validate_access_token', array( $this, 'validate_access_token' ) );
@@ -183,6 +184,20 @@ class Knawat_Dropshipping_Woocommerce_Common {
 			// Validate access token on keys.
 			do_action( 'knawat_dropshipwc_validate_access_token' );
 			$knawatdswc_success[] = __( 'Settings has been saved successfully.', 'dropshipping-woocommerce' );
+		}
+	}
+
+	/**
+	 * Resynchronization products from knawat.com
+	 *
+	 * @since    2.7.0
+	 */
+	public function resync_knawat_products() {
+		$query_string = $_GET;
+		if ( isset( $query_string['resync'] ) && $query_string['resync'] == 'yes' ) {
+			update_option( 'knawat_last_imported','1483300000000');
+			do_action( 'knawat_dropshipwc_validate_access_token' );
+			$knawatdswc_success[] = __( 'Sync has been reset successfully.', 'dropshipping-woocommerce' );
 		}
 	}
 
@@ -438,6 +453,8 @@ class Knawat_Dropshipping_Woocommerce_Common {
 			}
 		}
 	}
+
+
 }
 
 /*
@@ -576,6 +593,21 @@ function knawat_dropshipwc_get_activated_plugins() {
 
 	return $active_plugins;
 }
+
+
+/**
+ * Get Total Number of Products with specific timestamp
+ * 
+ * @return int $products_count The total number of products
+ */
+function knawat_dropshipwc_get_products_count( $timestamp ){
+	// MP request to get total count of synced products with $timestamp
+	$mp_api = new Knawat_Dropshipping_Woocommerce_API();
+	$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp);
+	$products_count = $data->total;
+	return $products_count;
+}
+
 
 /**
  * Check if order is for knawat local DS.
