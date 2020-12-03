@@ -603,10 +603,10 @@ function knawat_dropshipwc_get_activated_plugins() {
  * 
  * @return int $products_count The total number of products
  */
-function knawat_dropshipwc_get_products_count( $timestamp , $hideOutOfStock = 'yes'){
+function knawat_dropshipwc_get_products_count( $timestamp , $hideOutOfStock = true){
 	// MP request to get total count of synced products with $timestamp
 	$mp_api = new Knawat_Dropshipping_Woocommerce_API();
-	if($hideOutOfStock == 'yes'){
+	if($hideOutOfStock){
 		$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp);
 	}else{
 		$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp.'&hideOutOfStock=1');

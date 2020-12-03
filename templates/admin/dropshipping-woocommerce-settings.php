@@ -19,7 +19,7 @@ $reset_time         = 1483300000000;
 if ($token_status === 'valid'):
     $products_synced     = knawat_dropshipwc_get_products_count($last_update);
     $products_count      = knawat_dropshipwc_get_products_count($reset_time);
-    $outofstock_count    = knawat_dropshipwc_get_products_count($reset_time,'no');
+    $stock_count         = knawat_dropshipwc_get_products_count($reset_time,false);
 endif;
 ?>
 
@@ -208,7 +208,7 @@ endif;
                     <td>
                          <meter id="last-update-knawat" value="<?php echo $products_count-$products_synced; ?>" min="0" max="<?php echo $products_count; ?>" style="height: 35px; width: 815px;"></meter>
                         
-                        <p> <?php _e('You have <strong>'.$products_count.' product(s) </strong>, '.($outofstock_count).' of them in-stock, Already '.($products_count-$products_synced).' are done syncing.');?>  </p>
+                        <p> <?php _e('You have <strong>'.$products_count.' product(s) </strong>, '.($stock_count).' of them in-stock, Already '.($products_count-$products_synced).' are done syncing.');?>  </p>
 
                         <p> <?php _e('if some of your products didn\'t get updated, you may need to <a href="'.$sync_url.'">Sync All</a>, but it\'ll take approx few hours to update all prices and stock.');?> </p>
                      </td>
