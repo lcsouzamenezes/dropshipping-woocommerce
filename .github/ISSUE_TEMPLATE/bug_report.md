@@ -26,7 +26,9 @@ If applicable, add screenshots to help explain your problem.
 **Enviroment (please complete the following information):**
  - OS: [e.g. iOS]
  - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+ - Plugin Version [e.g. 22]
+ - WordPress Version [e.g. 5.2]
+ - WooCommerce Version [e.g. 5.2]
 
 **Additional context**
 Add any other context about the problem here.
