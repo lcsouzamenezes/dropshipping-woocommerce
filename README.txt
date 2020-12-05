@@ -88,24 +88,16 @@ Automatically updating shipment tracking number into your store
 * FIX: Performance enhancement when creating new order.
 
 = 2.0.7 =
-* FIX: Product with only 1 variation gets added as a simple product instead of variation.
-
-= 2.0.6 =
 * ADDED: Support for WCFM Marketplace latest version.
+* FIX: Product with only 1 variation gets added as a simple product instead of variation.
 
 = 2.0.5 =
 * Tested with latest versions of both WordPress 5.3 and WooCommece 3.7.1.
 
 = 2.0.4 =
 * ADDED: Support for Appmaker.xyz Plugin.
-
-= 2.0.3 =
-* FIX: Background import products was broken.
-
-= 2.0.2 =
-* IMPROVEMENT: Some Improvements.
-* ADDED: Knawat handshake.
 * IMPROVEMENT: "start import" button to get all products.
+* FIX: Background import products was broken.
 
 = 2.0.1 =
 * ADDED: Support for Import Product Information Attributes.
