@@ -801,7 +801,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 				if(!empty($parent_id)){
 					global $wpdb;
-					$parentsID = $wpdb->get_row("SELECT * FROM `wp_termmeta` WHERE `meta_key` LIKE 'tax_api_id' AND `meta_value` = " . $parent_id);
+					$parentsID = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}termmeta WHERE `meta_key` LIKE 'tax_api_id' AND `meta_value` = " . $parent_id);
 
 					if(!empty($parentsID->term_id)){
 						$update = wp_update_term($new_id['term_id'], $taxonomy_type , array(

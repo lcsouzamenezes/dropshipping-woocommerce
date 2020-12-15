@@ -71,11 +71,12 @@ if( empty( $consumer_keys ) ){
 						}else{
 							$imported = $updated = $failed = 0;
 							$batch = isset( $batches[0]->option_value ) ? maybe_unserialize( $batches[0]->option_value ) : array();
+							
 							if( !empty( $batch ) && is_array( $batch ) ){
-								$batch = current( $batch );
-								$imported = isset( $batch['imported'] ) ? $batch['imported'] : 0;
-								$failed = isset( $batch['failed'] ) ? $batch['failed'] : 0;
-								$updated = isset( $batch['updated'] ) ? $batch['updated'] : 0;
+								$batch 		= current( $batch );
+								$imported 	= !empty($batch['imported']) ? $batch['imported'] 	: 0;
+								$failed 	= !empty($batch['failed'])   ? $batch['failed'] 	: 0;
+								$updated 	= !empty($batch['updated'])  ? $batch['updated'] 	: 0;
 							}
 							?>
 							<a class="button button-primary" disabled="disabled">
