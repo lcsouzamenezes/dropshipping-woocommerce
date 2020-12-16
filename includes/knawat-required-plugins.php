@@ -58,6 +58,15 @@ function knawat_dropshipwc_register_required_plugins() {
 			'required'     	=> false,
 			'recommended_by'=> 'knawat'
 		);
+
+	$plugins[] = array( //add q-translate-xt in recommended plugins
+		'name'           => esc_html__( 'qTranslate XT', 'dropshipping-woocommerce' ),
+		'slug'           => 'qtranslate-xt',
+		'required'       => false,
+		'source'         => 'https://github.com/qtranslate/qtranslate-xt/archive/master.zip',
+		'recommended_by' => 'knawat'
+	);
+
 	/*
 	 * Array of configuration settings. Amend each line as needed.
 	 *
