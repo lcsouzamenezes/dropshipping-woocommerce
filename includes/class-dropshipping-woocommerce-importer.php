@@ -269,7 +269,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$active_plugins = knawat_dropshipwc_get_activated_plugins();
 
-			if ( $active_plugins['qtranslate-x'] ) {
+			if ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) {
 				global $q_config;
 				$default_lang = isset( $q_config['default_language'] ) ? sanitize_text_field( $q_config['default_language'] ) : $default_lang;
 				$active_langs = isset( $q_config['enabled_languages'] ) ? $q_config['enabled_languages'] : array();
@@ -291,7 +291,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$new_product['name']        = isset( $product->name->$default_lang ) ? sanitize_text_field( $product->name->$default_lang ) : '';
 				$new_product['description'] = isset( $product->description->$default_lang ) ? sanitize_textarea_field( $product->description->$default_lang ) : '';
 
-				if ( $active_plugins['qtranslate-x'] && ! empty( $active_langs ) ) {
+				if ( ( $active_plugins['qtranslate-x'] || $active_plugins['qtranslate-xt'] ) && ! empty( $active_langs ) ) {
 
 					$new_product['name']        = '';
 					$new_product['description'] = '';
@@ -365,8 +365,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			$knawat_options      = knawat_dropshipwc_get_options();
 			$categorize_products = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
 			$tag 				 = '';
-			
-			if ( $active_plugins['qtranslate-x'] && ! empty( $active_langs ) ) {
+
+			if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) )  {
 				
 				foreach ( $product->categories as $key => $category ) {
 					foreach ( $active_langs as $active_lang ) {
@@ -426,7 +426,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						$temp_variant['id'] = $varient_id;
 						// Update name as its name is added as null in the first time - related to migration task
 						if ( empty( $temp_variant['name'] ) && empty( $new_product['name'] ) ) {
-							if ( $active_plugins['qtranslate-x'] && ! empty( $active_langs ) ) {
+							if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) )  {
 
 								$new_product['name'] = '';
 
@@ -745,7 +745,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			$default_lang   = explode( '_', $default_lang );
 			$default_lang   = $default_lang[0];
 			$active_plugins = knawat_dropshipwc_get_activated_plugins();
-			if ( $active_plugins['qtranslate-x'] ) {
+			if ( $active_plugins['qtranslate-x'] || $active_plugins['qtranslate-xt'] ) {
 				global $q_config;
 				$default_lang = isset( $q_config['default_language'] ) ? sanitize_text_field( $q_config['default_language'] ) : $default_lang;
 				$active_langs = isset( $q_config['enabled_languages'] ) ? $q_config['enabled_languages'] : array();
@@ -761,7 +761,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$formated_value = isset( $lang_object->tr ) ? $lang_object->tr : '';
 			}
 
-			if ( $active_plugins['qtranslate-x'] && ! empty( $active_langs ) ) {
+			if ( ( $active_plugins['qtranslate-x'] || $active_plugins['qtranslate-xt'] ) && ! empty( $active_langs ) ) {
 				$formated_value = '';
 				foreach ( $active_langs as $active_lang ) {
 					if ( isset( $lang_object->$active_lang ) ) {
