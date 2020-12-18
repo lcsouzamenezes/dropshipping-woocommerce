@@ -11,7 +11,7 @@
  * Text Domain:       dropshipping-woocommerce
  * Domain Path:       /languages
  * WC requires at least: 3.3.0
- * WC tested up to: 3.8.1
+ * WC tested up to: 4.7.1
  *
  * @package     Knawat_Dropshipping_Woocommerce
  */
@@ -102,14 +102,14 @@ class Knawat_Dropshipping_Woocommerce{
 	 *
 	 * @since 1.0.0
 	 */
-	public function __clone() { _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '2.0.3' ); }
+	public function __clone() { _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '2.2.0' ); }
 
 	/**
 	 * A dummy magic method to prevent Knawat_Dropshipping_Woocommerce from being unserialized.
 	 *
 	 * @since 1.0.0
 	 */
-	public function __wakeup() { _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '2.0.3' ); }
+	public function __wakeup() { _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '2.2.0' ); }
 	
 	/**
 	 * Setup plugins constants.
@@ -122,7 +122,7 @@ class Knawat_Dropshipping_Woocommerce{
 
 		// Plugin version.
 		if( ! defined( 'KNAWAT_DROPWC_VERSION' ) ){
-			define( 'KNAWAT_DROPWC_VERSION', '2.0.3' );
+			define( 'KNAWAT_DROPWC_VERSION', '2.2.0' );
 		}
 
 		// Plugin folder Path.
