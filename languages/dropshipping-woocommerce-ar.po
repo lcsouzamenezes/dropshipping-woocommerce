@@ -892,12 +892,3 @@ msgstr "فريق قنوات"
 #. Author URI of the plugin
 msgid "https://github.com/Knawat"
 msgstr "https://github.com/Knawat"
-
-#: includes/class-dropshipping-woocommerce-admin.php:125
-#: templates/admin/dropshipping-woocommerce-settings.php:17
-msgid "Settings"
-msgstr "الإعدادات"
-
-#. templates/admin/dropshipping-woocommerce-settings.php:206
-msgid "Products Synced"
-msgstr "المنتجات التي تمت مزامنتها"

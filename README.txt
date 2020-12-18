@@ -77,6 +77,9 @@ Automatically updating shipment tracking number into your store
 * ADDED: Categorize knawat products as product categories or tags.
 * ADDED: Added Option for knawat products update from edit screen or bulk option.
 * ADDED: Product sync status bar on the setting tab.
+* ADDED: Category and tag import with hierarchy.
+* FIX: 	 Category and tag import issue.
+
 
 = 2.1.1 =
 * ADDED: Delete Product from your Knawat store if the product has 0 quantity.
