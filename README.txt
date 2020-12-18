@@ -1,11 +1,11 @@
 === Knawat WooCommerce DropShipping ===
-Contributors: knawat,dharm1025,esl4m,firstanonymous
+Contributors: knawat,dharm1025,esl4m,firstanonymous,surajrathod
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace, Appmaker
 Requires PHP: 7.0
 Requires at least: 4.0
-Tested up to: 5.1.1
-Stable tag: 2.1.1
-WC tested up to: 4.5.0
+Tested up to: 5.6.0
+Stable tag: 2.2.0
+WC tested up to: 4.7.1
 
 == Description ==
 
@@ -72,6 +72,11 @@ Automatically updating shipment tracking number into your store
 2. ![Alt text](https://knawat.com/wp-content/uploads/2019/05/sc11.png?raw=true "Settings")
 
 == Changelog ==
+
+= 2.2.0 = 
+* ADDED: Categorize knawat products as product categories or tags.
+* ADDED: Added Option for knawat products update from edit screen or bulk option.
+* ADDED: Product sync status bar on the setting tab.
 
 = 2.1.1 =
 * ADDED: Delete Product from your Knawat store if the product has 0 quantity.
