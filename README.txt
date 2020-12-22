@@ -1,5 +1,5 @@
 === Knawat WooCommerce DropShipping ===
-Contributors: knawat,dharm1025,esl4m,firstanonymous,surajrathod
+Contributors: dharm1025,esl4m,firstanonymous,surajrathod,hazemkhaled
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace, Appmaker
 Requires PHP: 7.0
 Requires at least: 4.0
