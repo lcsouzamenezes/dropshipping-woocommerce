@@ -5,7 +5,7 @@ Requires PHP: 7.0
 Requires at least: 4.0
 Tested up to: 5.6.0
 Stable tag: 2.2.0
-WC tested up to: 4.7.1
+WC tested up to: 4.8.0
 
 == Description ==
 
