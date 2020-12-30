@@ -1,25 +1,39 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (C) 2020 Knawat
+# This file is distributed under the same license as the Knawat WooCommerce DropShipping plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 16:55+0530\n"
-"PO-Revision-Date: 2020-12-18 16:57+0500\n"
+"Project-Id-Version: Knawat WooCommerce DropShipping 2.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dropshipping-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Eazy Po 0.9.5.3\n"
+"POT-Creation-Date: 2020-12-30T09:20:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: dropshipping-woocommerce\n"
 
-#: dropshipping-woocommerce.php:105 dropshipping-woocommerce.php:112
+#. Plugin Name of the plugin
+#. Description of the plugin
+msgid "Knawat WooCommerce DropShipping"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/dropshipping-woocommerce/"
+msgstr ""
+
+#. Author of the plugin
+#: includes/lib/knawat-merlin/knawat-merlin.php:111
+msgid "Knawat"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.knawat.com/?utm_source=wordpress.org&utm_medium=social&utm_campaign=The%20WC%20Plugin"
+msgstr ""
+
+#: dropshipping-woocommerce.php:105
+#: dropshipping-woocommerce.php:112
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
@@ -39,7 +53,6 @@ msgstr ""
 #: includes/class-dropshipping-wc-mp-orders.php:109
 #: includes/class-dropshipping-wc-mp-orders.php:166
 #: includes/class-dropshipping-wc-mp-orders.php:178
-#, php-format
 msgid "Order synchronize fail. order id: #%d"
 msgstr ""
 
@@ -68,43 +81,36 @@ msgid "Latest News from Knawat"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin-dashboard.php:147
-#, php-format
 msgid "%s net sales this month"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin-dashboard.php:163
-#, php-format
 msgid "%s net profit this month"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin-dashboard.php:184
-#, php-format
 msgid "%1$s top seller this month (sold %2$d)"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin-dashboard.php:237
-#, php-format
 msgid "<strong>%s order</strong> awaiting processing"
 msgid_plural "<strong>%s orders</strong> awaiting processing"
 msgstr[0] ""
 msgstr[1] ""
 
 #: includes/class-dropshipping-woocommerce-admin-dashboard.php:248
-#, php-format
 msgid "<strong>%s order</strong> on-hold"
 msgid_plural "<strong>%s orders</strong> on-hold"
 msgstr[0] ""
 msgstr[1] ""
 
 #: includes/class-dropshipping-woocommerce-admin-dashboard.php:307
-#, php-format
 msgid "<strong>%s product</strong> low in stock"
 msgid_plural "<strong>%s products</strong> low in stock"
 msgstr[0] ""
 msgstr[1] ""
 
 #: includes/class-dropshipping-woocommerce-admin-dashboard.php:318
-#, php-format
 msgid "<strong>%s product</strong> out of stock"
 msgid_plural "<strong>%s products</strong> out of stock"
 msgstr[0] ""
@@ -139,7 +145,6 @@ msgid "Knawat Products"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin.php:313
-#, php-format
 msgid " Rate %1$s Dropshipping Woocommerce%2$s %3$s"
 msgstr ""
 
@@ -196,10 +201,7 @@ msgid "Enter a quantity of product variant for selected dropshipper."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin.php:703
-msgid ""
-"Before you start importing products, it's better to set default category for "
-"import Knawat Products. You can set it from <strong>Products > Categories.</"
-"strong>  ex: New arrivals, or something else as you want."
+msgid "Before you start importing products, it's better to set default category for import Knawat Products. You can set it from <strong>Products > Categories.</strong>  ex: New arrivals, or something else as you want."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin.php:703
@@ -234,9 +236,7 @@ msgstr ""
 #: includes/class-dropshipping-woocommerce-api.php:167
 #: includes/class-dropshipping-woocommerce-api.php:206
 #: includes/class-dropshipping-woocommerce-api.php:246
-msgid ""
-"Access token not found for API. Please make sure your store is connected to "
-"knawat.com"
+msgid "Access token not found for API. Please make sure your store is connected to knawat.com"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-common.php:128
@@ -248,9 +248,7 @@ msgid "Settings has been saved successfully."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-common.php:326
-msgid ""
-"Your connection with knawat.com has been disconnected. Please check and "
-"verify your knawat consumer keys from"
+msgid "Your connection with knawat.com has been disconnected. Please check and verify your knawat consumer keys from"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-common.php:327
@@ -258,9 +256,7 @@ msgid "<strong>Knawat Dropshipping</strong> > <strong>Settings</strong>."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-common.php:454
-msgid ""
-"The product will be imported again from Knawat, if you don't want this "
-"product, then delete it permanently."
+msgid "The product will be imported again from Knawat, if you don't want this product, then delete it permanently."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-importer.php:113
@@ -270,18 +266,14 @@ msgstr ""
 #: includes/class-dropshipping-woocommerce-importer.php:130
 #: includes/class-dropshipping-woocommerce-importer.php:138
 #: includes/class-dropshipping-woocommerce-importer.php:151
-msgid ""
-"Something went wrong during get data from Knawat MP API. Please try again "
-"later."
+msgid "Something went wrong during get data from Knawat MP API. Please try again later."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-importer.php:549
-msgid ""
-"Variation cannot be imported: Missing parent ID or parent does not exist yet."
+msgid "Variation cannot be imported: Missing parent ID or parent does not exist yet."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-orders.php:299
-#, php-format
 msgid "Order &ndash; %s"
 msgstr ""
 
@@ -320,7 +312,6 @@ msgid "Mark main order refunded when all suborders are refunded."
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-orders.php:1466
-#, php-format
 msgid "%1$s stock reduced for \"%2$s\" from %3$s to %4$s."
 msgstr ""
 
@@ -385,22 +376,18 @@ msgid "Save Tracking"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-webhook.php:110
-#, php-format
 msgid "Knawat Order created (%s)"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-webhook.php:111
-#, php-format
 msgid "Knawat Order updated (%s)"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-webhook.php:112
-#, php-format
 msgid "Knawat Order deleted (%s)"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-webhook.php:113
-#, php-format
 msgid "Knawat Order restored (%s)"
 msgstr ""
 
@@ -409,7 +396,6 @@ msgid "Knawat Setup"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:30
-#, php-format
 msgid "%s%s Knawat &lsaquo; Knawat Setup %s"
 msgstr ""
 
@@ -421,7 +407,8 @@ msgstr ""
 msgid "Skip"
 msgstr ""
 
-#: includes/knawat-merlin-config.php:35 includes/knawat-merlin-config.php:39
+#: includes/knawat-merlin-config.php:35
+#: includes/knawat-merlin-config.php:39
 msgid "Next"
 msgstr ""
 
@@ -433,20 +420,18 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: includes/knawat-merlin-config.php:38 includes/knawat-merlin-config.php:40
+#: includes/knawat-merlin-config.php:38
+#: includes/knawat-merlin-config.php:40
 #: includes/lib/knawat-merlin/knawat-merlin.php:787
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2810
 msgid "Install"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:41
 #: includes/lib/knawat-merlin/knawat-merlin.php:793
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2819
 msgid "Activate"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:43
-#, php-format
 msgid "Welcome to %s"
 msgstr ""
 
@@ -455,15 +440,11 @@ msgid "Hi. Welcome back"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:45
-msgid ""
-"This wizard will connect your store with Knawat and install plugins. It is "
-"optional & should take only a few minutes."
+msgid "This wizard will connect your store with Knawat and install plugins. It is optional & should take only a few minutes."
 msgstr ""
 
 #: includes/knawat-merlin-config.php:46
-msgid ""
-"You may have already run this knawat setup wizard. If you would like to "
-"proceed anyway, click on the \"Start\" button below."
+msgid "You may have already run this knawat setup wizard. If you would like to proceed anyway, click on the \"Start\" button below."
 msgstr ""
 
 #: includes/knawat-merlin-config.php:49
@@ -487,7 +468,6 @@ msgid "Learn about child themes"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:55
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:335
 msgid "Install Plugins"
 msgstr ""
 
@@ -496,14 +476,11 @@ msgid "You're up to speed!"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:57
-msgid ""
-"Let’s install some essential WordPress plugins to get your site up to speed."
+msgid "Let’s install some essential WordPress plugins to get your site up to speed."
 msgstr ""
 
 #: includes/knawat-merlin-config.php:58
-msgid ""
-"The required WordPress plugins are all installed and up to date. Press \"Next"
-"\" to continue the setup wizard."
+msgid "The required WordPress plugins are all installed and up to date. Press \"Next\" to continue the setup wizard."
 msgstr ""
 
 #: includes/knawat-merlin-config.php:59
@@ -527,12 +504,10 @@ msgid "Start Adding Products"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:67
-#, php-format
 msgid "<a href=\"https://knawat.com/\" target=\"_blank\">%s</a>"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:68
-#, php-format
 msgid "<a href=\"https://help.knawat.com/hc/en-us/\" target=\"_blank\">%s</a>"
 msgstr ""
 
@@ -560,23 +535,23 @@ msgstr ""
 msgid "qTranslate X"
 msgstr ""
 
-#: includes/knawat-required-plugins.php:85
-#, php-format
+#: includes/knawat-required-plugins.php:63
+msgid "qTranslate XT"
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: includes/knawat-required-plugins.php:92
 msgid "Knawat Dropshipping requires the following plugin: %1$s."
 msgid_plural "Knawat Dropshipping requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/knawat-required-plugins.php:91
-#, php-format
+#. translators: 1: plugin name(s).
+#: includes/knawat-required-plugins.php:98
 msgid "Knawat Dropshipping recommends the following plugin: %1$s."
 msgid_plural "Knawat Dropshipping recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
-
-#: includes/lib/knawat-merlin/knawat-merlin.php:111
-msgid "Knawat"
-msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:385
 msgid "Please define default parameters in the form of an array."
@@ -603,9 +578,7 @@ msgid "Ready"
 msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:656
-msgid ""
-"Please insert Knawat Knawat Consumer Key and Secret. You can get your Knawat "
-"keys"
+msgid "Please insert Knawat Knawat Consumer Key and Secret. You can get your Knawat keys"
 msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:657
@@ -623,7 +596,6 @@ msgid "Knawat Consumer Secret"
 msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:790
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2816
 msgid "Update"
 msgstr ""
 
@@ -660,432 +632,12 @@ msgstr ""
 msgid "Please Insert Knawat Cosumer Secret."
 msgstr ""
 
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:334
-msgid "Install Required Plugins"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:337
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:339
-#, php-format
-msgid "Updating Plugin: %s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:340
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:343
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:349
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:355
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:361
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:367
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:373
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:378
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:383
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:388
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:392
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:393
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:920
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2626
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3673
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:394
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3252
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:395
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3045
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:397
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:399
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:401
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:402
-msgid "Dismiss this notice"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:403
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:404
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:607
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:608
-msgid "Update Required"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:725
-msgid "Set the parent_slug config variable instead."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1027
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1027
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1030
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1030
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1214
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3041
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2075
-#, php-format
-msgid "TGMPA v%s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2366
-msgid "Required"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2369
-msgid "Recommended"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2385
-msgid "WordPress Repository"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2388
-msgid "External Source"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2391
-msgid "Pre-Packaged"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2408
-msgid "Not Installed"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2412
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2414
-msgid "Active"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2420
-msgid "Required Update not Available"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2423
-msgid "Requires Update"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2426
-msgid "Update recommended"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2435
-#, php-format
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2481
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2485
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2489
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2493
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2575
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2583
-msgid "Installed version:"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2591
-msgid "Minimum required version:"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2603
-msgid "Available version:"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2626
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2640
-msgid "Plugin"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2641
-msgid "Source"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2642
-msgid "Type"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2646
-msgid "Version"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2647
-msgid "Status"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2696
-#, php-format
-msgid "Install %2$s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2701
-#, php-format
-msgid "Update %2$s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2707
-#, php-format
-msgid "Activate %2$s"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2777
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2850
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2852
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2893
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2895
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3001
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3027
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3251
-msgid "Plugin activation failed."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3591
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3594
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3596
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3600
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
-msgid "Show Details"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
-msgid "Hide Details"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3603
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3605
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3608
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3611
-msgid "All installations have been completed."
-msgstr ""
-
-#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3613
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/lib/wp-background-processing/wp-background-process.php:425
-#, php-format
-msgid "Every %d Minutes"
-msgstr ""
-
 #: templates/admin/dropshipping-woocommerce-import.php:21
-#, php-format
-msgid ""
-"Please insert Knawat Consumer Key and Consumer Secret in <a href=\"%s"
-"\">Settings</a> tab."
+msgid "Please insert Knawat Consumer Key and Consumer Secret in <a href=\"%s\">Settings</a> tab."
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-import.php:43
-msgid ""
-"Plugin auto import/update products from knawat.com in background on regular "
-"interval. But, if you want then you can manually start import."
+msgid "Plugin auto import/update products from knawat.com in background on regular interval. But, if you want then you can manually start import."
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-import.php:50
@@ -1099,9 +651,7 @@ msgid "Start Import"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-import.php:67
-msgid ""
-"You're not connected to a knawat.com, please make a connection for start "
-"import."
+msgid "You're not connected to a knawat.com, please make a connection for start import."
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-import.php:85
@@ -1113,9 +663,7 @@ msgid "Stop Import"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-import.php:89
-msgid ""
-"Product import is In-progress already. you can't start import now. Please "
-"find current import status below."
+msgid "Product import is In-progress already. you can't start import now. Please find current import status below."
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-import.php:92
@@ -1125,7 +673,6 @@ msgstr ""
 #: templates/admin/dropshipping-woocommerce-import.php:92
 #: templates/admin/dropshipping-woocommerce-import.php:93
 #: templates/admin/dropshipping-woocommerce-import.php:94
-#, php-format
 msgid "%d Products with variations."
 msgstr ""
 
@@ -1138,20 +685,15 @@ msgid "Failed:"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:29
-msgid ""
-"Note: Only orders in Processing status will be sent to Knawat to processs."
+msgid "Note: Only orders in Processing status will be sent to Knawat to processs."
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:30
-msgid ""
-"You need a Knawat consumer key and consumer secret for import products into "
-"your store from knawat.com"
+msgid "You need a Knawat consumer key and consumer secret for import products into your store from knawat.com"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:47
-msgid ""
-"You can get your Knawat Consumer Key from your <strong>Dashboard > Store "
-"settings</strong>"
+msgid "You can get your Knawat Consumer Key from your <strong>Dashboard > Store settings</strong>"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:48
@@ -1160,9 +702,7 @@ msgid "click to see the image"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:66
-msgid ""
-"You can get your Knawat Consumer Secret from your <strong>Dashboard > Store "
-"settings</strong>"
+msgid "You can get your Knawat Consumer Secret from your <strong>Dashboard > Store settings</strong>"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:76
@@ -1175,18 +715,6 @@ msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:90
 msgid "Categorize Products"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:94
-msgid "No"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:95
-msgid "Yes (Product Category)"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:96
-msgid "Yes (Product Tag)"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:100
@@ -1263,14 +791,6 @@ msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:206
 msgid "<strong>Products Synced</strong>"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:211
-msgid "You have <strong>"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:213
-msgid "if some of your products didn't get updated, you may need to <a href=\""
 msgstr ""
 
 #: templates/myaccount/shipment-tracking.php:11
