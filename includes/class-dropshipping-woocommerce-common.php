@@ -574,7 +574,6 @@ function knawat_dropshipwc_get_activated_plugins() {
 		'featured-image-by-url'         => false,
 		'woocommerce-currency-switcher' => false,
 		'qtranslate-xt'                 => false,
-		'qtranslate-x'                  => false
 	);
 
 	$blog_plugins = get_option( 'active_plugins', array() );
@@ -583,11 +582,6 @@ function knawat_dropshipwc_get_activated_plugins() {
 	// Check if qTranslate XT is activated
 	if ( in_array( 'qtranslate-xt/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-xt/qtranslate.php'] ) ) {
 		$active_plugins['qtranslate-xt'] = true;
-	}
-
-	// Check if qTranslate X is activated
-	if ( in_array( 'qtranslate-x/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-x/qtranslate.php'] ) ) {
-		$active_plugins['qtranslate-x'] = true;
 	}
 
 	// Check if Featured image by URL is activated
@@ -602,7 +596,6 @@ function knawat_dropshipwc_get_activated_plugins() {
 
 	return $active_plugins;
 }
-
 
 /**
  * Get Total Number of Products with specific timestamp
