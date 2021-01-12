@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="Knawat WooCommerce DropShipping">
+	<description>Knawat WooCommerce DropShipping</description>
+	<file>.</file>
+
+	<!-- Show progress and sniff codes in all reports. -->
+	<arg value="ps"/>
+
+	<!-- A path to strip from the front of file paths inside reports. -->
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+
+	<!-- Configs -->
+	<config name="minimum_supported_wp_version" value="4.9" />
+	<config name="testVersion" value="5.6-"/>
+
+	<exclude-pattern>vendor/</exclude-pattern>
+	<exclude-pattern>.github/</exclude-pattern>
+    <exclude-pattern>.wordpress-org/</exclude-pattern>
+
+	<!-- Rules -->
+	<rule ref="WordPress" />
+
+	<!-- Temporary Rule Exclusions -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="strict_class_file_names" value="false"/>
+		</properties>
+	</rule>
+	<!-- End of Temporary Rule Exclusions -->
+</ruleset>
