@@ -74,9 +74,9 @@ class Knawat_Dropshipping_WC_MP_Orders {
 				$korder_id = get_post_meta( $order_id, '_knawat_order_id', true );
 				if ( $korder_id != '' ) {
 
-					$order_status = $order->get_status();
+					$order_status       = $order->get_status();
 					$whilelisted_status = array( 'pending', 'processing', 'cancelled' );
-					if( !in_array( $order_status, $whilelisted_status ) ){
+					if ( ! in_array( $order_status, $whilelisted_status ) ) {
 						// Return as order status is not allowed to push order
 						delete_post_meta( $order_id, '_knawat_sync_failed' ); // Clear
 						return;
@@ -84,8 +84,8 @@ class Knawat_Dropshipping_WC_MP_Orders {
 
 					$update_order_json = $this->knawat_format_order( $order_id, true );
 					if ( $update_order_json ) {
-						$this->mp_api = new Knawat_Dropshipping_Woocommerce_API();
-						$result = $this->mp_api->put( 'orders/' . $korder_id, $update_order_json );
+						$this->mp_api   = new Knawat_Dropshipping_Woocommerce_API();
+						$result         = $this->mp_api->put( 'orders/' . $korder_id, $update_order_json );
 						$current_action = current_action();
 
 						if ( ! is_wp_error( $result ) ) {
@@ -95,10 +95,10 @@ class Knawat_Dropshipping_WC_MP_Orders {
 							} else {
 								// WC log error.
 								$order_sync_error = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
-								if( isset( $result->message ) ){
+								if ( isset( $result->message ) ) {
 									$order_sync_error .= ' REASON: ';
 									$order_sync_error .= isset( $result->name ) ? $result->name . ':' . $result->message : $result->message;
-									$order_sync_error .= isset( $result->code ) ? '('.$result->code . ')' : '';
+									$order_sync_error .= isset( $result->code ) ? '(' . $result->code . ')' : '';
 								}
 								$knawatdswc_errors['order_sync'] = $order_sync_error;
 								knawat_dropshipwc_logger( $order_sync_error );
@@ -106,7 +106,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 							}
 						} else {
 							// WC log error.
-							$order_sync_error = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
+							$order_sync_error                = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
 							$knawatdswc_errors['order_sync'] = $order_sync_error;
 							knawat_dropshipwc_logger( $order_sync_error );
 							update_post_meta( $order_id, '_knawat_sync_failed', true );
@@ -142,10 +142,10 @@ class Knawat_Dropshipping_WC_MP_Orders {
 					return;
 				}
 
-				$push_status = 'processing';
+				$push_status  = 'processing';
 				$order_status = $order->get_status();
 
-				if( $push_status != $order_status ){
+				if ( $push_status != $order_status ) {
 					// Return as order status is not allowed to push order
 					delete_post_meta( $order_id, '_knawat_sync_failed' );
 					return;
@@ -154,7 +154,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 				$new_order_json = $this->knawat_format_order( $order_id );
 				if ( $new_order_json ) {
 					$this->mp_api = new Knawat_Dropshipping_Woocommerce_API();
-					$result = $this->mp_api->post( 'orders', $new_order_json );
+					$result       = $this->mp_api->post( 'orders', $new_order_json );
 
 					if ( ! is_wp_error( $result ) ) {
 						if ( isset( $result->status ) && 'success' === $result->status ) {
@@ -164,10 +164,10 @@ class Knawat_Dropshipping_WC_MP_Orders {
 						} else {
 							// WC log error.
 							$order_sync_error = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
-							if( isset( $result->message ) ){
+							if ( isset( $result->message ) ) {
 								$order_sync_error .= ' REASON: ';
 								$order_sync_error .= isset( $result->name ) ? $result->name . ':' . $result->message : $result->message;
-								$order_sync_error .= isset( $result->code ) ? '('.$result->code . ')' : '';
+								$order_sync_error .= isset( $result->code ) ? '(' . $result->code . ')' : '';
 							}
 							$knawatdswc_errors['order_sync'] = $order_sync_error;
 							knawat_dropshipwc_logger( $order_sync_error );
@@ -175,7 +175,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 						}
 					} else {
 						// WC log error.
-						$order_sync_error = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
+						$order_sync_error                = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
 						$knawatdswc_errors['order_sync'] = $order_sync_error;
 						knawat_dropshipwc_logger( $order_sync_error );
 						update_post_meta( $order_id, '_knawat_sync_failed', true );
@@ -205,19 +205,19 @@ class Knawat_Dropshipping_WC_MP_Orders {
 
 		// Set Order ID.
 		$request->set_param( 'id', $order_id );
-		$result  = $controller->get_item( $request );
-		$order   = isset( $result->data ) ? $result->data : array();
-		$order_whitelist_fields = array( 'id', 'parent_id', 'number', 'order_key', 'created_via', 'currency', 'discount_total', 'discount_tax', 'shipping_total', 'shipping_tax', 'cart_tax','total','total_tax','prices_include_tax', 'customer_note', 'transaction_id', 'status', 'line_items', 'billing', 'shipping', 'pdf_invoice_url', 'pdf_invoice_url_rtl' );
-		$item_whitelist_fields = array( 'id', 'sku', 'quantity' );
-		$order_whitelist_flipped = array_flip($order_whitelist_fields);
-		$item_whitelist_flipped = array_flip($item_whitelist_fields);
-		$new_order = array();
+		$result                  = $controller->get_item( $request );
+		$order                   = isset( $result->data ) ? $result->data : array();
+		$order_whitelist_fields  = array( 'id', 'parent_id', 'number', 'order_key', 'created_via', 'currency', 'discount_total', 'discount_tax', 'shipping_total', 'shipping_tax', 'cart_tax', 'total', 'total_tax', 'prices_include_tax', 'customer_note', 'transaction_id', 'status', 'line_items', 'billing', 'shipping', 'pdf_invoice_url', 'pdf_invoice_url_rtl' );
+		$item_whitelist_fields   = array( 'id', 'sku', 'quantity' );
+		$order_whitelist_flipped = array_flip( $order_whitelist_fields );
+		$item_whitelist_flipped  = array_flip( $item_whitelist_fields );
+		$new_order               = array();
 
 		$search_order  = array( 'line_items', 'pdf_invoice_url', 'pdf_invoice_url_rtl', 'customer_note' );
 		$replace_order = array( 'items', 'invoice_url', 'invoice_url_rtl', 'notes' );
 		foreach ( $order as $key => $value ) {
-			if (isset($order_whitelist_flipped[$key])){
-				$key = str_replace( $search_order, $replace_order, $key );
+			if ( isset( $order_whitelist_flipped[ $key ] ) ) {
+				$key               = str_replace( $search_order, $replace_order, $key );
 				$new_order[ $key ] = $value;
 			}
 		}
@@ -226,55 +226,55 @@ class Knawat_Dropshipping_WC_MP_Orders {
 
 		if ( isset( $new_order['items'] ) && ! empty( $new_order['items'] ) ) {
 			foreach ( $new_order['items'] as $itemkey => $item ) {
-				if( ! $this->is_knawat_product_variation( $new_order['items'][ $itemkey ]['product_id'] ) ){
+				if ( ! $this->is_knawat_product_variation( $new_order['items'][ $itemkey ]['product_id'] ) ) {
 					unset( $new_order['items'][ $itemkey ] );
 					continue;
 				}
 				$product_id = $new_order['items'][ $itemkey ]['id'];
 				foreach ( $item as $ikey => $ivalue ) {
-					if ( ! isset( $item_whitelist_flipped[$ikey] ) ) {
+					if ( ! isset( $item_whitelist_flipped[ $ikey ] ) ) {
 						unset( $new_order['items'][ $itemkey ][ $ikey ] );
 					}
 				}
 			}
 		}
 		// Fix array for json_encode.
-		$items = $new_order['items'];
-		$new_order['items'] = [];
-		foreach ($items as $key => $value) {
+		$items              = $new_order['items'];
+		$new_order['items'] = array();
+		foreach ( $items as $key => $value ) {
 			$new_order['items'][] = $value;
 		}
 
 		// Set Payment Method.
-		$payment_method = isset( $order['payment_method'] ) ? sanitize_text_field( $order['payment_method'] ) : '';
+		$payment_method       = isset( $order['payment_method'] ) ? sanitize_text_field( $order['payment_method'] ) : '';
 		$payment_method_title = isset( $order['payment_method_title'] ) ? sanitize_text_field( $order['payment_method_title'] ) : '';
-		if( $payment_method != ''){
-			if( $payment_method_title != ''){
-				$payment_method .= ' ('.$payment_method_title.')';
+		if ( $payment_method != '' ) {
+			if ( $payment_method_title != '' ) {
+				$payment_method .= ' (' . $payment_method_title . ')';
 			}
-		} elseif( $payment_method_title != ''){
+		} elseif ( $payment_method_title != '' ) {
 			$payment_method = $payment_method_title;
 		}
-		if( empty( $payment_method ) ){
-			$payment_method = 'default '.__('(Knawat Payment Method)', 'dropshipping-woocommerce' );
+		if ( empty( $payment_method ) ) {
+			$payment_method = 'default ' . __( '(Knawat Payment Method)', 'dropshipping-woocommerce' );
 		}
 
 		$new_order['payment_method'] = $payment_method;
 
 		// If shipping is not available take billing address
-		if( !isset( $new_order['shipping']['first_name'] ) || empty( $new_order['shipping']['first_name'] ) ){
+		if ( ! isset( $new_order['shipping']['first_name'] ) || empty( $new_order['shipping']['first_name'] ) ) {
 			$shipping_fields = array( 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'country', 'email', 'phone' );
-			foreach ($shipping_fields as $shipping_field) {
-				if( !isset( $new_order['shipping'][$shipping_field] ) || empty( $new_order['shipping'][$shipping_field] ) ){
-					$new_order['shipping'][$shipping_field] = $new_order['billing'][$shipping_field];
+			foreach ( $shipping_fields as $shipping_field ) {
+				if ( ! isset( $new_order['shipping'][ $shipping_field ] ) || empty( $new_order['shipping'][ $shipping_field ] ) ) {
+					$new_order['shipping'][ $shipping_field ] = $new_order['billing'][ $shipping_field ];
 				}
 			}
 		}
 
 		// If city is not available add state value
-		if (empty($new_order['shipping']['city'])) {
-            $new_order['shipping']['city'] = $new_order['shipping']['state'];
-        }
+		if ( empty( $new_order['shipping']['city'] ) ) {
+			$new_order['shipping']['city'] = $new_order['shipping']['state'];
+		}
 
 		// Replace OrderKey with order Number for better readability in Odoo & AgileCRM
 		$new_order['order_key'] = $new_order['number'];
@@ -350,7 +350,8 @@ class Knawat_Dropshipping_WC_MP_Orders {
 
 			$sync_fail = $this->get_knawat_failed_orders();
 			if ( ! empty( $sync_fail ) ) {
-				$knawatdswc_warnings[] = sprintf( '%s <a href="' . wp_nonce_url( admin_url( 'admin-post.php?action=knawatds_order_fail_sync' ), 'knawatds_order_fail_sync_action', 'order_fail_nonce' ) . '">%s</a>',
+				$knawatdswc_warnings[] = sprintf(
+					'%s <a href="' . wp_nonce_url( admin_url( 'admin-post.php?action=knawatds_order_fail_sync' ), 'knawatds_order_fail_sync_action', 'order_fail_nonce' ) . '">%s</a>',
 					__( 'Some orders are not sycronized with knawat.com. Please', 'dropshipping-woocommerce' ),
 					__( 'synchronize it now', 'dropshipping-woocommerce' )
 				);
@@ -408,10 +409,10 @@ class Knawat_Dropshipping_WC_MP_Orders {
 	 * @since    2.0.0
 	 */
 	public function knawat_pull_knawat_order_information( $knawat_order_id, $order_id ) {
-		if( $knawat_order_id != ''){
-			$mp_api = new Knawat_Dropshipping_Woocommerce_API();
-			$knawat_order = $mp_api->get( 'orders/'.$knawat_order_id );
-			if( isset( $knawat_order->id ) && $knawat_order->id == $knawat_order_id ){
+		if ( $knawat_order_id != '' ) {
+			$mp_api       = new Knawat_Dropshipping_Woocommerce_API();
+			$knawat_order = $mp_api->get( 'orders/' . $knawat_order_id );
+			if ( isset( $knawat_order->id ) && $knawat_order->id == $knawat_order_id ) {
 				// Update Knawat Data here.
 				$this->knawat_update_knawat_order( $knawat_order, $order_id );
 			}
@@ -424,12 +425,12 @@ class Knawat_Dropshipping_WC_MP_Orders {
 	 * @since    2.0.0
 	 */
 	public function knawat_pull_knawat_orders( $item ) {
-		if( empty( $item ) ){
+		if ( empty( $item ) ) {
 			return false;
 		}
-		$mp_api = new Knawat_Dropshipping_Woocommerce_API();
-		$knawat_orders = $mp_api->get( 'orders/?page='.$item['page'].'&limit='.$item['limit'] );
-		if( empty( $knawat_orders ) ){
+		$mp_api        = new Knawat_Dropshipping_Woocommerce_API();
+		$knawat_orders = $mp_api->get( 'orders/?page=' . $item['page'] . '&limit=' . $item['limit'] );
+		if ( empty( $knawat_orders ) ) {
 			return false;
 		}
 		// Pull orders and save it here.
@@ -438,11 +439,11 @@ class Knawat_Dropshipping_WC_MP_Orders {
 		}
 
 		$item['orders_total'] = count( $knawat_orders );
-		if( $item['orders_total'] < $item['limit'] ){
+		if ( $item['orders_total'] < $item['limit'] ) {
 			$item['is_complete'] = true;
 			return $item;
-		}else{
-			$item['page'] = $item['page'] + 1;
+		} else {
+			$item['page']        = $item['page'] + 1;
 			$item['is_complete'] = false;
 			return $item;
 		}
@@ -455,21 +456,27 @@ class Knawat_Dropshipping_WC_MP_Orders {
 	 * @since    2.0.0
 	 */
 	public function knawat_update_knawat_order( $knawat_order, $order_id = 0 ) {
-		$knawat_status = isset( $knawat_order->knawat_order_status ) ? sanitize_text_field( $knawat_order->knawat_order_status ) : '';
-		$shipment_provider_name = isset( $knawat_order->shipment_provider_name ) ? sanitize_text_field( $knawat_order->shipment_provider_name ) : '';
+		$knawat_status            = isset( $knawat_order->knawat_order_status ) ? sanitize_text_field( $knawat_order->knawat_order_status ) : '';
+		$shipment_provider_name   = isset( $knawat_order->shipment_provider_name ) ? sanitize_text_field( $knawat_order->shipment_provider_name ) : '';
 		$shipment_tracking_number = isset( $knawat_order->shipment_tracking_number ) ? sanitize_text_field( $knawat_order->shipment_tracking_number ) : '';
 
-		if( $knawat_status !== '' || $shipment_provider_name !== '' || $shipment_tracking_number !== ''){
-			if( !empty($knawat_order) ){
-				if( $order_id == 0 ){
+		if ( $knawat_status !== '' || $shipment_provider_name !== '' || $shipment_tracking_number !== '' ) {
+			if ( ! empty( $knawat_order ) ) {
+				if ( $order_id == 0 ) {
 					// Get order Id based on orderID.
-					$orders = wc_get_orders( array( 'knawat_order_id' => $knawat_order->id, 'limit' => 1, 'return' => 'ids' ) );
-					if( !empty($orders) ){
+					$orders = wc_get_orders(
+						array(
+							'knawat_order_id' => $knawat_order->id,
+							'limit'           => 1,
+							'return'          => 'ids',
+						)
+					);
+					if ( ! empty( $orders ) ) {
 						$order_id = $orders[0];
 					}
 				}
 				$order = wc_get_order( $order_id );
-				if(!empty($order)){
+				if ( ! empty( $order ) ) {
 					$order->update_meta_data( '_knawat_order_status', $knawat_status );
 					$order->update_meta_data( '_shipment_provider_name', $shipment_provider_name );
 					$order->update_meta_data( '_shipment_tracking_number', $shipment_tracking_number );
@@ -479,15 +486,15 @@ class Knawat_Dropshipping_WC_MP_Orders {
 		}
 	}
 
-	public function is_knawat_product_variation( $product_id ){
-		$product = wc_get_product((int)$product_id);
-		if(!empty($product)){
+	public function is_knawat_product_variation( $product_id ) {
+		$product = wc_get_product( (int) $product_id );
+		if ( ! empty( $product ) ) {
 			$product_id = $product->get_parent_id();
-			if( $product_id === 0){
+			if ( $product_id === 0 ) {
 				$product_id = $product->get_id();
 			}
 			$dropshipping = get_post_meta( $product_id, 'dropshipping', true );
-			if( $dropshipping == 'knawat' ){
+			if ( $dropshipping == 'knawat' ) {
 				return true;
 			}
 		}
@@ -501,15 +508,18 @@ class Knawat_Dropshipping_WC_MP_Orders {
 	 * @since 2.0.2
 	 * @return void
 	 */
-	public function knawatds_order_syncronize( $order_id ){
+	public function knawatds_order_syncronize( $order_id ) {
 		// Only during the first execution of the action woocommerce_update_order
-		if( did_action( 'woocommerce_update_order' ) === 1 ) {
-			if ( ! class_exists( 'Knawat_Dropshipping_WC_Async_Request', false ) || empty($order_id)) {
+		if ( did_action( 'woocommerce_update_order' ) === 1 ) {
+			if ( ! class_exists( 'Knawat_Dropshipping_WC_Async_Request', false ) || empty( $order_id ) ) {
 				return;
 			}
 
 			// Async Push Order.
-			$data = array( 'operation' => 'push_order', 'order_id'=> $order_id );
+			$data          = array(
+				'operation' => 'push_order',
+				'order_id'  => $order_id,
+			);
 			$async_request = new Knawat_Dropshipping_WC_Async_Request();
 			$async_request->data( $data );
 			$async_request->dispatch();

@@ -89,14 +89,14 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 		public function import() {
 
-			$api_url = '';
+			$api_url          = '';
 			$this->start_time = time();
 			$data             = array(
 				'imported' => array(),
 				'failed'   => array(),
 				'updated'  => array(),
 			);
-			
+
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
@@ -110,7 +110,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				case 'single':
 					$sku = sanitize_text_field( $this->params['sku'] );
 					if ( empty( $sku ) ) {
-						return array( 'status' => 'fail', 'message' => __( 'Please provide product sku.', 'dropshipping-woocommerce' ) );
+						return array(
+							'status'  => 'fail',
+							'message' => __( 'Please provide product sku.', 'dropshipping-woocommerce' ),
+						);
 					}
 					$this->data = $this->mp_api->get( 'catalog/products/' . $sku );
 					break;
@@ -122,12 +125,16 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			if ( is_wp_error( $this->data ) ) {
 				knawat_dropshipwc_logger( '[GET_PRODUCTS_FROM_API_ERROR] ' . $api_url . ' ' . $this->data->get_error_message() );
 
-				return array( 'status' => 'fail', 'message' => $this->data->get_error_message() );
-			} else if ( ! isset( $this->data->products ) && ! ( 'single' === $this->import_type && isset( $this->data->product ) ) ) {
+				return array(
+					'status'  => 'fail',
+					'message' => $this->data->get_error_message(),
+				);
+			} elseif ( ! isset( $this->data->products ) && ! ( 'single' === $this->import_type && isset( $this->data->product ) ) ) {
 				knawat_dropshipwc_logger( '[GET_PRODUCTS_FROM_API_ERROR] ' . $api_url . ' ' . print_r( $this->data, true ) );
 
-				return array( 'status'  => 'fail',
-				              'message' => __( 'Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce' )
+				return array(
+					'status'  => 'fail',
+					'message' => __( 'Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce' ),
 				);
 			}
 
@@ -137,7 +144,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				if ( isset( $response->product->status ) && 'failed' == $response->product->status ) {
 					$error_message = isset( $response->product->message ) ? $response->product->message : __( 'Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce' );
 
-					return array( 'status' => 'fail', 'message' => $error_message );
+					return array(
+						'status'  => 'fail',
+						'message' => $error_message,
+					);
 				}
 				$products[] = $response->product;
 			} else {
@@ -147,8 +157,9 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			// Handle errors
 			if ( isset( $products->code ) || ! is_array( $products ) ) {
-				return array( 'status'  => 'fail',
-				              'message' => __( 'Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce' )
+				return array(
+					'status'  => 'fail',
+					'message' => __( 'Something went wrong during get data from Knawat MP API. Please try again later.', 'dropshipping-woocommerce' ),
 				);
 			}
 
@@ -180,7 +191,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 				if ( isset( $formated_data['id'] ) && ! $this->params['force_update'] ) {
 					// Fake it
-					$result = array( 'id' => $formated_data['id'], 'updated' => true );
+					$result = array(
+						'id'      => $formated_data['id'],
+						'updated' => true,
+					);
 					if ( isset( $formated_data['raw_attributes'] ) && ! empty( $formated_data['raw_attributes'] ) ) {
 						foreach ( $formated_data['raw_attributes'] as $attkey => $attvalue ) {
 							if ( ! empty( $attvalue['taxonomy'] ) ) {
@@ -243,7 +257,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				}
 			}
 
-			/*if( $this->params['products_total'] === 0 ){
+			/*
+			if( $this->params['products_total'] === 0 ){
 				$this->params['is_complete'] = true;
 			}elseif( ( $this->params['products_total'] < $this->params['limit'] ) && ( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ) ){
 				$this->params['is_complete'] = true;
@@ -282,7 +297,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			} else {
 				$new_product['sku'] = $product->sku;
 			}
-			
+
 			if ( ! $product_id || $this->params['force_update'] ) {
 
 				if ( isset( $product->variations ) && ! empty( $product->variations ) ) {
@@ -313,19 +328,28 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					}
 				}
 
-				//$new_product['short_description'] = $new_product['description'];
+				// $new_product['short_description'] = $new_product['description'];
 				$new_product['short_description'] = '';
 
 				// Added Meta Data.
 				$new_product['meta_data']   = array();
-				$new_product['meta_data'][] = array( 'key' => 'dropshipping', 'value' => 'knawat' );
+				$new_product['meta_data'][] = array(
+					'key'   => 'dropshipping',
+					'value' => 'knawat',
+				);
 
 				// Formatting Image Data
 				if ( $active_plugins['featured-image-by-url'] && isset( $product->images ) && ! empty( $product->images ) ) {
 					$images                     = $product->images;
-					$new_product['meta_data'][] = array( 'key' => '_knawatfibu_url', 'value' => array_shift( $images ) );
+					$new_product['meta_data'][] = array(
+						'key'   => '_knawatfibu_url',
+						'value' => array_shift( $images ),
+					);
 					if ( ! empty( $images ) ) {
-						$new_product['meta_data'][] = array( 'key' => '_knawatfibu_wcgallary', 'value' => implode( ',', $images ) );
+						$new_product['meta_data'][] = array(
+							'key'   => '_knawatfibu_wcgallary',
+							'value' => implode( ',', $images ),
+						);
 					}
 				} elseif ( isset( $product->images ) && ! empty( $product->images ) ) {
 					$images                      = $product->images;
@@ -364,10 +388,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			}
 			$knawat_options      = knawat_dropshipwc_get_options();
 			$categorize_products = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
-			$tag 				 = '';
+			$tag                 = '';
 
-			if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) )  {
-				
+			if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
+
 				foreach ( $product->categories as $key => $category ) {
 					foreach ( $active_langs as $active_lang ) {
 						if ( isset( $category->name->$active_lang ) ) {
@@ -378,44 +402,44 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						$tag .= '[:]';
 					}
 					global $wpdb;
-					
-					$parentId = isset($category->parentId) ? $category->parentId : '';
+
+					$parentId = isset( $category->parentId ) ? $category->parentId : '';
 
 					if ( $categorize_products == 'yes_as_tags' ) {
-						$tag_ids[] 		= $this->set_product_taxonomy( $tag , 'product_tag' , $category->id , $parentId );
+						$tag_ids[] = $this->set_product_taxonomy( $tag, 'product_tag', $category->id, $parentId );
 					}
 
 					if ( $categorize_products == 'yes' ) {
-						$category_ids[] = $this->set_product_taxonomy( $tag , 'product_cat' , $category->id , $parentId );
+						$category_ids[] = $this->set_product_taxonomy( $tag, 'product_cat', $category->id, $parentId );
 					}
 
 					$tag = '';
 				}
-			
+
 				$new_product['category_ids'] = $category_ids;
-				$new_product['tag_ids']		 = $tag_ids;
+				$new_product['tag_ids']      = $tag_ids;
 
 			} else {
 				foreach ( $product->categories as $category ) {
 					$tag .= isset( $category->name->$default_lang ) ? sanitize_text_field( $category->name->$default_lang ) : '';
 
-					$parentId = isset($category->parentId) ? $category->parentId : '';
+					$parentId = isset( $category->parentId ) ? $category->parentId : '';
 
 					if ( $categorize_products == 'yes_as_tags' ) {
-						$tag_ids[] = $this->set_product_taxonomy( $tag , 'product_tag' , $category->id , $parentId );
+						$tag_ids[] = $this->set_product_taxonomy( $tag, 'product_tag', $category->id, $parentId );
 					}
 
 					if ( $categorize_products == 'yes' ) {
-						$category_ids[] = $this->set_product_taxonomy( $tag , 'product_cat' , $category->id , $parentId );
+						$category_ids[] = $this->set_product_taxonomy( $tag, 'product_cat', $category->id, $parentId );
 					}
 
 					$tag = '';
 				}
 
 				$new_product['category_ids'] = $category_ids;
-				$new_product['tag_ids']		 = $tag_ids;
+				$new_product['tag_ids']      = $tag_ids;
 			}
-			
+
 			$variations     = array();
 			$var_attributes = array();
 			if ( isset( $product->variations ) && ! empty( $product->variations ) ) {
@@ -426,7 +450,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						$temp_variant['id'] = $varient_id;
 						// Update name as its name is added as null in the first time - related to migration task
 						if ( empty( $temp_variant['name'] ) && empty( $new_product['name'] ) ) {
-							if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) )  {
+							if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
 
 								$new_product['name'] = '';
 
@@ -444,7 +468,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					} else {
 						$temp_variant['sku']  = $variation->sku;
 						$temp_variant['name'] = $new_product['name'];
-						//handeled test case where variation =1 and parent sku != child sku
+						// handeled test case where variation =1 and parent sku != child sku
 						if ( count( $product->variations ) == 1 && $temp_variant['sku'] == $product->sku ) {
 							$temp_variant['type'] = 'simple';
 						} else {
@@ -465,7 +489,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					}
 					$temp_variant['manage_stock']   = true;
 					$temp_variant['stock_quantity'] = $this->parse_stock_quantity_field( $variation->quantity );
-					$temp_variant['meta_data'][]    = array( 'key' => '_knawat_cost', 'value' => wc_format_decimal( $variation->cost_price ) );
+					$temp_variant['meta_data'][]    = array(
+						'key'   => '_knawat_cost',
+						'value' => wc_format_decimal( $variation->cost_price ),
+					);
 
 					if ( $varient_id && $varient_id > 0 && ! $this->params['force_update'] ) {
 						// Update Data for existing Variend Here.
@@ -527,7 +554,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 		 * Set variation data.
 		 *
 		 * @param WC_Product $variation Product instance.
-		 * @param array $data Item data.
+		 * @param array      $data Item data.
 		 *
 		 * @return WC_Product|WP_Error
 		 * @throws Exception If data cannot be set.
@@ -779,17 +806,17 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 		/**
 		 * Set product category and tags.
-		 * 
-		 * @param string $taxonomy_type product taxonomy type 
-		 * @param string $tag product taxonomy name 
-		 * @param int $tax_id use for as tax id
-		 * @param int $parent_id use for as parent id
-		 * 
-		 * @return string 
+		 *
+		 * @param string $taxonomy_type product taxonomy type
+		 * @param string $tag product taxonomy name
+		 * @param int    $tax_id use for as tax id
+		 * @param int    $parent_id use for as parent id
+		 *
+		 * @return string
 		 * @since 2.0.7
 		 */
 
-		public function set_product_taxonomy( $tag , $taxonomy_type , $tax_id , $parent_id ){
+		public function set_product_taxonomy( $tag, $taxonomy_type, $tax_id, $parent_id ) {
 
 			$product_taxonomy = term_exists( sanitize_title( $tag ), $taxonomy_type );
 
@@ -797,21 +824,25 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 				$new_id = wp_insert_term( $tag, $taxonomy_type );
 
-				update_term_meta($new_id['term_id'], 'tax_api_id' , $tax_id);
+				update_term_meta( $new_id['term_id'], 'tax_api_id', $tax_id );
 
-				if(!empty($parent_id)){
+				if ( ! empty( $parent_id ) ) {
 					global $wpdb;
-					$parentsID = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}termmeta WHERE `meta_key` LIKE 'tax_api_id' AND `meta_value` = " . $parent_id);
+					$parentsID = $wpdb->get_row( "SELECT * FROM {$wpdb->prefix}termmeta WHERE `meta_key` LIKE 'tax_api_id' AND `meta_value` = " . $parent_id );
 
-					if(!empty($parentsID->term_id)){
-						$update = wp_update_term($new_id['term_id'], $taxonomy_type , array(
-							'parent' => $parentsID->term_id,
-						));
+					if ( ! empty( $parentsID->term_id ) ) {
+						$update = wp_update_term(
+							$new_id['term_id'],
+							$taxonomy_type,
+							array(
+								'parent' => $parentsID->term_id,
+							)
+						);
 					}
 				}
 			}
 
-			$taxonomy_ids = !empty($product_taxonomy['term_id']) ? $product_taxonomy['term_id'] : $new_id['term_id'];
+			$taxonomy_ids = ! empty( $product_taxonomy['term_id'] ) ? $product_taxonomy['term_id'] : $new_id['term_id'];
 
 			return $taxonomy_ids;
 		}
