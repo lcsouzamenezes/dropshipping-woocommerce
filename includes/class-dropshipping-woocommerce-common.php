@@ -70,6 +70,23 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	}
 
 	/**
+	 * Check is qTranslate X Activate or not.
+	 *
+	 * @return   boolean
+	 * @since    2.2.0
+	 */
+	public function knawat_dropshipwc_is_qTranslatex_activated() {
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+		if ( is_plugin_active( 'qtranslate-x/qtranslate.php' )) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
 	 * Check order contains knawat products or not.
 	 *
 	 * @return     boolean
@@ -573,11 +590,17 @@ function knawat_dropshipwc_get_activated_plugins() {
 	$active_plugins = array(
 		'featured-image-by-url'         => false,
 		'woocommerce-currency-switcher' => false,
+		'qtranslate-x'                  => false,
 		'qtranslate-xt'                 => false,
 	);
 
 	$blog_plugins = get_option( 'active_plugins', array() );
 	$site_plugins = is_multisite() ? (array) maybe_unserialize( get_site_option( 'active_sitewide_plugins' ) ) : array();
+
+	// Check if qTranslate X is activated
+	if ( in_array( 'qtranslate-x/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-x/qtranslate.php'] ) ) {
+		$active_plugins['qtranslate-x'] = true;
+	}
 
 	// Check if qTranslate XT is activated
 	if ( in_array( 'qtranslate-xt/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-xt/qtranslate.php'] ) ) {

@@ -43,6 +43,8 @@ function knawat_dropshipwc_register_required_plugins() {
 		)
 	);
 
+	
+	
 	if( !$knawat_dropshipwc->common->knawat_dropshipwc_is_woomulti_currency_activated() ){
 		$plugins[] = array(
 			'name'         	=> esc_html__( 'WooCommerce Currency Switcher', 'dropshipping-woocommerce' ),
@@ -52,13 +54,16 @@ function knawat_dropshipwc_register_required_plugins() {
 		);	
 	}
 	
-	$plugins[] = array( //add q-translate-xt in recommended plugins
-		'name'           => esc_html__( 'qTranslate XT', 'dropshipping-woocommerce' ),
-		'slug'           => 'qtranslate-xt',
-		'required'       => false,
-		'source'         => 'https://github.com/qtranslate/qtranslate-xt/archive/master.zip',
-		'recommended_by' => 'knawat'
-	);
+	if( !$knawat_dropshipwc->common->knawat_dropshipwc_is_qTranslatex_activated() ){
+	
+		$plugins[] = array( //add q-translate-xt in recommended plugins
+			'name'           => esc_html__( 'qTranslate XT', 'dropshipping-woocommerce' ),
+			'slug'           => 'qtranslate-xt',
+			'required'       => false,
+			'source'         => 'https://github.com/qtranslate/qtranslate-xt/archive/master.zip',
+			'recommended_by' => 'knawat'
+		);
+	}
 
 	/*
 	 * Array of configuration settings. Amend each line as needed.
