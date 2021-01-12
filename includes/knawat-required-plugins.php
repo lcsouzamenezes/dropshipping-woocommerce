@@ -53,9 +53,8 @@ function knawat_dropshipwc_register_required_plugins() {
 			'recommended_by'=> 'knawat'
 		);	
 	}
-	
+
 	if( !$knawat_dropshipwc->common->knawat_dropshipwc_is_qTranslatex_activated() ){
-	
 		$plugins[] = array( //add q-translate-xt in recommended plugins
 			'name'           => esc_html__( 'qTranslate XT', 'dropshipping-woocommerce' ),
 			'slug'           => 'qtranslate-xt',

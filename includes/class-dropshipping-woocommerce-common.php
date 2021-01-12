@@ -79,11 +79,11 @@ class Knawat_Dropshipping_Woocommerce_Common {
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		}
+		
 		if ( is_plugin_active( 'qtranslate-x/qtranslate.php' )) {
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 	}
 
 	/**
