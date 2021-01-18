@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-01-12T11:00:35+00:00\n"
+"POT-Creation-Date: 2021-01-12T12:22:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: dropshipping-woocommerce\n"
@@ -239,23 +239,23 @@ msgstr ""
 msgid "Access token not found for API. Please make sure your store is connected to knawat.com"
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:128
+#: includes/class-dropshipping-woocommerce-common.php:145
 msgid "Another product import is in process already."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:186
+#: includes/class-dropshipping-woocommerce-common.php:203
 msgid "Settings has been saved successfully."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:326
+#: includes/class-dropshipping-woocommerce-common.php:343
 msgid "Your connection with knawat.com has been disconnected. Please check and verify your knawat consumer keys from"
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:327
+#: includes/class-dropshipping-woocommerce-common.php:344
 msgid "<strong>Knawat Dropshipping</strong> > <strong>Settings</strong>."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:454
+#: includes/class-dropshipping-woocommerce-common.php:471
 msgid "The product will be imported again from Knawat, if you don't want this product, then delete it permanently."
 msgstr ""
 
@@ -527,27 +527,23 @@ msgstr ""
 msgid "Featured Image by URL"
 msgstr ""
 
-#: includes/knawat-required-plugins.php:48
+#: includes/knawat-required-plugins.php:50
 msgid "WooCommerce Currency Switcher"
 msgstr ""
 
-#: includes/knawat-required-plugins.php:56
-msgid "qTranslate X"
-msgstr ""
-
-#: includes/knawat-required-plugins.php:63
+#: includes/knawat-required-plugins.php:59
 msgid "qTranslate XT"
 msgstr ""
 
 #. translators: 1: plugin name(s).
-#: includes/knawat-required-plugins.php:92
+#: includes/knawat-required-plugins.php:89
 msgid "Knawat Dropshipping requires the following plugin: %1$s."
 msgid_plural "Knawat Dropshipping requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: includes/knawat-required-plugins.php:98
+#: includes/knawat-required-plugins.php:95
 msgid "Knawat Dropshipping recommends the following plugin: %1$s."
 msgid_plural "Knawat Dropshipping recommends the following plugins: %1$s."
 msgstr[0] ""
