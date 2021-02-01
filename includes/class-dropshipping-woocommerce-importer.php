@@ -97,6 +97,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				'updated'  => array(),
 			);
 			
+			$wpml_product_translation = new Knawat_Dropshipping_wpml_Woocommerce_Importer();
+
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
@@ -177,6 +179,12 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						$total_qty += isset( $vars['stock_quantity'] ) ? $vars['stock_quantity'] : 0;
 					}
 				}
+
+				/**
+				 * Pass Product Data to Knawat WooCommerce DropShipping WPML Support Plugin
+				 */
+				$product_id = $formated_data['id'];
+				do_action('wpml_import_translation_product',$product_id,$product,$formated_data);
 
 				if ( isset( $formated_data['id'] ) && ! $this->params['force_update'] ) {
 					// Fake it
