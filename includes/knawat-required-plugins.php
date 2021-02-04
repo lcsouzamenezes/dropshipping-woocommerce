@@ -24,34 +24,32 @@ function knawat_dropshipwc_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'         	=> esc_html__( 'WooCoomerce', 'dropshipping-woocommerce' ),
-			'slug'          => 'woocommerce',
-			'required'     	=> true,
-			'recommended_by'=> 'knawat'
+			'name'           => esc_html__( 'WooCoomerce', 'dropshipping-woocommerce' ),
+			'slug'           => 'woocommerce',
+			'required'       => true,
+			'recommended_by' => 'knawat',
 		),
 		array(
-			'name'         	=> esc_html__( 'WooCommerce PDF Invoices & Packing Slips', 'dropshipping-woocommerce' ),
-			'slug'         	=> 'woocommerce-pdf-invoices-packing-slips',
-			'required'     	=> true,
-			'recommended_by'=> 'knawat'
+			'name'           => esc_html__( 'WooCommerce PDF Invoices & Packing Slips', 'dropshipping-woocommerce' ),
+			'slug'           => 'woocommerce-pdf-invoices-packing-slips',
+			'required'       => true,
+			'recommended_by' => 'knawat',
 		),
 		array(
-			'name'         	=> esc_html__( 'Featured Image by URL', 'dropshipping-woocommerce' ),
-			'slug'         	=> 'featured-image-by-url',
-			'required'     	=> false,
-			'recommended_by'=> 'knawat'
-		)
+			'name'           => esc_html__( 'Featured Image by URL', 'dropshipping-woocommerce' ),
+			'slug'           => 'featured-image-by-url',
+			'required'       => false,
+			'recommended_by' => 'knawat',
+		),
 	);
 
-	
-	
-	if( !$knawat_dropshipwc->common->knawat_dropshipwc_is_woomulti_currency_activated() ){
+	if ( ! $knawat_dropshipwc->common->knawat_dropshipwc_is_woomulti_currency_activated() ) {
 		$plugins[] = array(
-			'name'         	=> esc_html__( 'WooCommerce Currency Switcher', 'dropshipping-woocommerce' ),
-			'slug'         	=> 'woocommerce-currency-switcher',
-			'required'     	=> false,
-			'recommended_by'=> 'knawat'
-		);	
+			'name'           => esc_html__( 'WooCommerce Currency Switcher', 'dropshipping-woocommerce' ),
+			'slug'           => 'woocommerce-currency-switcher',
+			'required'       => false,
+			'recommended_by' => 'knawat',
+		);
 	}
 
 	if( !$knawat_dropshipwc->common->knawat_dropshipwc_is_qTranslatex_activated() ){
@@ -85,19 +83,19 @@ function knawat_dropshipwc_register_required_plugins() {
 		'message'      => '',                      // Message to output right before the plugins table.
 
 		'strings'      => array(
-			
-			'notice_can_install_required'     => _n_noop(
+
+			'notice_can_install_required'    => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'Knawat Dropshipping requires the following plugin: %1$s.',
 				'Knawat Dropshipping requires the following plugins: %1$s.',
 				'dropshipping-woocommerce'
 			),
-			'notice_can_install_recommended'  => _n_noop(
+			'notice_can_install_recommended' => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'Knawat Dropshipping recommends the following plugin: %1$s.',
 				'Knawat Dropshipping recommends the following plugins: %1$s.',
 				'dropshipping-woocommerce'
-			)
+			),
 		),
 	);
 
