@@ -84,7 +84,6 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			$this->import_type	= $import_type;
 			$this->params		= wp_parse_args( $params, $default_args );
 			$this->mp_api		= new Knawat_Dropshipping_Woocommerce_API();
-			$wpml_prod_trans	= new Knawat_Dropshipping_wpml_Woocommerce_Importer();
 		}
 
 		public function import() {
