@@ -1,6 +1,6 @@
 <?php
 /**
- * Knawat_Merlin 
+ * Knawat_Merlin
  * Better WordPress Setup Wizard
  *
  * The following code is a derivative work from the
@@ -51,7 +51,7 @@ class Knawat_Merlin {
 	 */
 	protected $tgmpa;
 
-	
+
 	/**
 	 * The text string array.
 	 *
@@ -104,26 +104,30 @@ class Knawat_Merlin {
 
 		$this->version();
 
-		$config = wp_parse_args( $config, array(
-			'directory' => '',
-			'merlin_url'=> 'merlin',
-			'dev_mode' 	=> '',
-			'plugin'	=>	__( 'Knawat', 'dropshipping-woocommerce' )
-		) );
+		$config = wp_parse_args(
+			$config,
+			array(
+				'directory'  => '',
+				'merlin_url' => 'merlin',
+				'dev_mode'   => '',
+				'plugin'     => __( 'Knawat', 'dropshipping-woocommerce' ),
+			)
+		);
 
 		// Set config arguments.
-		$this->directory 			= $config['directory'];		
-		$this->merlin_url			= $config['merlin_url'];
-		$this->dev_mode 			= $config['dev_mode'];
-		$this->plugin 				= $config['plugin'];
+		$this->directory  = $config['directory'];
+		$this->merlin_url = $config['merlin_url'];
+		$this->dev_mode   = $config['dev_mode'];
+		$this->plugin     = $config['plugin'];
 
-		$this->slug  				= 'dropshipping-woocommerce';
+		$this->slug = 'dropshipping-woocommerce';
 
 		// Strings passed in from the config file.
-		$this->strings 				= $strings;
+		$this->strings = $strings;
 
 		// Is Dev Mode turned on?
-		/*if ( true != $this->dev_mode ) {
+		/*
+		if ( true != $this->dev_mode ) {
 
 			// Has this plugin been setup yet?
 			$already_setup 			= get_option( 'merlin_' . $this->slug . '_completed' );
@@ -168,7 +172,7 @@ class Knawat_Merlin {
 
 		delete_transient( $this->slug . '_merlin_redirect' );
 
-		wp_safe_redirect( admin_url( 'admin.php?page='.$this->merlin_url ) );
+		wp_safe_redirect( admin_url( 'admin.php?page=' . $this->merlin_url ) );
 
 		exit;
 	}
@@ -197,8 +201,8 @@ class Knawat_Merlin {
 	 * After a theme update, we clear the slug_merlin_completed option.
 	 * This prompts the user to visit the update page again.
 	 *
-	 * @param 		string $return To end or not.
-	 * @param 		string $plugin  The current plugin.
+	 * @param       string $return To end or not.
+	 * @param       string $plugin  The current plugin.
 	 */
 	function post_install_check( $return, $plugin ) {
 
@@ -218,8 +222,13 @@ class Knawat_Merlin {
 		// Strings passed in from the config file.
 		$strings = $this->strings;
 
-		$this->hook_suffix = add_submenu_page( 'knawat_dropship',
-			esc_html( $strings['admin-menu'] ), esc_html( $strings['admin-menu'] ), 'manage_options', $this->merlin_url, array( $this, 'admin_page' )
+		$this->hook_suffix = add_submenu_page(
+			'knawat_dropship',
+			esc_html( $strings['admin-menu'] ),
+			esc_html( $strings['admin-menu'] ),
+			'manage_options',
+			$this->merlin_url,
+			array( $this, 'admin_page' )
 		);
 	}
 
@@ -243,33 +252,41 @@ class Knawat_Merlin {
 		$this->step = isset( $_GET['step'] ) ? sanitize_key( $_GET['step'] ) : current( array_keys( $this->steps ) );
 
 		// Use minified libraries if dev mode is turned on.
-		//$suffix = ( ( true == $this->dev_mode ) ) ? '' : '.min';
+		// $suffix = ( ( true == $this->dev_mode ) ) ? '' : '.min';
 		$suffix = '';
 
 		// Enqueue styles.
-		wp_enqueue_style( 'knawat-merlin', KNAWAT_DROPWC_PLUGIN_URL .'includes/lib/'. $this->directory . '/assets/css/knawat-merlin' . $suffix . '.css', array( 'wp-admin' ), MERLIN_VERSION );
+		wp_enqueue_style( 'knawat-merlin', KNAWAT_DROPWC_PLUGIN_URL . 'includes/lib/' . $this->directory . '/assets/css/knawat-merlin' . $suffix . '.css', array( 'wp-admin' ), MERLIN_VERSION );
 
 		// Enqueue javascript.
-		wp_enqueue_script( 'knawat-merlin', KNAWAT_DROPWC_PLUGIN_URL .'includes/lib/'. $this->directory . '/assets/js/knawat-merlin' . $suffix . '.js', array( 'jquery-core' ), MERLIN_VERSION );
+		wp_enqueue_script( 'knawat-merlin', KNAWAT_DROPWC_PLUGIN_URL . 'includes/lib/' . $this->directory . '/assets/js/knawat-merlin' . $suffix . '.js', array( 'jquery-core' ), MERLIN_VERSION );
 
 		// Localize the javascript.
 		if ( class_exists( 'TGM_Plugin_Activation' ) ) {
 			// Check first if TMGPA is included.
-			wp_localize_script( 'knawat-merlin', 'merlin_params', array(
-				'tgm_plugin_nonce' 	=> array(
-					'update'  	=> wp_create_nonce( 'tgmpa-update' ),
-					'install' 	=> wp_create_nonce( 'tgmpa-install' ),
-				),
-				'tgm_bulk_url' 		=> $this->tgmpa->get_tgmpa_url(),
-				'ajaxurl'      		=> admin_url( 'admin-ajax.php' ),
-				'wpnonce'      		=> wp_create_nonce( 'merlin_nonce' ),
-			) );
+			wp_localize_script(
+				'knawat-merlin',
+				'merlin_params',
+				array(
+					'tgm_plugin_nonce' => array(
+						'update'  => wp_create_nonce( 'tgmpa-update' ),
+						'install' => wp_create_nonce( 'tgmpa-install' ),
+					),
+					'tgm_bulk_url'     => $this->tgmpa->get_tgmpa_url(),
+					'ajaxurl'          => admin_url( 'admin-ajax.php' ),
+					'wpnonce'          => wp_create_nonce( 'merlin_nonce' ),
+				)
+			);
 		} else {
 			// If TMGPA is not included.
-			wp_localize_script( 'knawat-merlin', 'merlin_params', array(
-				'ajaxurl'      		=> admin_url( 'admin-ajax.php' ),
-				'wpnonce'      		=> wp_create_nonce( 'merlin_nonce' ),
-			) );
+			wp_localize_script(
+				'knawat-merlin',
+				'merlin_params',
+				array(
+					'ajaxurl' => admin_url( 'admin-ajax.php' ),
+					'wpnonce' => wp_create_nonce( 'merlin_nonce' ),
+				)
+			);
 		}
 
 		ob_start();
@@ -293,7 +310,8 @@ class Knawat_Merlin {
 
 				if ( $show_content ) {
 					$this->body();
-				} ?>
+				}
+				?>
 
 			<?php $this->step_output(); ?>
 
@@ -315,10 +333,11 @@ class Knawat_Merlin {
 	protected function header() {
 
 		// Strings passed in from the config file.
-		$strings = $this->strings; 
+		$strings = $this->strings;
 
 		// Get the current step.
-		$current_step = strtolower( $this->steps[ $this->step ]['name'] ); ?>
+		$current_step = strtolower( $this->steps[ $this->step ]['name'] );
+		?>
 		<!DOCTYPE html>
 		<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 		<head>
@@ -358,7 +377,7 @@ class Knawat_Merlin {
 	function svg_sprite() {
 
 		// Define SVG sprite file.
-		$svg = KNAWAT_DROPWC_PLUGIN_DIR .'includes/lib/'. $this->directory . '/assets/images/sprite.svg';
+		$svg = KNAWAT_DROPWC_PLUGIN_DIR . 'includes/lib/' . $this->directory . '/assets/images/sprite.svg';
 
 		// If it exists, include it.
 		if ( file_exists( $svg ) ) {
@@ -448,9 +467,9 @@ class Knawat_Merlin {
 
 		$array = array(
 			'svg' => array(
-				'class' => array(),
+				'class'       => array(),
 				'aria-hidden' => array(),
-				'role' => array(),
+				'role'        => array(),
 			),
 			'use' => array(
 				'xlink:href' => array(),
@@ -467,7 +486,7 @@ class Knawat_Merlin {
 	function loading_spinner() {
 
 		// Define the spinner file.
-		$spinner = KNAWAT_DROPWC_PLUGIN_DIR .'includes/lib/'. $this->directory . '/assets/images/spinner.php';
+		$spinner = KNAWAT_DROPWC_PLUGIN_DIR . 'includes/lib/' . $this->directory . '/assets/images/spinner.php';
 
 		// Retrieve the spinner.
 		include apply_filters( 'merlin_loading_spinner', $spinner );
@@ -496,14 +515,14 @@ class Knawat_Merlin {
 		// Show the plugin importer, only if TGMPA is included.
 		if ( class_exists( 'TGM_Plugin_Activation' ) ) {
 			$this->steps['plugins'] = array(
-				'name'    => esc_html__( 'Plugins', 'dropshipping-woocommerce' ),
-				'view'    => array( $this, 'plugins' ),
+				'name' => esc_html__( 'Plugins', 'dropshipping-woocommerce' ),
+				'view' => array( $this, 'plugins' ),
 			);
 		}
 
 		$this->steps['ready'] = array(
-			'name'    => esc_html__( 'Ready', 'dropshipping-woocommerce' ),
-			'view'    => array( $this, 'ready' ),
+			'name' => esc_html__( 'Ready', 'dropshipping-woocommerce' ),
+			'view' => array( $this, 'ready' ),
 		);
 
 		$this->steps = apply_filters( $this->slug . '_merlin_steps', $this->steps );
@@ -513,25 +532,28 @@ class Knawat_Merlin {
 	 * Output the steps
 	 */
 	protected function step_output() {
-		$ouput_steps 	= $this->steps;
-		$array_keys 	= array_keys( $this->steps );
-		$current_step 	= array_search( $this->step, $array_keys );
+		$ouput_steps  = $this->steps;
+		$array_keys   = array_keys( $this->steps );
+		$current_step = array_search( $this->step, $array_keys );
 
-		array_shift( $ouput_steps ); ?>
+		array_shift( $ouput_steps );
+		?>
 
 		<ol class="dots">
 
-			<?php foreach ( $ouput_steps as $step_key => $step ) :
+			<?php
+			foreach ( $ouput_steps as $step_key => $step ) :
 
 				$class_attr = '';
-				$show_link = false;
+				$show_link  = false;
 
 				if ( $step_key === $this->step ) {
 					$class_attr = 'active';
 				} elseif ( $current_step > array_search( $step_key, $array_keys ) ) {
 					$class_attr = 'done';
-					$show_link = true;
-				} ?>
+					$show_link  = true;
+				}
+				?>
 
 				<li class="<?php echo esc_attr( $class_attr ); ?>">
 					<a href="<?php echo esc_url( $this->step_link( $step_key ) ); ?>" title="<?php echo esc_attr( $step['name'] ); ?>"></a>
@@ -547,7 +569,7 @@ class Knawat_Merlin {
 	/**
 	 * Get the step URL.
 	 *
-	 * @param 	string $step Name of the step, appended to the URL.
+	 * @param   string $step Name of the step, appended to the URL.
 	 */
 	protected function step_link( $step ) {
 		return add_query_arg( 'step', $step );
@@ -569,19 +591,19 @@ class Knawat_Merlin {
 	protected function welcome() {
 
 		// Has this plugin been setup yet? Compare this to the option set when you get to the last panel.
-		$already_setup 			= get_option( 'merlin_' . $this->slug . '_completed' );
-		
+		$already_setup = get_option( 'merlin_' . $this->slug . '_completed' );
+
 		// PLugin Name.
-		$plugin 					= ucfirst( $this->plugin );
+		$plugin = ucfirst( $this->plugin );
 
 		// Strings passed in from the config file.
 		$strings = $this->strings;
 
 		// Text strings.
-		$header 				= ! $already_setup ? $strings['welcome-header%s'] : $strings['welcome-header-success%s'];
-		$paragraph 				= ! $already_setup ? $strings['welcome%s'] : $strings['welcome-success%s'];
-		$start 					= $strings['btn-start'];
-		$no 					= $strings['btn-no'];
+		$header    = ! $already_setup ? $strings['welcome-header%s'] : $strings['welcome-header-success%s'];
+		$paragraph = ! $already_setup ? $strings['welcome%s'] : $strings['welcome-success%s'];
+		$start     = $strings['btn-start'];
+		$no        = $strings['btn-no'];
 		?>
 
 		<div class="merlin__content--transition">
@@ -600,7 +622,7 @@ class Knawat_Merlin {
 			<?php wp_nonce_field( 'merlin' ); ?>
 		</footer>
 
-	<?php
+		<?php
 	}
 
 	/**
@@ -622,22 +644,23 @@ class Knawat_Merlin {
 		// Strings passed in from the config file.
 		$strings = $this->strings;
 
-		$knawat_options = knawat_dropshipwc_get_options();
-		$mp_consumer_key = isset( $knawat_options['mp_consumer_key'] ) ? esc_attr( $knawat_options['mp_consumer_key'] ) : '';
+		$knawat_options     = knawat_dropshipwc_get_options();
+		$mp_consumer_key    = isset( $knawat_options['mp_consumer_key'] ) ? esc_attr( $knawat_options['mp_consumer_key'] ) : '';
 		$mp_consumer_secret = isset( $knawat_options['mp_consumer_secret'] ) ? esc_attr( $knawat_options['mp_consumer_secret'] ) : '';
 
 		$already_setup = 0;
-		/*if( knawat_dropshipwc_is_connected() ){
-			$already_setup = 1;	
+		/*
+		if( knawat_dropshipwc_is_connected() ){
+			$already_setup = 1;
 		}*/
-				
+
 		// Text strings.
-		$header 				= ! $already_setup ? $strings['knawat-header'] : $strings['knawat-header-success'];
-		//$paragraph 				= ! $already_setup ? $strings['knawat'] : $strings['knawat-success%s'];
-		$action 				= $strings['knawat-action-link'];
-		$skip 					= $strings['btn-skip'];
-		$next 					= $strings['btn-next'];
-		$install 				= $strings['btn-knawat-connect'];
+		$header = ! $already_setup ? $strings['knawat-header'] : $strings['knawat-header-success'];
+		// $paragraph                = ! $already_setup ? $strings['knawat'] : $strings['knawat-success%s'];
+		$action  = $strings['knawat-action-link'];
+		$skip    = $strings['btn-skip'];
+		$next    = $strings['btn-next'];
+		$install = $strings['btn-knawat-connect'];
 		?>
 
 		<div class="merlin__content--transition">
@@ -652,9 +675,10 @@ class Knawat_Merlin {
 				
 			<p id="knawat-connect-text">
 				<?php
-				printf( '%s <a href="https://app.knawat.com/" target="_blank">%s</a>',
-					esc_html__('Please insert Knawat Knawat Consumer Key and Secret. You can get your Knawat keys', 'dropshipping-woocommerce' ),
-					esc_html__('from here', 'dropshipping-woocommerce' )
+				printf(
+					'%s <a href="https://app.knawat.com/" target="_blank">%s</a>',
+					esc_html__( 'Please insert Knawat Knawat Consumer Key and Secret. You can get your Knawat keys', 'dropshipping-woocommerce' ),
+					esc_html__( 'from here', 'dropshipping-woocommerce' )
 				);
 				?>
 			</p><br/>
@@ -662,18 +686,33 @@ class Knawat_Merlin {
 			<div class="knawat_connect_wrap">
 
 				<div class="key_field">
-					<?php _e( 'Knawat Consumer Key','dropshipping-woocommerce' ); ?>
-					<input id="mp_consumer_key" class="mp_consumer_key" name="knawat[mp_consumer_key]" type="text" value="<?php if ( $mp_consumer_key != '' ) { echo $mp_consumer_key; } ?>" />
+					<?php _e( 'Knawat Consumer Key', 'dropshipping-woocommerce' ); ?>
+					<input id="mp_consumer_key" class="mp_consumer_key" name="knawat[mp_consumer_key]" type="text" value="
+					<?php
+					if ( $mp_consumer_key != '' ) {
+						echo $mp_consumer_key; }
+					?>
+					" />
 				</div>
 
 				<div class="key_field">
-					<?php _e( 'Knawat Consumer Secret','dropshipping-woocommerce' ); ?>
-					<input id="mp_consumer_secret" class="mp_consumer_secret" name="knawat[mp_consumer_secret]" type="text" value="<?php if ( $mp_consumer_secret != '' ) { echo $mp_consumer_secret; } ?>" />
+					<?php _e( 'Knawat Consumer Secret', 'dropshipping-woocommerce' ); ?>
+					<input id="mp_consumer_secret" class="mp_consumer_secret" name="knawat[mp_consumer_secret]" type="text" value="
+					<?php
+					if ( $mp_consumer_secret != '' ) {
+						echo $mp_consumer_secret; }
+					?>
+					" />
 				</div>
 
 			</div>
 
-			<input id="knawat-connect-status" type="hidden" name="knawat_status" value="<?php if( $already_setup ){ echo 'connected'; } ?>" required="required" >
+			<input id="knawat-connect-status" type="hidden" name="knawat_status" value="
+			<?php
+			if ( $already_setup ) {
+				echo 'connected'; }
+			?>
+			" required="required" >
 
 		</div>
 
@@ -690,7 +729,7 @@ class Knawat_Merlin {
 			</footer>
 		</form>
 
-	<?php
+		<?php
 	}
 
 	/**
@@ -699,10 +738,10 @@ class Knawat_Merlin {
 	protected function plugins() {
 
 		// Variables.
-		$url     				= wp_nonce_url( add_query_arg( array( 'plugins' => 'go' ) ), 'merlin' );
-		$method  				= '';
-		$fields 				= array_keys( $_POST );
-		$creds   				= request_filesystem_credentials( esc_url_raw( $url ), $method, false, false, $fields );
+		$url    = wp_nonce_url( add_query_arg( array( 'plugins' => 'go' ) ), 'merlin' );
+		$method = '';
+		$fields = array_keys( $_POST );
+		$creds  = request_filesystem_credentials( esc_url_raw( $url ), $method, false, false, $fields );
 
 		tgmpa_load_bulk_installer();
 
@@ -716,20 +755,20 @@ class Knawat_Merlin {
 		}
 
 		// Are there plugins that need installing/activating?
-		$plugins 				= $this->get_tgmpa_plugins();
-		$count 					= count( $plugins['all'] );
-		$class 					= $count ? null : 'no-plugins';
+		$plugins = $this->get_tgmpa_plugins();
+		$count   = count( $plugins['all'] );
+		$class   = $count ? null : 'no-plugins';
 
 		// Strings passed in from the config file.
 		$strings = $this->strings;
 
 		// Text strings.
-		$header 				= $count ? $strings['plugins-header'] : $strings['plugins-header-success'];
-		$paragraph 				= $count ? $strings['plugins'] : $strings['plugins-success%s'];
-		$action 				= $strings['plugins-action-link'];
-		$skip 					= $strings['btn-skip'];
-		$next 					= $strings['btn-next'];
-		$install 				= $strings['btn-plugins-install'];
+		$header    = $count ? $strings['plugins-header'] : $strings['plugins-header-success'];
+		$paragraph = $count ? $strings['plugins'] : $strings['plugins-success%s'];
+		$action    = $strings['plugins-action-link'];
+		$skip      = $strings['btn-skip'];
+		$next      = $strings['btn-next'];
+		$install   = $strings['btn-plugins-install'];
 		?>
 
 		<div class="merlin__content--transition">
@@ -746,7 +785,7 @@ class Knawat_Merlin {
 
 			<?php if ( $count ) { ?>
 				<a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html( $action ); ?></span><span class="chevron"></span></a>
-			<?php  } ?>
+			<?php } ?>
 
 		</div>
 
@@ -756,21 +795,22 @@ class Knawat_Merlin {
 
 				<ul class="merlin__drawer merlin__drawer--install-plugins">
 				
-				<?php 
-				$required_plugins = array();
+				<?php
+				$required_plugins    = array();
 				$recommanded_plugins = array();
-				if( !empty( $plugins['all'] ) ){
-					foreach ( $plugins['all'] as $slug1 => $plugin1 ){
-						if( isset( $plugin1['required'] ) && $plugin1['required'] == 1 ){
-							$required_plugins[$slug1] = $plugin1;
-						}else{
-							$recommanded_plugins[$slug1] = $plugin1;
+				if ( ! empty( $plugins['all'] ) ) {
+					foreach ( $plugins['all'] as $slug1 => $plugin1 ) {
+						if ( isset( $plugin1['required'] ) && $plugin1['required'] == 1 ) {
+							$required_plugins[ $slug1 ] = $plugin1;
+						} else {
+							$recommanded_plugins[ $slug1 ] = $plugin1;
 						}
 					}
-					$plugins['all'] = array_merge( $required_plugins, $recommanded_plugins );	
-				}				
+					$plugins['all'] = array_merge( $required_plugins, $recommanded_plugins );
+				}
 
-				foreach ( $plugins['all'] as $slug => $plugin ) : ?>
+				foreach ( $plugins['all'] as $slug => $plugin ) :
+					?>
 
 					<li class="merlin__drawer--install-plugins__list-item status status--Pending" data-slug="<?php echo esc_attr( $slug ); ?>">
 						<input type="checkbox" name="<?php echo esc_attr( $slug ); ?>" class="checkbox" id="default_plugin_<?php echo esc_attr( $slug ); ?>" value="1" <?php echo ( ! isset( $plugin['required'] ) || $plugin['required'] ) ? ' checked disabled' : ''; ?> data-slug="<?php echo esc_attr( $slug ); ?>">
@@ -792,7 +832,7 @@ class Knawat_Merlin {
 							if ( isset( $plugins['activate'][ $slug ] ) ) {
 								$keys[] = esc_html__( 'Activate', 'dropshipping-woocommerce' );
 							}
-							echo implode( esc_html__( 'and', 'dropshipping-woocommerce' ) , $keys );
+							echo implode( esc_html__( 'and', 'dropshipping-woocommerce' ), $keys );
 							?>
 						</span>
 
@@ -803,7 +843,7 @@ class Knawat_Merlin {
 
 				</ul>
 				<br />
-				<small style="color: #a1a5a8;"><?php _e('* Developed by third party','dropshipping-woocommerce'); ?></small>
+				<small style="color: #a1a5a8;"><?php _e( '* Developed by third party', 'dropshipping-woocommerce' ); ?></small>
 			<?php endif; ?>
 
 			<footer class="merlin__content__footer <?php echo esc_attr( $class ); ?>">
@@ -820,7 +860,7 @@ class Knawat_Merlin {
 			</footer>
 		</form>
 
-	<?php
+		<?php
 	}
 
 	/**
@@ -829,33 +869,34 @@ class Knawat_Merlin {
 	protected function ready() {
 
 		// Theme Name.
-		$plugin 					= ucfirst( $this->plugin );
+		$plugin = ucfirst( $this->plugin );
 
 		// Strings passed in from the config file.
 		$strings = $this->strings;
 
 		// Text strings.
-		$header 				= $strings['ready-header'];
-		$paragraph 				= $strings['ready'];
-		$action 				= $strings['ready-action-link'];
-		$skip 					= $strings['btn-skip'];
-		$next 					= $strings['btn-next'];
-		$big_btn 				= $strings['ready-big-button'];
+		$header    = $strings['ready-header'];
+		$paragraph = $strings['ready'];
+		$action    = $strings['ready-action-link'];
+		$skip      = $strings['btn-skip'];
+		$next      = $strings['btn-next'];
+		$big_btn   = $strings['ready-big-button'];
 
 		// Links.
-		$link_1 				= $strings['ready-link-1'];
-		$link_2 				= $strings['ready-link-2'];
-		$link_3 				= $strings['ready-link-3'];
+		$link_1 = $strings['ready-link-1'];
+		$link_2 = $strings['ready-link-2'];
+		$link_3 = $strings['ready-link-3'];
 
 		$allowed_html_array = array(
 			'a' => array(
-				'href' 		=> array(),
-				'title' 	=> array(),
-				'target' 	=> array(),
+				'href'   => array(),
+				'title'  => array(),
+				'target' => array(),
 			),
 		);
 
-		update_option( 'merlin_' . $this->slug . '_completed', time() ); ?>
+		update_option( 'merlin_' . $this->slug . '_completed', time() );
+		?>
 
 		<div class="merlin__content--transition">
 
@@ -877,13 +918,13 @@ class Knawat_Merlin {
 
 				<li><?php echo wp_kses( $link_1, $allowed_html_array ); ?></li>
 				<li><?php echo wp_kses( $link_2, $allowed_html_array ); ?></li>
-				<!-- <li><?php //echo wp_kses( $link_3, $allowed_html_array ); ?></li> -->
+				<!-- <li><?php // echo wp_kses( $link_3, $allowed_html_array ); ?></li> -->
 
 			</ul>
 
 		</footer>
 
-	<?php
+		<?php
 	}
 
 	/**
@@ -892,18 +933,18 @@ class Knawat_Merlin {
 	 * @return    array
 	 */
 	protected function get_tgmpa_plugins() {
-		$plugins  = array(
+		$plugins = array(
 			'all'      => array(), // Meaning: all plugins which still have open actions.
 			'install'  => array(),
 			'update'   => array(),
 			'activate' => array(),
 		);
-		
+
 		foreach ( $this->tgmpa->plugins as $slug => $plugin ) {
 			if ( $this->tgmpa->is_plugin_active( $slug ) && false === $this->tgmpa->does_plugin_have_update( $slug ) ) {
 				continue;
 			} else {
-				if( !isset( $plugin['recommended_by'] ) ){
+				if ( ! isset( $plugin['recommended_by'] ) ) {
 					continue;
 				}
 				$plugins['all'][ $slug ] = $plugin;
@@ -933,9 +974,9 @@ class Knawat_Merlin {
 			exit( 0 );
 		}
 
-		$json = array();
+		$json      = array();
 		$tgmpa_url = $this->tgmpa->get_tgmpa_url();
-		$plugins = $this->get_tgmpa_plugins();
+		$plugins   = $this->get_tgmpa_plugins();
 
 		foreach ( $plugins['activate'] as $slug => $plugin ) {
 			if ( $_POST['slug'] === $slug ) {
@@ -989,7 +1030,15 @@ class Knawat_Merlin {
 			$json['hash'] = md5( serialize( $json ) );
 			wp_send_json( $json );
 		} else {
-			wp_send_json( array( 'done' => 1, 'message' => esc_html__( 'Success', 'dropshipping-woocommerce' ) ) );
+			wp_send_json(
+				array(
+					'done'    => 1,
+					'message' => esc_html__(
+						'Success',
+						'dropshipping-woocommerce'
+					),
+				)
+			);
 		}
 
 		exit;
@@ -1004,24 +1053,24 @@ class Knawat_Merlin {
 			exit( 0 );
 		}
 
-		if( empty( $_POST['kAPIKey'] ) ){
+		if ( empty( $_POST['kAPIKey'] ) ) {
 			wp_send_json(
 				array(
-					'error' => esc_html__( 'Please Insert Knawat Cosumer Key.', 'dropshipping-woocommerce' )
+					'error' => esc_html__( 'Please Insert Knawat Cosumer Key.', 'dropshipping-woocommerce' ),
 				)
 			);
 		}
 
-		if( empty( $_POST['kAPISecret'] ) ){
+		if ( empty( $_POST['kAPISecret'] ) ) {
 			wp_send_json(
 				array(
-					'error' => esc_html__( 'Please Insert Knawat Cosumer Secret.', 'dropshipping-woocommerce' )
+					'error' => esc_html__( 'Please Insert Knawat Cosumer Secret.', 'dropshipping-woocommerce' ),
 				)
 			);
 		}
 
-		$current_options = knawat_dropshipwc_get_options();
-		$current_options['mp_consumer_key'] = sanitize_text_field( $_POST['kAPIKey'] );
+		$current_options                       = knawat_dropshipwc_get_options();
+		$current_options['mp_consumer_key']    = sanitize_text_field( $_POST['kAPIKey'] );
 		$current_options['mp_consumer_secret'] = sanitize_text_field( $_POST['kAPISecret'] );
 		// Update Options
 		knawat_dropshipwc_update_options( $current_options );
@@ -1031,8 +1080,8 @@ class Knawat_Merlin {
 
 		wp_send_json(
 			array(
-				'done' => 1,
-				'message' => esc_html__( 'Success', 'dropshipping-woocommerce' )
+				'done'    => 1,
+				'message' => esc_html__( 'Success', 'dropshipping-woocommerce' ),
 			)
 		);
 	}
