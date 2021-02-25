@@ -275,6 +275,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$this->params['is_complete'] = $this->params['products_total'] === 0;
 
+			//update product import date 
+			$product_date = strtotime($product->updated);
+			update_option( 'knawat_last_imported', $product_date , false );
+
 			return $data;
 
 		}
