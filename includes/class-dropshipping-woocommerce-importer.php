@@ -101,7 +101,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
 					$api_url              = 'catalog/products/?limit=' . $this->params['limit'] . '&page=' . $this->params['page'];
 					if ( ! empty( $knawat_last_imported ) && $this->params['force_full_import'] != 1 ) {
-						$api_url .= '&lastupdate=' . $knawat_last_imported.'&sort=updated';;
+						$api_url .= '&lastupdate=' . $knawat_last_imported.'&sort={"field":"updated"}';
 					}
 					$this->data = $this->mp_api->get( $api_url );
 					break;
