@@ -170,11 +170,17 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				return $data;
 			}
 
+			$lastUpdateDate = '';
 			foreach ( $products as $index => $product ) {
 
 				if ( $index <= $this->params['product_index'] ) {
 					continue;
 				}
+
+				if(!empty($product->updated)){
+					$lastUpdateDate = $product->updated;
+				}
+
 
 				$formated_data = $this->get_formatted_product( $product );
 				$variations    = $formated_data['variations'];
@@ -275,14 +281,14 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$this->params['is_complete'] = $this->params['products_total'] === 0;
 
-			if(!empty($product->updated)){
-
+			if(!empty($lastUpdateDate)){
 				//update product import date 			
-				$datetime = new DateTime($product->updated);
+				$datetime = new DateTime($lastUpdateDate);
 				$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
-	
 				update_option( 'knawat_last_imported', $lastUpdateTime , false );
-
+				$this->params['page'] = 1;
+			}else{
+				$this->params['page'] += 1;
 			}
 			
 
