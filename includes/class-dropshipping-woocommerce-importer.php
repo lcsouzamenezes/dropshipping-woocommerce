@@ -96,12 +96,13 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				'updated'  => array(),
 			);
       
+			$page = $this->params['page'];
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
-					$api_url              = 'catalog/products/?limit=' . $this->params['limit'] . '&page=' . $this->params['page'];
+					$api_url              = 'catalog/products/?limit=' . $this->params['limit'] . '&page='.$page;
 					if ( ! empty( $knawat_last_imported ) && $this->params['force_full_import'] != 1 ) {
-						$api_url .= '&lastupdate=' . $knawat_last_imported.'&sort={"field":"updated"}';
+						$api_url .= '&lastupdate=' . $knawat_last_imported.'&sort=>field=updated';
 					}
 					$this->data = $this->mp_api->get( $api_url );
 					break;
@@ -286,9 +287,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$datetime = new DateTime($lastUpdateDate);
 				$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
 				update_option( 'knawat_last_imported', $lastUpdateTime , false );
-				$this->params['page'] = 1;
+				$page  = $this->params['page'];
+				
 			}else{
-				$this->params['page'] += 1;
+				$page  = $this->params['page'] + 1;
 			}
 			
 
