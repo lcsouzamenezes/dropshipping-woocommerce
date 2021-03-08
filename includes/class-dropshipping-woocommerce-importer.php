@@ -414,6 +414,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			}
 			$knawat_options      = knawat_dropshipwc_get_options();
 			$categorize_products = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
+			$remove_outofstock 	 = isset( $knawat_options['remove_outofstock'] ) ? esc_attr( $knawat_options['remove_outofstock'] ) : 'no';
 			$tag                 = '';
 
 			if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
@@ -468,8 +469,16 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$variations     = array();
 			$var_attributes = array();
+			$zero_variation = array();
+			$variantCount	= count($product->variations);
 			if ( isset( $product->variations ) && ! empty( $product->variations ) ) {
 				foreach ( $product->variations as $variation ) {
+
+					$zero_variant = array();
+					if($variation->sale_price == 0 && $remove_outofstock == 'yes'){
+						$zero_variant['zero_variant'] = $variation->sale_price;
+					}
+
 					$temp_variant = array();
 					$varient_id   = wc_get_product_id_by_sku( $variation->sku );
 					if ( $varient_id && $varient_id > 0 ) {
@@ -554,6 +563,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						}
 					}
 					$variations[] = $temp_variant;
+
+					if(!empty($zero_variant)){
+						$zero_variation[] = $zero_variant;
+					}
 				}
 			}
 
@@ -570,11 +583,27 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					$new_product['raw_attributes'][] = $temp_raw;
 				}
 			}
+
 			$new_product['variations'] = $variations;
+
+			if($variantCount == count($zero_variation)){
+				$this->remove_zero_variation_product($new_product['id'],$product->sku);
+			}
 
 			return $new_product;
 		}
 
+
+		/**
+		 * Remove Zero Variation Product From the List
+		*/
+		public function remove_zero_variation_product($productID,$sku){
+			if(!empty($productID) && !empty($sku)){
+				wp_delete_post($productID,true);
+				$api_url = 'catalog/products/'.$sku;
+				$this->mp_api->delete( $api_url );
+			}	
+		}
 
 		/**
 		 * Set variation data.
