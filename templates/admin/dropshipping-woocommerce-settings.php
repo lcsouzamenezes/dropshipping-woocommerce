@@ -110,7 +110,7 @@ endif;
 
 			<tr class="knawat_dropshipwc_row">
                 <th scope="row">
-					<?php _e( 'Delete Out Of Stock Products', 'dropshipping-woocommerce' ); ?>
+					<?php esc_html_e( 'Delete Out Of Stock Products', 'dropshipping-woocommerce' ); ?>
                 </th>
                 <td>
                     <select name="knawat[remove_outofstock]" required="required">
