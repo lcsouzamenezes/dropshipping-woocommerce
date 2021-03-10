@@ -471,6 +471,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			$var_attributes = array();
 			$zero_variation = array();
 			$variantCount	= count($product->variations);
+
 			if ( isset( $product->variations ) && ! empty( $product->variations ) ) {
 				foreach ( $product->variations as $variation ) {
 
@@ -479,85 +480,87 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						$zero_variant['zero_variant'] = $variation->sale_price;
 					}
 
-					$temp_variant = array();
-					$varient_id   = wc_get_product_id_by_sku( $variation->sku );
-					if ( $varient_id && $varient_id > 0 ) {
-						$temp_variant['id'] = $varient_id;
-						// Update name as its name is added as null in the first time - related to migration task
-						if ( empty( $temp_variant['name'] ) && empty( $new_product['name'] ) ) {
-							if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
+					if($variation->sale_price != 0){
+						$temp_variant = array();
+						$varient_id   = wc_get_product_id_by_sku( $variation->sku );
+						if ( $varient_id && $varient_id > 0 ) {
+							$temp_variant['id'] = $varient_id;
+							// Update name as its name is added as null in the first time - related to migration task
+							if ( empty( $temp_variant['name'] ) && empty( $new_product['name'] ) ) {
+								if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
 
-								$new_product['name'] = '';
+									$new_product['name'] = '';
 
-								foreach ( $active_langs as $active_lang ) {
-									if ( isset( $product->name->$active_lang ) ) {
-										$new_product['name'] .= '[:' . $active_lang . ']' . $product->name->$active_lang;
+									foreach ( $active_langs as $active_lang ) {
+										if ( isset( $product->name->$active_lang ) ) {
+											$new_product['name'] .= '[:' . $active_lang . ']' . $product->name->$active_lang;
+										}
+									}
+									if ( $new_product['name'] != '' ) {
+										$new_product['name'] .= '[:]';
 									}
 								}
-								if ( $new_product['name'] != '' ) {
-									$new_product['name'] .= '[:]';
-								}
+								$temp_variant['name'] = $new_product['name'];
 							}
-							$temp_variant['name'] = $new_product['name'];
-						}
-					} else {
-						$temp_variant['sku']  = $variation->sku;
-						$temp_variant['name'] = $new_product['name'];
-						// handeled test case where variation =1 and parent sku != child sku
-						if ( count( $product->variations ) == 1 && $temp_variant['sku'] == $product->sku ) {
-							$temp_variant['type'] = 'simple';
 						} else {
-							$temp_variant['type'] = 'variation';
+							$temp_variant['sku']  = $variation->sku;
+							$temp_variant['name'] = $new_product['name'];
+							// handeled test case where variation =1 and parent sku != child sku
+							if ( count( $product->variations ) == 1 && $temp_variant['sku'] == $product->sku ) {
+								$temp_variant['type'] = 'simple';
+							} else {
+								$temp_variant['type'] = 'variation';
+							}
 						}
-					}
 
-					// Add Meta Data.
-					$temp_variant['meta_data'] = array();
-					if ( is_numeric( $variation->sale_price ) ) {
-						$temp_variant['price'] = wc_format_decimal( $variation->sale_price );
-					}
-					if ( is_numeric( $variation->market_price ) ) {
-						$temp_variant['regular_price'] = wc_format_decimal( $variation->market_price );
-					}
-					if ( is_numeric( $variation->sale_price ) ) {
-						$temp_variant['sale_price'] = wc_format_decimal( $variation->sale_price );
-					}
-					$temp_variant['manage_stock']   = true;
-					$temp_variant['stock_quantity'] = $this->parse_stock_quantity_field( $variation->quantity );
-					$temp_variant['meta_data'][]    = array(
-						'key'   => '_knawat_cost',
-						'value' => wc_format_decimal( $variation->cost_price ),
-					);
+						// Add Meta Data.
+						$temp_variant['meta_data'] = array();
+						if ( is_numeric( $variation->sale_price ) ) {
+							$temp_variant['price'] = wc_format_decimal( $variation->sale_price );
+						}
+						if ( is_numeric( $variation->market_price ) ) {
+							$temp_variant['regular_price'] = wc_format_decimal( $variation->market_price );
+						}
+						if ( is_numeric( $variation->sale_price ) ) {
+							$temp_variant['sale_price'] = wc_format_decimal( $variation->sale_price );
+						}
+						$temp_variant['manage_stock']   = true;
+						$temp_variant['stock_quantity'] = $this->parse_stock_quantity_field( $variation->quantity );
+						$temp_variant['meta_data'][]    = array(
+							'key'   => '_knawat_cost',
+							'value' => wc_format_decimal( $variation->cost_price ),
+						);
 
-					if ( $varient_id && $varient_id > 0 && ! $this->params['force_update'] ) {
-						// Update Data for existing Variend Here.
-					} else {
-						$temp_variant['weight'] = wc_format_decimal( $variation->weight );
-						if ( isset( $variation->attributes ) && ! empty( $variation->attributes ) ) {
-							foreach ( $variation->attributes as $attribute ) {
-								$temp_attribute_name  = isset( $attribute->name ) ? $this->attribute_languagfy( $attribute->name ) : '';
-								$temp_attribute_value = isset( $attribute->option ) ? $this->attribute_languagfy( $attribute->option ) : '';
+						if ( $varient_id && $varient_id > 0 && ! $this->params['force_update'] ) {
+							// Update Data for existing Variend Here.
+						} else {
+							$temp_variant['weight'] = wc_format_decimal( $variation->weight );
+							if ( isset( $variation->attributes ) && ! empty( $variation->attributes ) ) {
+								foreach ( $variation->attributes as $attribute ) {
+									$temp_attribute_name  = isset( $attribute->name ) ? $this->attribute_languagfy( $attribute->name ) : '';
+									$temp_attribute_value = isset( $attribute->option ) ? $this->attribute_languagfy( $attribute->option ) : '';
 
-								// continue if no attribute name found.
-								if ( $temp_attribute_name == '' ) {
-									continue;
-								}
+									// continue if no attribute name found.
+									if ( $temp_attribute_name == '' ) {
+										continue;
+									}
 
-								$temp_var_attribute               = array();
-								$temp_var_attribute['name']       = $temp_attribute_name;
-								$temp_var_attribute['value']      = array( $temp_attribute_value );
-								$temp_var_attribute['taxonomy']   = true;
-								$temp_variant['raw_attributes'][] = $temp_var_attribute;
+									$temp_var_attribute               = array();
+									$temp_var_attribute['name']       = $temp_attribute_name;
+									$temp_var_attribute['value']      = array( $temp_attribute_value );
+									$temp_var_attribute['taxonomy']   = true;
+									$temp_variant['raw_attributes'][] = $temp_var_attribute;
 
-								// Add attribute name to $var_attributes for make it taxonomy.
-								$var_attributes[] = $temp_attribute_name;
+									// Add attribute name to $var_attributes for make it taxonomy.
+									$var_attributes[] = $temp_attribute_name;
 
-								if ( isset( $attributes[ $temp_attribute_name ] ) ) {
-									if ( ! in_array( $temp_attribute_value, $attributes[ $temp_attribute_name ] ) ) {
+									if ( isset( $attributes[ $temp_attribute_name ] ) ) {
+										if ( ! in_array( $temp_attribute_value, $attributes[ $temp_attribute_name ] ) ) {
+											$attributes[ $temp_attribute_name ][] = $temp_attribute_value;
+										}
+									} else {
 										$attributes[ $temp_attribute_name ][] = $temp_attribute_value;
 									}
-								} else {
-									$attributes[ $temp_attribute_name ][] = $temp_attribute_value;
 								}
 							}
 						}
@@ -584,7 +587,9 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				}
 			}
 
-			$new_product['variations'] = $variations;
+			if(!empty($variations)):
+				$new_product['variations'] = $variations;
+			endif;
 
 			if($variantCount == count($zero_variation)){
 				$this->remove_zero_variation_product($new_product['id'],$product->sku);
