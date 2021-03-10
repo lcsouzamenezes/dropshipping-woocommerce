@@ -119,9 +119,7 @@ endif;
                     </select>
 
                     <p class="description" id="remove_outofstock-description">
-						<?php
-						_e( 'Select yes then out of stock products will be removed', 'dropshipping-woocommerce' );
-						?>
+					<?php esc_html_e('Some products go out of stock and return back. If you checked this, products will not return back to your store.', 'dropshipping-woocommerce' ); ?>
                     </p>
                 </td>
             </tr>

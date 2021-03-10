@@ -190,7 +190,8 @@ class Knawat_Dropshipping_Woocommerce_Common {
 
 			if ( isset( $knawatds_options['remove_outofstock'] ) ) {
 				$current_options['remove_outofstock'] = sanitize_text_field( $knawatds_options['remove_outofstock']);    
-			}else{
+			} else {
+
 				$current_options['remove_outofstock'] = 'no';
 			}
 			
