@@ -287,10 +287,11 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$datetime = new DateTime($lastUpdateDate);
 				$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
 				update_option( 'knawat_last_imported', $lastUpdateTime , false );
-				$page  = $this->params['page'];
+				$this->params['page'] = 1;
 				
 			}else{
-				$page  = $this->params['page'] + 1;
+
+				$this->params['page']   += 1;
 			}
 			
 
@@ -476,8 +477,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				foreach ( $product->variations as $variation ) {
 
 					$zero_variant = array();
-					if($variation->sale_price == 0 && $remove_outofstock == 'yes'){
-						$zero_variant['zero_variant'] = $variation->sale_price;
+					if($variation->quantity == 0 && $remove_outofstock == 'yes'){
+						$zero_variant['zero_variant'] = $variation->quantity;
 					}
 
 					if($variation->sale_price != 0){
@@ -603,11 +604,16 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 		 * Remove Zero Variation Product From the List
 		*/
 		public function remove_zero_variation_product($productID,$sku){
-			if(!empty($productID) && !empty($sku)){
-				wp_delete_post($productID,true);
-				$api_url = 'catalog/products/'.$sku;
-				$this->mp_api->delete( $api_url );
-			}	
+			try{
+				if(!empty($productID) && !empty($sku)){
+					wp_delete_post($productID,true);
+					$api_url = 'catalog/products/'.$sku;
+					$this->mp_api->delete( $api_url );
+				}
+
+			}catch (Exception $ex) {
+				//skip it
+			}
 		}
 
 		/**
