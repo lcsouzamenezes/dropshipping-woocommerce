@@ -477,8 +477,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				foreach ( $product->variations as $variation ) {
 
 					$zero_variant = array();
-					if($variation->quantity == 0 && $remove_outofstock == 'yes'){
-						$zero_variant['zero_variant'] = $variation->quantity;
+					if($variation->stock_quantity == 0 && $remove_outofstock == 'yes'){
+						$zero_variant['zero_variant'] = $variation->stock_quantity;
 					}
 
 					if($variation->sale_price != 0){
@@ -592,7 +592,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$new_product['variations'] = $variations;
 			endif;
 
-			if($variantCount == count($zero_variation)){
+			if($variantCount == count($zero_variation) && $remove_outofstock == 'yes'){
 				$this->remove_zero_variation_product($new_product['id'],$product->sku);
 			}
 
@@ -606,9 +606,14 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 		public function remove_zero_variation_product($productID,$sku){
 			try{
 				if(!empty($productID) && !empty($sku)){
+					
+					if (is_plugin_active( 'dropshipping-woocommerce-wpml-addon/dropshipping-woocommerce-wpml-addon.php')) {
+						do_action('remove_stokout_product',$productID);
+					}
+
 					wp_delete_post($productID,true);
 					$api_url = 'catalog/products/'.$sku;
-					$this->mp_api->delete( $api_url );
+					$this->mp_api->delete($api_url);
 				}
 
 			}catch (Exception $ex) {
