@@ -100,9 +100,12 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
-					$api_url              = 'catalog/products/?limit=' . $this->params['limit'] . '&page='.$page;
+					$sortData = array(
+						'sort' => array('field'=>'updated','order'=>'asc')
+					  );
+					$api_url 	= 'catalog/products/?limit=' . $this->params['limit'] . '&page='.$page;
 					if ( ! empty( $knawat_last_imported ) && $this->params['force_full_import'] != 1 ) {
-						$api_url .= '&lastupdate=' . $knawat_last_imported.'&sort=>field=updated';
+						$api_url .= '&lastupdate='.$knawat_last_imported.$sortData;
 					}
 					$this->data = $this->mp_api->get( $api_url );
 					break;
@@ -477,8 +480,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				foreach ( $product->variations as $variation ) {
 
 					$zero_variant = array();
-					if($variation->stock_quantity == 0 && $remove_outofstock == 'yes'){
-						$zero_variant['zero_variant'] = $variation->stock_quantity;
+					if($variation->quantity == 0 && $remove_outofstock == 'yes'){
+						$zero_variant['zero_variant'] = $variation->quantity;
 					}
 
 					if($variation->sale_price != 0){
@@ -605,13 +608,12 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 		*/
 		public function remove_zero_variation_product($productID,$sku){
 			try{
-				if(!empty($productID) && !empty($sku)){
-					
-					if (is_plugin_active( 'dropshipping-woocommerce-wpml-addon/dropshipping-woocommerce-wpml-addon.php')) {
-						do_action('remove_stokout_product',$productID);
-					}
+				$productID = $_GET['product_id'];
+				if(isset($productID) && !empty($sku)){
 
-					wp_delete_post($productID,true);
+					do_action('remove_stokout_product',$productID);
+
+					$this->delete_wp_product($productID);
 					$api_url = 'catalog/products/'.$sku;
 					$this->mp_api->delete($api_url);
 				}
@@ -917,6 +919,27 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			return $taxonomy_ids;
 		}
+
+		/**
+		 * Delete product along with the meta
+		 */
+		public function delete_wp_product($product_ID){
+			global $wpdb;
+			$wpdb->query( 
+				$wpdb->prepare("
+					DELETE posts,pt,pm
+					FROM {$wpdb->prefix}posts posts
+					LEFT JOIN {$wpdb->prefix}term_relationships pt ON pt.object_id = posts.ID
+					LEFT JOIN {$wpdb->prefix}postmeta pm ON pm.post_id = posts.ID
+					WHERE posts.post_type = 'product'
+					AND posts.ID = %s
+					", 
+					$product_ID
+				) 
+			);
+			
+		}
+
 	}
 
 endif;
