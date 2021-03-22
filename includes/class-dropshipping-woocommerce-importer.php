@@ -100,9 +100,10 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
-					$sortData = array(
+					$sorting = array(
 						'sort' => array('field'=>'updated','order'=>'asc')
-					  );
+					);
+					$sortData = '&'.http_build_query($sorting,'','&');
 					$api_url 	= 'catalog/products/?limit=' . $this->params['limit'] . '&page='.$page;
 					if ( ! empty( $knawat_last_imported ) && $this->params['force_full_import'] != 1 ) {
 						$api_url .= '&lastupdate='.$knawat_last_imported.$sortData;
@@ -610,12 +611,12 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			try{
 				$productID = $_GET['product_id'];
 				if(isset($productID) && !empty($sku)){
-
-					do_action('remove_stokout_product',$productID);
-
-					$this->delete_wp_product($productID);
 					$api_url = 'catalog/products/'.$sku;
 					$this->mp_api->delete($api_url);
+
+					do_action('remove_stokout_product',$productID);
+					$this->wc_deleteProduct($productID);
+				
 				}
 
 			}catch (Exception $ex) {
@@ -920,26 +921,43 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			return $taxonomy_ids;
 		}
 
-		/**
-		 * Delete product along with the meta
-		 */
-		public function delete_wp_product($product_ID){
-			global $wpdb;
-			$wpdb->query( 
-				$wpdb->prepare("
-					DELETE posts,pt,pm
-					FROM {$wpdb->prefix}posts posts
-					LEFT JOIN {$wpdb->prefix}term_relationships pt ON pt.object_id = posts.ID
-					LEFT JOIN {$wpdb->prefix}postmeta pm ON pm.post_id = posts.ID
-					WHERE posts.post_type = 'product'
-					AND posts.ID = %s
-					", 
-					$product_ID
-				) 
-			);
-			
-		}
+		
+	/**
+	* Method to delete Woo Product
+	*
+	* @param int $id the product ID.
+	* @param bool $force true to permanently delete product, false to move to trash.
+	* @return WP_Error|boolean
+	*/
+	public function wc_deleteProduct($product_ID){
+			try{
 
+				$product = wc_get_product($product_ID);
+				if(empty($product)){
+					return false;
+				}
+				
+				if ($product->is_type('variable')){
+					foreach ($product->get_children() as $child_id)
+					{
+						$child = wc_get_product($child_id);
+						$child->delete();
+					}
+				}
+
+				$product->delete(true);
+				$result = $product->get_id() > 0 ? false : true;
+				
+				if ($parent_id = wp_get_post_parent_id($product_ID)){
+					wc_delete_product_transients($parent_id);
+				}
+				return true;
+
+			}catch (Exception $ex) {
+					//skip it
+		}
 	}
+
+}
 
 endif;
