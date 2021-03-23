@@ -97,7 +97,6 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 				if ( ! isset( $params['force_stopped'] ) ) {
 					// update option on import finish.
 					update_option( 'knawat_full_import', 'done', false );
-					update_option( 'knawat_last_imported', time(), false );
 				}
 
 				// Logs import data
@@ -110,13 +109,16 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 			} else {
 
 				$item = $params;
-				if ( $params['products_total'] == ( $params['product_index'] + 1 ) ) {
-					$item['page']          = $params['page'] + 1;
-					$item['product_index'] = -1;
-				} else {
-					$item['page']          = $params['page'];
-					$item['product_index'] = $params['product_index'];
-				}
+				// if ( $params['products_total'] == ( $params['product_index'] + 1 ) ) {
+				// 	$item['page']          = $params['page'] + 1;
+				// 	$item['product_index'] = -1;
+				// } else {
+				// 	$item['page']     = $params['page'];
+				// 	$item['product_index'] = $params['product_index'];
+				// }
+				
+				$item['product_index'] 	= -1;
+				$item['page']     		= $params['page'];
 
 				$item['imported'] += count( $results['imported'] );
 				$item['failed']   += count( $results['failed'] );

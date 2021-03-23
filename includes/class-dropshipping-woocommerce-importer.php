@@ -96,12 +96,17 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				'updated'  => array(),
 			);
       
+			$page = $this->params['page'];
 			switch ( $this->import_type ) {
 				case 'full':
 					$knawat_last_imported = get_option( 'knawat_last_imported', false );
-					$api_url              = 'catalog/products/?limit=' . $this->params['limit'] . '&page=' . $this->params['page'];
+					$sorting = array(
+						'sort' => array('field'=>'updated','order'=>'asc')
+					);
+					$sortData = '&'.http_build_query($sorting,'','&');
+					$api_url 	= 'catalog/products/?limit=' . $this->params['limit'] . '&page='.$page;
 					if ( ! empty( $knawat_last_imported ) && $this->params['force_full_import'] != 1 ) {
-						$api_url .= '&lastupdate=' . $knawat_last_imported;
+						$api_url .= '&lastupdate='.$knawat_last_imported.$sortData;
 					}
 					$this->data = $this->mp_api->get( $api_url );
 					break;
@@ -170,11 +175,17 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				return $data;
 			}
 
+			$lastUpdateDate = '';
 			foreach ( $products as $index => $product ) {
 
 				if ( $index <= $this->params['product_index'] ) {
 					continue;
 				}
+
+				if(!empty($product->updated)){
+					$lastUpdateDate = $product->updated;
+				}
+
 
 				$formated_data = $this->get_formatted_product( $product );
 				$variations    = $formated_data['variations'];
@@ -274,6 +285,19 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			}*/
 
 			$this->params['is_complete'] = $this->params['products_total'] === 0;
+
+			if(!empty($lastUpdateDate)){
+				//update product import date 			
+				$datetime = new DateTime($lastUpdateDate);
+				$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
+				update_option( 'knawat_last_imported', $lastUpdateTime , false );
+				$this->params['page'] = 1;
+				
+			}else{
+
+				$this->params['page']   += 1;
+			}
+			
 
 			return $data;
 
@@ -395,6 +419,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			}
 			$knawat_options      = knawat_dropshipwc_get_options();
 			$categorize_products = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
+			$remove_outofstock 	 = isset( $knawat_options['remove_outofstock'] ) ? esc_attr( $knawat_options['remove_outofstock'] ) : 'no';
 			$tag                 = '';
 
 			if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
@@ -449,92 +474,107 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$variations     = array();
 			$var_attributes = array();
+			$zero_variation = array();
+			$variantCount	= count($product->variations);
+
 			if ( isset( $product->variations ) && ! empty( $product->variations ) ) {
 				foreach ( $product->variations as $variation ) {
-					$temp_variant = array();
-					$varient_id   = wc_get_product_id_by_sku( $variation->sku );
-					if ( $varient_id && $varient_id > 0 ) {
-						$temp_variant['id'] = $varient_id;
-						// Update name as its name is added as null in the first time - related to migration task
-						if ( empty( $temp_variant['name'] ) && empty( $new_product['name'] ) ) {
-							if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
 
-								$new_product['name'] = '';
+					$zero_variant = array();
+					if($variation->quantity == 0 && $remove_outofstock == 'yes'){
+						$zero_variant['zero_variant'] = $variation->quantity;
+					}
 
-								foreach ( $active_langs as $active_lang ) {
-									if ( isset( $product->name->$active_lang ) ) {
-										$new_product['name'] .= '[:' . $active_lang . ']' . $product->name->$active_lang;
+					if($variation->sale_price != 0){
+						$temp_variant = array();
+						$varient_id   = wc_get_product_id_by_sku( $variation->sku );
+						if ( $varient_id && $varient_id > 0 ) {
+							$temp_variant['id'] = $varient_id;
+							// Update name as its name is added as null in the first time - related to migration task
+							if ( empty( $temp_variant['name'] ) && empty( $new_product['name'] ) ) {
+								if ( ( $active_plugins['qtranslate-xt'] || $active_plugins['qtranslate-x'] ) && ! empty( $active_langs ) ) {
+
+									$new_product['name'] = '';
+
+									foreach ( $active_langs as $active_lang ) {
+										if ( isset( $product->name->$active_lang ) ) {
+											$new_product['name'] .= '[:' . $active_lang . ']' . $product->name->$active_lang;
+										}
+									}
+									if ( $new_product['name'] != '' ) {
+										$new_product['name'] .= '[:]';
 									}
 								}
-								if ( $new_product['name'] != '' ) {
-									$new_product['name'] .= '[:]';
-								}
+								$temp_variant['name'] = $new_product['name'];
 							}
-							$temp_variant['name'] = $new_product['name'];
-						}
-					} else {
-						$temp_variant['sku']  = $variation->sku;
-						$temp_variant['name'] = $new_product['name'];
-						// handeled test case where variation =1 and parent sku != child sku
-						if ( count( $product->variations ) == 1 && $temp_variant['sku'] == $product->sku ) {
-							$temp_variant['type'] = 'simple';
 						} else {
-							$temp_variant['type'] = 'variation';
+							$temp_variant['sku']  = $variation->sku;
+							$temp_variant['name'] = $new_product['name'];
+							// handeled test case where variation =1 and parent sku != child sku
+							if ( count( $product->variations ) == 1 && $temp_variant['sku'] == $product->sku ) {
+								$temp_variant['type'] = 'simple';
+							} else {
+								$temp_variant['type'] = 'variation';
+							}
 						}
-					}
 
-					// Add Meta Data.
-					$temp_variant['meta_data'] = array();
-					if ( is_numeric( $variation->sale_price ) ) {
-						$temp_variant['price'] = wc_format_decimal( $variation->sale_price );
-					}
-					if ( is_numeric( $variation->market_price ) ) {
-						$temp_variant['regular_price'] = wc_format_decimal( $variation->market_price );
-					}
-					if ( is_numeric( $variation->sale_price ) ) {
-						$temp_variant['sale_price'] = wc_format_decimal( $variation->sale_price );
-					}
-					$temp_variant['manage_stock']   = true;
-					$temp_variant['stock_quantity'] = $this->parse_stock_quantity_field( $variation->quantity );
-					$temp_variant['meta_data'][]    = array(
-						'key'   => '_knawat_cost',
-						'value' => wc_format_decimal( $variation->cost_price ),
-					);
+						// Add Meta Data.
+						$temp_variant['meta_data'] = array();
+						if ( is_numeric( $variation->sale_price ) ) {
+							$temp_variant['price'] = wc_format_decimal( $variation->sale_price );
+						}
+						if ( is_numeric( $variation->market_price ) ) {
+							$temp_variant['regular_price'] = wc_format_decimal( $variation->market_price );
+						}
+						if ( is_numeric( $variation->sale_price ) ) {
+							$temp_variant['sale_price'] = wc_format_decimal( $variation->sale_price );
+						}
+						$temp_variant['manage_stock']   = true;
+						$temp_variant['stock_quantity'] = $this->parse_stock_quantity_field( $variation->quantity );
+						$temp_variant['meta_data'][]    = array(
+							'key'   => '_knawat_cost',
+							'value' => wc_format_decimal( $variation->cost_price ),
+						);
 
-					if ( $varient_id && $varient_id > 0 && ! $this->params['force_update'] ) {
-						// Update Data for existing Variend Here.
-					} else {
-						$temp_variant['weight'] = wc_format_decimal( $variation->weight );
-						if ( isset( $variation->attributes ) && ! empty( $variation->attributes ) ) {
-							foreach ( $variation->attributes as $attribute ) {
-								$temp_attribute_name  = isset( $attribute->name ) ? $this->attribute_languagfy( $attribute->name ) : '';
-								$temp_attribute_value = isset( $attribute->option ) ? $this->attribute_languagfy( $attribute->option ) : '';
+						if ( $varient_id && $varient_id > 0 && ! $this->params['force_update'] ) {
+							// Update Data for existing Variend Here.
+						} else {
+							$temp_variant['weight'] = wc_format_decimal( $variation->weight );
+							if ( isset( $variation->attributes ) && ! empty( $variation->attributes ) ) {
+								foreach ( $variation->attributes as $attribute ) {
+									$temp_attribute_name  = isset( $attribute->name ) ? $this->attribute_languagfy( $attribute->name ) : '';
+									$temp_attribute_value = isset( $attribute->option ) ? $this->attribute_languagfy( $attribute->option ) : '';
 
-								// continue if no attribute name found.
-								if ( $temp_attribute_name == '' ) {
-									continue;
-								}
+									// continue if no attribute name found.
+									if ( $temp_attribute_name == '' ) {
+										continue;
+									}
 
-								$temp_var_attribute               = array();
-								$temp_var_attribute['name']       = $temp_attribute_name;
-								$temp_var_attribute['value']      = array( $temp_attribute_value );
-								$temp_var_attribute['taxonomy']   = true;
-								$temp_variant['raw_attributes'][] = $temp_var_attribute;
+									$temp_var_attribute               = array();
+									$temp_var_attribute['name']       = $temp_attribute_name;
+									$temp_var_attribute['value']      = array( $temp_attribute_value );
+									$temp_var_attribute['taxonomy']   = true;
+									$temp_variant['raw_attributes'][] = $temp_var_attribute;
 
-								// Add attribute name to $var_attributes for make it taxonomy.
-								$var_attributes[] = $temp_attribute_name;
+									// Add attribute name to $var_attributes for make it taxonomy.
+									$var_attributes[] = $temp_attribute_name;
 
-								if ( isset( $attributes[ $temp_attribute_name ] ) ) {
-									if ( ! in_array( $temp_attribute_value, $attributes[ $temp_attribute_name ] ) ) {
+									if ( isset( $attributes[ $temp_attribute_name ] ) ) {
+										if ( ! in_array( $temp_attribute_value, $attributes[ $temp_attribute_name ] ) ) {
+											$attributes[ $temp_attribute_name ][] = $temp_attribute_value;
+										}
+									} else {
 										$attributes[ $temp_attribute_name ][] = $temp_attribute_value;
 									}
-								} else {
-									$attributes[ $temp_attribute_name ][] = $temp_attribute_value;
 								}
 							}
 						}
 					}
 					$variations[] = $temp_variant;
+
+					if(!empty($zero_variant)){
+						$zero_variation[] = $zero_variant;
+					}
 				}
 			}
 
@@ -551,11 +591,38 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					$new_product['raw_attributes'][] = $temp_raw;
 				}
 			}
-			$new_product['variations'] = $variations;
+
+			if(!empty($variations)):
+				$new_product['variations'] = $variations;
+			endif;
+
+			if($variantCount == count($zero_variation) && $remove_outofstock == 'yes'){
+				$this->remove_zero_variation_product($new_product['id'],$product->sku);
+			}
 
 			return $new_product;
 		}
 
+
+		/**
+		 * Remove Zero Variation Product From the List
+		*/
+		public function remove_zero_variation_product($productID,$sku){
+			try{
+				$productID = $_GET['product_id'];
+				if(isset($productID) && !empty($sku)){
+					$api_url = 'catalog/products/'.$sku;
+					$this->mp_api->delete($api_url);
+
+					do_action('remove_stokout_product',$productID);
+					$this->wc_deleteProduct($productID);
+				
+				}
+
+			}catch (Exception $ex) {
+				//skip it
+			}
+		}
 
 		/**
 		 * Set variation data.
@@ -853,6 +920,44 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			return $taxonomy_ids;
 		}
+
+		
+	/**
+	* Method to delete Woo Product
+	*
+	* @param int $id the product ID.
+	* @param bool $force true to permanently delete product, false to move to trash.
+	* @return WP_Error|boolean
+	*/
+	public function wc_deleteProduct($product_ID){
+			try{
+
+				$product = wc_get_product($product_ID);
+				if(empty($product)){
+					return false;
+				}
+				
+				if ($product->is_type('variable')){
+					foreach ($product->get_children() as $child_id)
+					{
+						$child = wc_get_product($child_id);
+						$child->delete();
+					}
+				}
+
+				$product->delete(true);
+				$result = $product->get_id() > 0 ? false : true;
+				
+				if ($parent_id = wp_get_post_parent_id($product_ID)){
+					wc_delete_product_transients($parent_id);
+				}
+				return true;
+
+			}catch (Exception $ex) {
+					//skip it
+		}
 	}
+
+}
 
 endif;

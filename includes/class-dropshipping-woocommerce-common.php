@@ -188,6 +188,13 @@ class Knawat_Dropshipping_Woocommerce_Common {
 				$current_options['categorize_products'] = 'no';
 			}
 
+			if ( isset( $knawatds_options['remove_outofstock'] ) ) {
+				$current_options['remove_outofstock'] = sanitize_text_field( $knawatds_options['remove_outofstock']);    
+			} else {
+
+				$current_options['remove_outofstock'] = 'no';
+			}
+			
 			if ( isset( $knawatds_options['dokan_seller'] ) && is_numeric( $knawatds_options['dokan_seller'] ) ) {
 				$current_options['dokan_seller'] = sanitize_text_field( $knawatds_options['dokan_seller'] );
 			}
