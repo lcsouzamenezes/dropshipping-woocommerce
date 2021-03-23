@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-03-23T04:48:43+00:00\n"
+"POT-Creation-Date: 2021-03-23T14:12:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: dropshipping-woocommerce\n"
@@ -423,11 +423,13 @@ msgstr ""
 #: includes/knawat-merlin-config.php:36
 #: includes/knawat-merlin-config.php:38
 #: includes/lib/knawat-merlin/knawat-merlin.php:827
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2830
 msgid "Install"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:39
 #: includes/lib/knawat-merlin/knawat-merlin.php:833
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2839
 msgid "Activate"
 msgstr ""
 
@@ -468,6 +470,7 @@ msgid "Learn about child themes"
 msgstr ""
 
 #: includes/knawat-merlin-config.php:53
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:335
 msgid "Install Plugins"
 msgstr ""
 
@@ -592,6 +595,7 @@ msgid "Knawat Consumer Secret"
 msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:830
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2836
 msgid "Update"
 msgstr ""
 
@@ -626,6 +630,394 @@ msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:1067
 msgid "Please Insert Knawat Cosumer Secret."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:337
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:339
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:341
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:347
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:353
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:359
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:365
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:371
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:377
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:382
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:387
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:393
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2646
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3697
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:394
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3272
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:395
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3065
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:397
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:399
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:401
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:403
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1029
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1029
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1039
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1039
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1228
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3061
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2386
+msgid "Required"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2389
+msgid "Recommended"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2405
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2408
+msgid "External Source"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2411
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2428
+msgid "Not Installed"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2432
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2434
+msgid "Active"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2440
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2443
+msgid "Requires Update"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2446
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2455
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2501
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2505
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2509
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2513
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2595
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2603
+msgid "Installed version:"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2611
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2623
+msgid "Available version:"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2646
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2660
+msgid "Plugin"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2661
+msgid "Source"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2662
+msgid "Type"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2666
+msgid "Version"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2667
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2716
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2721
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2727
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2797
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2870
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2872
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2913
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2915
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3021
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3047
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3271
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3615
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3618
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3620
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3624
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3626
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3626
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3634
+msgid "Show Details"
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3626
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3634
+msgid "Hide Details"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3627
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3629
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3632
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3634
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3635
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3637
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-import.php:23
@@ -713,12 +1105,29 @@ msgstr ""
 msgid "Categorize Products"
 msgstr ""
 
+#: templates/admin/dropshipping-woocommerce-settings.php:99
+#: templates/admin/dropshipping-woocommerce-settings.php:117
+msgid "No"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:100
+msgid "Yes (Product Category)"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:101
+msgid "Yes (Product Tag)"
+msgstr ""
+
 #: templates/admin/dropshipping-woocommerce-settings.php:105
 msgid "Select yes to fetch product categories"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:113
 msgid "Delete Out Of Stock Products"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:118
+msgid "Yes"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:122
@@ -795,6 +1204,10 @@ msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:227
 msgid "<strong>Products Synced</strong>"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:234
+msgid "if some of your products didn't get updated, you may need to <a href=\""
 msgstr ""
 
 #: templates/myaccount/shipment-tracking.php:11
