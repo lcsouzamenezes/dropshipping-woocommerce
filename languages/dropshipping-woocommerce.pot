@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-05T12:32:18+00:00\n"
+"POT-Creation-Date: 2021-03-23T04:48:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: dropshipping-woocommerce\n"
@@ -132,7 +132,7 @@ msgid "Product Import"
 msgstr ""
 
 #: includes/class-dropshipping-woocommerce-admin.php:133
-#: templates/admin/dropshipping-woocommerce-settings.php:28
+#: templates/admin/dropshipping-woocommerce-settings.php:29
 msgid "Settings"
 msgstr ""
 
@@ -243,33 +243,33 @@ msgstr ""
 msgid "Another product import is in process already."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:203
+#: includes/class-dropshipping-woocommerce-common.php:210
 msgid "Settings has been saved successfully."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:350
+#: includes/class-dropshipping-woocommerce-common.php:357
 msgid "Your connection with knawat.com has been disconnected. Please check and verify your knawat consumer keys from"
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:351
+#: includes/class-dropshipping-woocommerce-common.php:358
 msgid "<strong>Knawat Dropshipping</strong> > <strong>Settings</strong>."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-common.php:481
+#: includes/class-dropshipping-woocommerce-common.php:488
 msgid "The product will be imported again from Knawat, if you don't want this product, then delete it permanently."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-importer.php:114
+#: includes/class-dropshipping-woocommerce-importer.php:119
 msgid "Please provide product sku."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-importer.php:136
-#: includes/class-dropshipping-woocommerce-importer.php:144
-#: includes/class-dropshipping-woocommerce-importer.php:161
+#: includes/class-dropshipping-woocommerce-importer.php:141
+#: includes/class-dropshipping-woocommerce-importer.php:149
+#: includes/class-dropshipping-woocommerce-importer.php:166
 msgid "Something went wrong during get data from Knawat MP API. Please try again later."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-importer.php:583
+#: includes/class-dropshipping-woocommerce-importer.php:650
 msgid "Variation cannot be imported: Missing parent ID or parent does not exist yet."
 msgstr ""
 
@@ -582,12 +582,12 @@ msgid "from here"
 msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:689
-#: templates/admin/dropshipping-woocommerce-settings.php:38
+#: templates/admin/dropshipping-woocommerce-settings.php:39
 msgid "Knawat Consumer Key"
 msgstr ""
 
 #: includes/lib/knawat-merlin/knawat-merlin.php:699
-#: templates/admin/dropshipping-woocommerce-settings.php:62
+#: templates/admin/dropshipping-woocommerce-settings.php:63
 msgid "Knawat Consumer Secret"
 msgstr ""
 
@@ -680,112 +680,120 @@ msgstr ""
 msgid "Failed:"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:29
+#: templates/admin/dropshipping-woocommerce-settings.php:30
 msgid "Note: Only orders in Processing status will be sent to Knawat to processs."
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:30
+#: templates/admin/dropshipping-woocommerce-settings.php:31
 msgid "You need a Knawat consumer key and consumer secret for import products into your store from knawat.com"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:52
+#: templates/admin/dropshipping-woocommerce-settings.php:53
 msgid "You can get your Knawat Consumer Key from your <strong>Dashboard > Store settings</strong>"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:53
-#: templates/admin/dropshipping-woocommerce-settings.php:71
+#: templates/admin/dropshipping-woocommerce-settings.php:54
+#: templates/admin/dropshipping-woocommerce-settings.php:72
 msgid "click to see the image"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:70
+#: templates/admin/dropshipping-woocommerce-settings.php:71
 msgid "You can get your Knawat Consumer Secret from your <strong>Dashboard > Store settings</strong>"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:80
+#: templates/admin/dropshipping-woocommerce-settings.php:81
 msgid "Products Batch Size:"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:86
+#: templates/admin/dropshipping-woocommerce-settings.php:87
 msgid "Products batch size for import products from knawat.com"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:94
+#: templates/admin/dropshipping-woocommerce-settings.php:95
 msgid "Categorize Products"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:104
+#: templates/admin/dropshipping-woocommerce-settings.php:105
 msgid "Select yes to fetch product categories"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:112
-msgid "Orders Synchronization Interval:"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:117
-msgid "48 Hours"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:118
-msgid "24 Hours"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:119
-msgid "12 Hours"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:120
-msgid "9 Hours"
-msgstr ""
-
-#: templates/admin/dropshipping-woocommerce-settings.php:121
-msgid "6 Hours"
+#: templates/admin/dropshipping-woocommerce-settings.php:113
+msgid "Delete Out Of Stock Products"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:122
-msgid "3 Hours"
+msgid "Some products go out of stock and return back. If you checked this, products will not return back to your store."
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:123
-msgid "1 Hour"
+#: templates/admin/dropshipping-woocommerce-settings.php:129
+msgid "Orders Synchronization Interval:"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:134
+msgid "48 Hours"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:135
+msgid "24 Hours"
 msgstr ""
 
 #: templates/admin/dropshipping-woocommerce-settings.php:136
+msgid "12 Hours"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:137
+msgid "9 Hours"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:138
+msgid "6 Hours"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:139
+msgid "3 Hours"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:140
+msgid "1 Hour"
+msgstr ""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:153
 msgid "Select interval for synchronization orders with Knawat"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:145
+#: templates/admin/dropshipping-woocommerce-settings.php:162
 msgid "Dokan Seller"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:155
+#: templates/admin/dropshipping-woocommerce-settings.php:172
 msgid "Select Dokan Seller"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:161
+#: templates/admin/dropshipping-woocommerce-settings.php:178
 msgid "Select dokan seller for import Knawat products under it."
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:171
+#: templates/admin/dropshipping-woocommerce-settings.php:188
 msgid "Knawat Connection status"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:178
+#: templates/admin/dropshipping-woocommerce-settings.php:195
 msgid "Connected"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:184
+#: templates/admin/dropshipping-woocommerce-settings.php:201
 msgid "Not connected"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:188
+#: templates/admin/dropshipping-woocommerce-settings.php:205
 msgid "Please verify your knawat consumer keys."
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:203
+#: templates/admin/dropshipping-woocommerce-settings.php:220
 msgid "Save Settings"
 msgstr ""
 
-#: templates/admin/dropshipping-woocommerce-settings.php:210
+#: templates/admin/dropshipping-woocommerce-settings.php:227
 msgid "<strong>Products Synced</strong>"
 msgstr ""
 
