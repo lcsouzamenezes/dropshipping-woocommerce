@@ -96,9 +96,9 @@ endif;
 				</th>
 				<td>
 					<select name="knawat[categorize_products]" required="required">
-						<option value="no" <?php selected( 'no', $categorize_products, true ); ?>><?php esc_html_e( 'No' ); ?></option>
-						<option value="yes" <?php selected( 'yes', $categorize_products, true ); ?>><?php esc_html_e( 'Yes (Product Category)' ); ?></option>
-						<option value="yes_as_tags" <?php selected( 'yes_as_tags', $categorize_products, true ); ?>><?php esc_html_e( 'Yes (Product Tag)' ); ?></option>
+						<option value="no" <?php selected( 'no', $categorize_products, true ); ?>><?php esc_html_e( 'No','dropshipping-woocommerce' ); ?></option>
+						<option value="yes" <?php selected( 'yes', $categorize_products, true ); ?>><?php esc_html_e( 'Yes (Product Category)','dropshipping-woocommerce' ); ?></option>
+						<option value="yes_as_tags" <?php selected( 'yes_as_tags', $categorize_products, true ); ?>><?php esc_html_e( 'Yes (Product Tag)','dropshipping-woocommerce' ); ?></option>
 					</select>
 					<p class="description" id="product_batch-description">
 						<?php
@@ -114,8 +114,8 @@ endif;
                 </th>
                 <td>
                     <select name="knawat[remove_outofstock]" required="required">
-                        <option value="no" <?php selected( 'no', $remove_outofstock, true ) ?>><?php esc_html_e('No'); ?></option>
-                        <option value="yes" <?php selected( 'yes', $remove_outofstock, true ) ?>><?php esc_html_e('Yes'); ?></option>
+                        <option value="no" <?php selected( 'no', $remove_outofstock, true ) ?>><?php esc_html_e('No','dropshipping-woocommerce'); ?></option>
+                        <option value="yes" <?php selected( 'yes', $remove_outofstock, true ) ?>><?php esc_html_e('Yes','dropshipping-woocommerce'); ?></option>
                     </select>
 
                     <p class="description" id="remove_outofstock-description">
@@ -229,9 +229,9 @@ endif;
 					<td>
 						 <meter id="last-update-knawat" value="<?php echo $products_count - $products_synced; ?>" min="0" max="<?php echo $products_count; ?>" style="height: 35px; width: 815px;"></meter>
 						
-						<p> <?php _e( 'You have <strong>' . $products_count . ' product(s) </strong>, ' . ( $stock_count ) . ' of them in-stock, Already ' . ( $products_count - $products_synced ) . ' are done syncing.' ); ?>  </p>
+						<p> <?php _e( 'You have <strong>' . $products_count . ' product(s) </strong>, ' . ( $stock_count ) . ' of them in-stock, Already ' . ( $products_count - $products_synced ) . ' are done syncing.','dropshipping-woocommerce' ); ?>  </p>
 
-						<p> <?php _e( 'if some of your products didn\'t get updated, you may need to <a href="' . $sync_url . '">Sync All</a>, but it\'ll take approx few hours to update all prices and stock.' ); ?> </p>
+						<p> <?php _e( 'if some of your products didn\'t get updated, you may need to <a href="' . $sync_url . '">Sync All</a>, but it\'ll take approx few hours to update all prices and stock.','dropshipping-woocommerce' ); ?> </p>
 					 </td>
 				</tr>
 			</tbody>
