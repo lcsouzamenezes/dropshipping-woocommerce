@@ -7,7 +7,7 @@ Tested up to: 5.6.0
 Stable tag: 2.2.0
 WC tested up to: 4.8.0
 
-=== Description Page ===
+== Description Page ==
 
 Knawat - WooCommerce Dropshipping
 Are you looking for the best WooCommerce Dropshipping Plugin? 
@@ -26,7 +26,7 @@ Launching your e-business or online store has never been as easy. All you need t
 The products will be imported to your products catalog at the wholesale price. Price and stock will be both updated in real-time whenever they are modified either by the suppliers or by modifying your profit margin.
 
 
-=== Features ===
+== Features ==
 
 Anywhere, anytime, Knawat covers every step on the way from the moment your clients make their orders until they receive it to their homes.  
 
