@@ -9,7 +9,8 @@ WC tested up to: 4.8.0
 
 == Description Page ==
 
-Knawat - WooCommerce Dropshipping
+===Knawat - WooCommerce Dropshipping===
+
 Are you looking for the best WooCommerce Dropshipping Plugin? 
 Does importing thousands of products sound complicated?
 Are you looking for Dropshipping fulfillment?
