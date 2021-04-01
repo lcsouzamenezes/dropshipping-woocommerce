@@ -34,26 +34,26 @@ Anywhere, anytime, Knawat covers every step on the way from the moment your clie
 Your online store or e-business depends on many factors for it to succeed; Products, prices, stocks, shipping, fulfillment, content, and a safe plan for you to start. In short; we provide all that it takes for you to give your e-business a try. 
 
 
-Start Free 
+== Start Free ==
 Knawat provides a free plan for you to start your online store, or launch your e-business with no risk whatsoever. 
 
 Easy Products’ Importation 
 Importing products to your online store takes just minutes to be done. Simply search for the products you want, click “import” and here they are. All the products and their details will instantly be in your store. 
 
-=== Multilingual Content ===
+== Multilingual Content ==
 Be accurate, and reach your targeted audience with the right content. Knawat provides the right content to your products, from the product title, to the product features. Keeping it easy for your customers all the time, in all (English, Arabic, and Turkish) languages. 
 
-=== Stock & pricing Management === 
+== Stock & pricing Management == 
 Be in control of your store. Knawat takes this one off your shoulder, by automatically updating your products’ pricing and stock level around the clock. Once you define your pricing-rule in a click, your prices will be automatically updated.
 
 
-=== Facilitate and Tracking Shipping === 
+== Facilitate and Tracking Shipping == 
 Shipping is no longer an issue with Knawat, your customers can receive their shipment within a week. Now, Knawat provides a tracking feature to all shipments, along with fixed fees.  
 
-=== Automated Fulfillment ===
+== Automated Fulfillment ==
 How easy? “Signed, sealed, delivered”. This easy.  Just make an order, and let us do the rest. From the moment your client orders until they receive it at their home. Getting the products from the warehouse, quality-check up, shipment’s packing, labeling, invoice tagging, shipments tracking, then notifying your customer.  
 
-=== On Going Support ===
+== On Going Support ==
 An integrated team, who fulfill all your inquiries, and solve your most critical issues, and who is willing to go the extra mile for you to achieve your success.
 
 More Feature to Choose From
