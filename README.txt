@@ -7,9 +7,9 @@ Tested up to: 5.6.0
 Stable tag: 2.2.0
 WC tested up to: 4.8.0
 
-== Description Page ==
+== Description ==
 
-===Knawat - WooCommerce Dropshipping===
+===Knawat WooCommerce Dropshipping===
 
 Are you looking for the best WooCommerce Dropshipping Plugin? 
 Does importing thousands of products sound complicated?
