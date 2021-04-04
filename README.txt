@@ -9,41 +9,56 @@ WC tested up to: 4.8.0
 
 == Description ==
 
-===Knawat WooCommerce DropShipping:===
+===Knawat WooCommerce Dropshipping===
 
-Are you looking to find the best WooCommerce Dropshipping plugin? to import thousands of products with just a few clicks? Dropshipping and Fulfillment Knawat WooCommerce dropshipping plugin automates the dropshipping on WooCommerce. allows you to add products to your WooCommerce store easily from knawat.com and start selling now!	
+Are you looking for the best WooCommerce Dropshipping Plugin? 
+Does importing thousands of products sound complicated?
+Are you looking for Dropshipping fulfillment?
+You are in the right place.
+Knawat paves the way for you. Now, importing thousands of products can be done in just a few clicks. 
+Knawat WooCommerce Dropshipping Plugin automates the dropshipping on WooCommerce, along with total automated fulfillment, giving you an easy way to import products to your WooCommerce store right from Knawat.com and 
+
+start selling now (Call to action button)
 
 [youtube https://www.youtube.com/watch?v=MXwKwZ6qJZw]
 
-==Features==
+Launching your e-business or online store has never been as easy. All you need to do is choose the type, the number of your products, and the desired language, click on it, and there it will be; all the details of these products, such as; images, description, and data will be in your store.
 
-We ship to every corner around the globe. Sell your products to customers around the world, Knawat will pack and ship orders directly to your customer doorstep with your invoice and your brand name. Automatic updating prices and stock level. Focus your efforts on selling not on stock management. Stock levels and product prices are automatically updated in real-time with the suppliers’ system.
+The products will be imported to your products catalog at the wholesale price. Price and stock will be both updated in real-time whenever they are modified either by the suppliers or by modifying your profit margin.
 
-===Multilingual Content===
 
-Our translation team working on product description translating it to three different languages (English, Arabic, and Turkish), and localized to different cultures. Reach your target customers with the right content.
+== Features ==
 
-===Easily import products to your store===
+Anywhere, anytime, Knawat covers every step on the way from the moment your clients make their orders until they receive it to their homes.  
 
-You simply check on all the products you want and click import to push them all to your store.
+Your online store or e-business depends on many factors for it to succeed; Products, prices, stocks, shipping, fulfillment, content, and a safe plan for you to start. In short; we provide all that it takes for you to give your e-business a try. 
 
-===Automatic Pricing===
 
-Automatic Pricing feature helps you price all your products at once, you just define your pricing rule with a simple click.
+== Start Free ==
+Knawat provides a free plan for you to start your online store, or launch your e-business with no risk whatsoever. 
 
-===Automated updating for prices and stock availability===
+Easy Products’ Importation 
+Importing products to your online store takes just minutes to be done. Simply search for the products you want, click “import” and here they are. All the products and their details will instantly be in your store. 
 
-Knawat app will automatically update product prices and stock levels to give you full control of your products.
+== Multilingual Content ==
+Be accurate, and reach your targeted audience with the right content. Knawat provides the right content to your products, from the product title, to the product features. Keeping it easy for your customers all the time, in all (English, Arabic, and Turkish) languages. 
 
-===Automated fulfill orders===
+== Stock & pricing Management == 
+Be in control of your store. Knawat takes this one off your shoulder, by automatically updating your products’ pricing and stock level around the clock. Once you define your pricing-rule in a click, your prices will be automatically updated.
 
-When you confirm an order, we will bring the order from the supplier warehouse, pack it, and ship it with your invoice to your customer's doorstep.
 
-===Shipment tracking===
+== Facilitate and Tracking Shipping == 
+Shipping is no longer an issue with Knawat, your customers can receive their shipment within a week. Now, Knawat provides a tracking feature to all shipments, along with fixed fees.  
 
-Automatically updating shipment tracking number into your store
+== Automated Fulfillment ==
+How easy? “Signed, sealed, delivered”. This easy.  Just make an order, and let us do the rest. From the moment your client orders until they receive it at their home. Getting the products from the warehouse, quality-check up, shipment’s packing, labeling, invoice tagging, shipments tracking, then notifying your customer.  
 
-[More features](https://knawat.com/features/?utm_source=plugins&utm_medium=referral&utm_campaign=wordpress).
+== On Going Support ==
+An integrated team, who fulfill all your inquiries, and solve your most critical issues, and who is willing to go the extra mile for you to achieve your success.
+
+More Feature to Choose From
+
+(https://knawat.com/features/?utm_source=plugins&utm_medium=referral&utm_campaign=wordpress).
 
 = Contributing =
 
