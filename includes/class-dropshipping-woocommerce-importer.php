@@ -616,6 +616,11 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 					do_action('remove_stokout_product',$productID);
 					$this->wc_deleteProduct($productID);
+
+					if($this->params['force_update']){
+						wp_redirect(admin_url('edit.php?post_type=product'));
+						exit;
+					}
 				
 				}
 
