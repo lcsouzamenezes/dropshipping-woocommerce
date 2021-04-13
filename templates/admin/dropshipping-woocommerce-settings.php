@@ -10,7 +10,7 @@ $mp_consumer_secret              = isset( $knawat_options['mp_consumer_secret'] 
 $token_status                    = isset( $knawat_options['token_status'] ) ? esc_attr( $knawat_options['token_status'] ) : 'invalid';
 $product_batch                   = isset( $knawat_options['product_batch'] ) ? esc_attr( $knawat_options['product_batch'] ) : 25;
 $categorize_products             = isset( $knawat_options['categorize_products'] ) ? esc_attr( $knawat_options['categorize_products'] ) : 'no';
-$remove_outofstock     			 = isset( $knawat_options['remove_outofstock'] ) ? esc_attr( $knawat_options['remove_outofstock'] ) : 'no';
+$remove_outofstock     			 = isset( $knawat_options['remove_outofstock'] ) ? esc_attr( $knawat_options['remove_outofstock'] ) : 'yes';
 $dokan_seller                    = isset( $knawat_options['dokan_seller'] ) ? esc_attr( $knawat_options['dokan_seller'] ) : - 1;
 $sync_url                        = wp_nonce_url( admin_url( 'admin-post.php?action=resyncs_knawat_products' ), 'knawat_product_sync_action', 'product_sync' );
 $knawat_options['last_imported'] = get_option( 'knawat_last_imported', false );
@@ -114,8 +114,8 @@ endif;
                 </th>
                 <td>
                     <select name="knawat[remove_outofstock]" required="required">
-                        <option value="no" <?php selected( 'no', $remove_outofstock, true ) ?>><?php esc_html_e('No','dropshipping-woocommerce'); ?></option>
                         <option value="yes" <?php selected( 'yes', $remove_outofstock, true ) ?>><?php esc_html_e('Yes','dropshipping-woocommerce'); ?></option>
+						<option value="no" <?php selected( 'no', $remove_outofstock, true ) ?>><?php esc_html_e('No','dropshipping-woocommerce'); ?></option>
                     </select>
 
                     <p class="description" id="remove_outofstock-description">
