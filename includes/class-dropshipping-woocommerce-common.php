@@ -192,7 +192,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 				$current_options['remove_outofstock'] = sanitize_text_field( $knawatds_options['remove_outofstock']);    
 			} else {
 
-				$current_options['remove_outofstock'] = 'no';
+				$current_options['remove_outofstock'] = 'yes';
 			}
 			
 			if ( isset( $knawatds_options['dokan_seller'] ) && is_numeric( $knawatds_options['dokan_seller'] ) ) {
