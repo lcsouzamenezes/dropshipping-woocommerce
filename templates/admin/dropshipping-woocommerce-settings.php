@@ -39,13 +39,7 @@ endif;
 					<?php _e( 'Knawat Consumer Key', 'dropshipping-woocommerce' ); ?>
 				</th>
 				<td>
-					<input class="mp_consumer_key regular-text" name="knawat[mp_consumer_key]" type="text" value="
-					<?php
-					if ( $mp_consumer_key != '' ) {
-						echo $mp_consumer_key;
-					}
-					?>
-					"/>
+					<input class="mp_consumer_key regular-text" name="knawat[mp_consumer_key]" type="text" value="<?php if ( $mp_consumer_key != '' ) { echo $mp_consumer_key;} ?>"/>
 					<p class="description" id="mp_consumer_key-description">
 						<?php
 						printf(
