@@ -109,15 +109,11 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 			} else {
 
 				$item = $params;
-				// if ( $params['products_total'] == ( $params['product_index'] + 1 ) ) {
-				// 	$item['page']          = $params['page'] + 1;
-				// 	$item['product_index'] = -1;
-				// } else {
-				// 	$item['page']     = $params['page'];
-				// 	$item['product_index'] = $params['product_index'];
-				// }
-				
-				$item['product_index'] 	= -1;
+				if ( $params['products_total'] == ( $params['product_index'] + 1 ) ) {
+					$item['product_index'] = -1;
+				} else {
+					$item['product_index'] = $params['product_index'];
+				}
 				$item['page']     		= $params['page'];
 
 				$item['imported'] += count( $results['imported'] );

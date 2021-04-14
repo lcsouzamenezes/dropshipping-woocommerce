@@ -288,9 +288,9 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$datetime = new DateTime($lastUpdateDate);
 			$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
-			if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $lastUpdateTime){
-				$this->params['is_complete'] = true;
-			}
+			// if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $lastUpdateTime){
+			// 	$this->params['is_complete'] = true;
+			// }
 
 			if(!empty($lastUpdateDate) && $knawat_last_imported != $lastUpdateTime){
 				//update product import date 			
@@ -298,7 +298,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
 				update_option( 'knawat_last_imported', $lastUpdateTime , false );
 				$this->params['page'] = 1;
-			} else {
+				$this->params['product_index'] = -1;
+			} else if( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ){
 				$this->params['page'] += 1;
 			}
 			return $data;
