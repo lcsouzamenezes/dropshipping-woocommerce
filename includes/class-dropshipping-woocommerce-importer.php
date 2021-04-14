@@ -292,21 +292,16 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$this->params['is_complete'] = true;
 			}
 
-			if(!empty($lastUpdateDate)){
+			if(!empty($lastUpdateDate) && $knawat_last_imported != $lastUpdateTime){
 				//update product import date 			
 				$datetime = new DateTime($lastUpdateDate);
 				$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
 				update_option( 'knawat_last_imported', $lastUpdateTime , false );
 				$this->params['page'] = 1;
-				
-			}else{
-
-				$this->params['page']   += 1;
+			} else {
+				$this->params['page'] += 1;
 			}
-			
-
 			return $data;
-
 		}
 
 		public function get_formatted_product( $product ) {

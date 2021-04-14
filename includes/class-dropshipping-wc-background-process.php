@@ -48,7 +48,6 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 				}
 				return false;
 			}
-
 			$importer = new Knawat_Dropshipping_Woocommerce_Importer( 'full', $item );
 			$results  = $importer->import();
 			$params   = $importer->get_import_params();
@@ -77,6 +76,7 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 				),
 				'info'
 			);
+			knawat_dropshipwc_logger( '[IMPORT_PARAMS]' . print_r( $params, true ), 'info' );
 
 			$is_stop_import = get_transient( 'knawat_stop_import' );
 			if ( $is_stop_import === 'product_import' ) {
