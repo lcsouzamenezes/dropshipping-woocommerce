@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-14T07:07:49+00:00\n"
+"POT-Creation-Date: 2021-04-14T12:05:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: dropshipping-woocommerce\n"
@@ -269,7 +269,7 @@ msgstr ""
 msgid "Something went wrong during get data from Knawat MP API. Please try again later."
 msgstr ""
 
-#: includes/class-dropshipping-woocommerce-importer.php:661
+#: includes/class-dropshipping-woocommerce-importer.php:656
 msgid "Variation cannot be imported: Missing parent ID or parent does not exist yet."
 msgstr ""
 
