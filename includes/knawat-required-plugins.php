@@ -62,6 +62,17 @@ function knawat_dropshipwc_register_required_plugins() {
 		);
 	}
 
+
+	if($knawat_dropshipwc->common->knawat_dropshipwc_is_wpml_activated()){
+		$plugins[] = array( 
+			'name'           => esc_html__( 'Knawat WooCommerce DropShipping WPML Addon', 'dropshipping-woocommerce' ),
+			'slug'           => 'dropshipping-woocommerce-wpml-addon',
+			'required'       => true,
+			'source'         => 'https://github.com/Knawat/dropshipping-woocommerce-wpml-addon/archive/master.zip',
+			'recommended_by' => 'knawat'
+		);
+	}
+
 	/*
 	 * Array of configuration settings. Amend each line as needed.
 	 *
