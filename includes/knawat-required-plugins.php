@@ -67,7 +67,7 @@ function knawat_dropshipwc_register_required_plugins() {
 		$plugins[] = array( 
 			'name'           => esc_html__( 'Knawat WooCommerce DropShipping WPML Addon', 'dropshipping-woocommerce' ),
 			'slug'           => 'dropshipping-woocommerce-wpml-addon',
-			'required'       => true,
+			'required'       => false,
 			'source'         => 'https://wordpress.org/plugins/dropshipping-woocommerce-wpml-addon',
 			'recommended_by' => 'knawat'
 		);
