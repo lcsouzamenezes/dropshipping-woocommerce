@@ -44,7 +44,6 @@ function knawat_dropshipwc_register_required_plugins() {
 	);
 
 	if ( ! $knawat_dropshipwc->common->knawat_dropshipwc_is_woomulti_currency_activated() ) {
-		
 		$plugins[] = array(
 			'name'           => esc_html__( 'WooCommerce Currency Switcher', 'dropshipping-woocommerce' ),
 			'slug'           => 'woocommerce-currency-switcher',
@@ -65,8 +64,7 @@ function knawat_dropshipwc_register_required_plugins() {
 	}
 
 
-	if ( $knawat_dropshipwc->common->knawat_dropshipwc_is_wpml_activated() ) { 
-
+	if ( $knawat_dropshipwc->common->knawat_dropshipwc_is_wpml_activated() ) {
 		$plugins[] = array(
 			'name'           => esc_html__( 'Knawat WooCommerce DropShipping WPML Addon', 'dropshipping-woocommerce' ),
 			'slug'           => 'dropshipping-woocommerce-wpml-addon',
