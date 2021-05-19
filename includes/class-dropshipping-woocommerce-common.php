@@ -76,6 +76,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 * @since    2.2.0
 	 */
 	public function knawat_dropshipwc_is_qTranslatex_activated() {
+		
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		}
@@ -87,9 +88,27 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	}
 
 	/**
+	 * Check is WPML Activate or not.
+	 *
+	 * @return   boolean
+	 * @since    2.2.0
+	 */
+	 public function knawat_dropshipwc_is_wpml_activated() {
+		
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+		
+		if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' )) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Check order contains knawat products or not.
 	 *
-	 * @return     boolean
+	 * @return   boolean
 	 * @since    1.0.0
 	 */
 	public function is_knawat_order( $order_id ) {
