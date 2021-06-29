@@ -462,7 +462,9 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			} else {
 				foreach ( $product->categories as $category ) {
-					$tag .= isset( $category->name->$default_lang ) ? sanitize_text_field( $category->name->$default_lang ) : '';
+					$catName = iconv(mb_detect_encoding($category->name->$default_lang),'UTF-8',$category->name->$default_lang);
+					$tag 	.= isset( $catName ) ? sanitize_text_field( $catName ) : '';
+				
 
 					$parentId = isset( $category->parentId ) ? $category->parentId : '';
 
