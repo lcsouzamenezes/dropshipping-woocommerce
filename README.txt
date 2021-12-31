@@ -88,6 +88,9 @@ More Feature to Choose From
 
 == Changelog ==
 
+= 2.2.1 =
+* Tested with latest versions of both WordPress 5.8.2 and WooCommece 6.0.0.
+
 = 2.2.0 = 
 * ADDED: Categorize knawat products as product categories or tags.
 * ADDED: Added Option for knawat products update from edit screen or bulk option.
