@@ -3,9 +3,9 @@ Contributors: dharm1025,esl4m,firstanonymous,surajrathod,hazemkhaled
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace, Appmaker
 Requires PHP: 7.0
 Requires at least: 4.0
-Tested up to: 5.8.2
-Stable tag: 2.3.0
-WC tested up to: 6.0.0
+Tested up to: 5.8.3
+Stable tag: 3.0.0
+WC tested up to: 6.1.0
 
 == Description ==
 
@@ -88,14 +88,17 @@ More Feature to Choose From
 
 == Changelog ==
 
-= 2.3.0 =
-* Tested with latest versions of both WordPress 5.8.2 and WooCommece 6.0.0.
+= 3.0.0 =
+* Tested with latest versions of both WordPress 5.8.3 and WooCommece 6.1.0.
 * ADDED: qTranslate-XT Support
 * ADDED: WPML Support
 * ADDED: Delete out of stock product default option set to yes
 * ADDED: Admin can enable/disable delete products when goes out of stock
 * IMPROVEMENT: Improve product sync speed
 * FIX: non-latin key issue while importing with category
+
+= 2.3.0 =
+* Tested with latest versions of both WordPress 5.8.2 and WooCommece 6.0.0.
 
 = 2.2.0 = 
 * ADDED: Categorize knawat products as product categories or tags.

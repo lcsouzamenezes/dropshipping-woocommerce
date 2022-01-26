@@ -3,7 +3,7 @@
  * Plugin Name:       Knawat WooCommerce DropShipping
  * Plugin URI:        https://wordpress.org/plugins/dropshipping-woocommerce/
  * Description:       Knawat WooCommerce DropShipping
- * Version:           2.2.1
+ * Version:           3.0.0
  * Author:            Knawat
  * Author URI:        https://www.knawat.com/?utm_source=wordpress.org&utm_medium=social&utm_campaign=The%20WC%20Plugin
  * License:           GPL-2.0+
@@ -11,7 +11,7 @@
  * Text Domain:       dropshipping-woocommerce
  * Domain Path:       /languages
  * WC requires at least: 3.3.0
- * WC tested up to: 6.0.0
+ * WC tested up to: 6.1.0
  *
  * @package     Knawat_Dropshipping_Woocommerce
  */
