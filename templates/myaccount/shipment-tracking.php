@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( $tracking_data ){
+if ( $tracking_data ) {
 	?>
 	<h2 class="woocommerce-order-shipment_tracking_title"><?php _e( 'Tracking Information', 'dropshipping-woocommerce' ); ?></h2>
 
@@ -35,7 +35,7 @@ if ( $tracking_data ){
 				</td>
 				<td class="date-shipped" data-title="<?php _e( 'Date', 'dropshipping-woocommerce' ); ?>">	
 					<?php
-					if( $tracking_data['_shipment_date_shipped'] != '' ){
+					if ( $tracking_data['_shipment_date_shipped'] != '' ) {
 						echo date_i18n( get_option( 'date_format' ), strtotime( $tracking_data['_shipment_date_shipped'] ) );
 					}
 					?>
@@ -49,5 +49,5 @@ if ( $tracking_data ){
 		</tbody>
 	</table>
 
-<?php
+	<?php
 }

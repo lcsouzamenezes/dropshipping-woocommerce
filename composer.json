@@ -1,0 +1,20 @@
+{
+  "name": "knawat/dropshipping-woocommerce",
+  "description": "Knawat WooCommerce DropShipping",
+  "type": "wordpress-plugin",
+  "require": {
+    "squizlabs/php_codesniffer": "^3.5",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "wp-coding-standards/wpcs": "^2.3"
+  },
+  "authors": [
+    {
+      "name": "Dharmesh Patel",
+      "email": "dspatel44@gmail.com"
+    }
+  ],
+  "scripts": {
+    "wpcs-check": "phpcs -s --report=summary --extensions=php ./",
+    "wpcs-fix": "phpcbf --extensions=php ./"
+  }
+}

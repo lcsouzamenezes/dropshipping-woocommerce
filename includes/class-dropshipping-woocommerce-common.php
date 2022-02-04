@@ -34,7 +34,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 		add_action( 'before_delete_post', array( $this, 'knawat_delete_product_on_mp' ) );
 		add_action( 'wp_trash_post', array( $this, 'knawat_show_notice_for_delete' ) );
 	}
-	
+
 	/**
 	 * Check is WooCommerce Activate or not.
 	 *
@@ -43,7 +43,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 */
 	public function knawat_dropshipwc_is_woocommerce_activated() {
 		if ( ! function_exists( 'is_plugin_active' ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 			return true;
@@ -60,7 +60,7 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	 */
 	public function knawat_dropshipwc_is_woomulti_currency_activated() {
 		if ( ! function_exists( 'is_plugin_active' ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		if ( is_plugin_active( 'woocommerce-currency-switcher/index.php' ) || is_plugin_active( 'currency-switcher-woocommerce/currency-switcher-woocommerce.php' ) || is_plugin_active( 'woocommerce-multilingual/wpml-woocommerce.php' ) || is_plugin_active( 'woo-multi-currency/woo-multi-currency.php' ) ) {
 			return true;
@@ -70,9 +70,45 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	}
 
 	/**
+	 * Check is qTranslate X Activate or not.
+	 *
+	 * @return   boolean
+	 * @since    2.2.0
+	 */
+	public function knawat_dropshipwc_is_qTranslatex_activated() {
+		
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+
+		if ( is_plugin_active( 'qtranslate-x/qtranslate.php' )) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Check is WPML Activate or not.
+	 *
+	 * @return   boolean
+	 * @since    2.2.0
+	 */
+	 public function knawat_dropshipwc_is_wpml_activated() {
+		
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+		
+		if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' )) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Check order contains knawat products or not.
 	 *
-	 * @return     boolean
+	 * @return   boolean
 	 * @since    1.0.0
 	 */
 	public function is_knawat_order( $order_id ) {
@@ -166,11 +202,18 @@ class Knawat_Dropshipping_Woocommerce_Common {
 			}
 
 			if ( isset( $knawatds_options['categorize_products'] ) ) {
-				$current_options['categorize_products'] = sanitize_text_field( $knawatds_options['categorize_products']);    
-			}else{
+				$current_options['categorize_products'] = sanitize_text_field( $knawatds_options['categorize_products'] );
+			} else {
 				$current_options['categorize_products'] = 'no';
 			}
 
+			if ( isset( $knawatds_options['remove_outofstock'] ) ) {
+				$current_options['remove_outofstock'] = sanitize_text_field( $knawatds_options['remove_outofstock']);    
+			} else {
+
+				$current_options['remove_outofstock'] = 'yes';
+			}
+			
 			if ( isset( $knawatds_options['dokan_seller'] ) && is_numeric( $knawatds_options['dokan_seller'] ) ) {
 				$current_options['dokan_seller'] = sanitize_text_field( $knawatds_options['dokan_seller'] );
 			}
@@ -195,11 +238,11 @@ class Knawat_Dropshipping_Woocommerce_Common {
 	public function resync_knawat_products() {
 		global $knawatdswc_success, $knawat_dropshipwc;
 		$query_string = $_GET;
-		if( wp_verify_nonce( sanitize_key( $query_string['product_sync'] ), 'knawat_product_sync_action') ){
-			update_option( 'knawat_last_imported','1483300000000');
+		if ( wp_verify_nonce( sanitize_key( $query_string['product_sync'] ), 'knawat_product_sync_action' ) ) {
+			update_option( 'knawat_last_imported', '1483300000000' );
 			do_action( 'knawat_dropshipwc_validate_access_token' );
-			$redirect_url = esc_url_raw( add_query_arg( array( 'tab' => 'settings' ), admin_url('admin.php?page=knawat_dropship')));
-			wp_safe_redirect(  $redirect_url );
+			$redirect_url = esc_url_raw( add_query_arg( array( 'tab' => 'settings' ), admin_url( 'admin.php?page=knawat_dropship' ) ) );
+			wp_safe_redirect( $redirect_url );
 			exit();
 		}
 	}
@@ -257,8 +300,8 @@ class Knawat_Dropshipping_Woocommerce_Common {
 
 		// Async Product Update.
 		$async_request = new Knawat_Dropshipping_WC_Async_Request();
-		$data = array( 'sku' => $sku );
-		if ($force_update) {
+		$data          = array( 'sku' => $sku );
+		if ( $force_update ) {
 			$data['force_update'] = $force_update;
 		}
 		$async_request->data( $data );
@@ -280,7 +323,14 @@ class Knawat_Dropshipping_Woocommerce_Common {
 			return false;
 		}
 		$sku      = sanitize_text_field( $sku );
-		$importer = new Knawat_Dropshipping_Woocommerce_Importer( 'single', array( 'sku' => $sku, 'limit' => 1, 'force_update' => $force_update ) );
+		$importer = new Knawat_Dropshipping_Woocommerce_Importer(
+			'single',
+			array(
+				'sku'          => $sku,
+				'limit'        => 1,
+				'force_update' => $force_update,
+			)
+		);
 		$import   = $importer->import();
 
 		return $import;
@@ -288,7 +338,6 @@ class Knawat_Dropshipping_Woocommerce_Common {
 
 	/**
 	 * Validate Access Token
-	 *
 	 *
 	 * @access public
 	 * @return string
@@ -322,7 +371,8 @@ class Knawat_Dropshipping_Woocommerce_Common {
 				return;
 			}
 			global $knawat_dropshipwc, $knawatdswc_warnings;
-			$knawatdswc_warnings[] = sprintf( '%s <a href="' . esc_url( add_query_arg( 'tab', 'settings', $knawat_dropshipwc->admin->adminpage_url ) ) . '" >%s</a>',
+			$knawatdswc_warnings[] = sprintf(
+				'%s <a href="' . esc_url( add_query_arg( 'tab', 'settings', $knawat_dropshipwc->admin->adminpage_url ) ) . '" >%s</a>',
 				__( 'Your connection with knawat.com has been disconnected. Please check and verify your knawat consumer keys from', 'dropshipping-woocommerce' ),
 				__( '<strong>Knawat Dropshipping</strong> > <strong>Settings</strong>.', 'dropshipping-woocommerce' )
 			);
@@ -408,7 +458,10 @@ class Knawat_Dropshipping_Woocommerce_Common {
 			}
 
 			// Async Product Update.
-			$data          = array( 'operation' => 'delete_product', 'delete_sku' => $sku );
+			$data          = array(
+				'operation'  => 'delete_product',
+				'delete_sku' => $sku,
+			);
 			$async_request = new Knawat_Dropshipping_WC_Async_Request();
 			$async_request->data( $data );
 			$async_request->dispatch();
@@ -463,11 +516,14 @@ class Knawat_Dropshipping_Woocommerce_Common {
 /*
  * Woocommerce WebHooks Utilities
  */
-add_filter( 'http_request_args', function ( $args ) {
-	$args['reject_unsafe_urls'] = false;
+add_filter(
+	'http_request_args',
+	function ( $args ) {
+		$args['reject_unsafe_urls'] = false;
 
-	return $args;
-} );
+		return $args;
+	}
+);
 
 /*
  * Store is contected to knawat.com or not
@@ -573,21 +629,21 @@ function knawat_dropshipwc_get_activated_plugins() {
 	$active_plugins = array(
 		'featured-image-by-url'         => false,
 		'woocommerce-currency-switcher' => false,
-		'qtranslate-xt'                 => false,
-		'qtranslate-x'                  => false
+		'qtranslate-x'                  => false,
+		'qtranslate-xt'                 => false
 	);
 
 	$blog_plugins = get_option( 'active_plugins', array() );
 	$site_plugins = is_multisite() ? (array) maybe_unserialize( get_site_option( 'active_sitewide_plugins' ) ) : array();
 
-	// Check if qTranslate XT is activated
-	if ( in_array( 'qtranslate-xt/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-xt/qtranslate.php'] ) ) {
-		$active_plugins['qtranslate-xt'] = true;
-	}
-
 	// Check if qTranslate X is activated
 	if ( in_array( 'qtranslate-x/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-x/qtranslate.php'] ) ) {
 		$active_plugins['qtranslate-x'] = true;
+	}
+
+	// Check if qTranslate XT is activated
+	if ( in_array( 'qtranslate-xt/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-xt/qtranslate.php'] ) ) {
+		$active_plugins['qtranslate-xt'] = true;
 	}
 
 	// Check if Featured image by URL is activated
@@ -603,19 +659,18 @@ function knawat_dropshipwc_get_activated_plugins() {
 	return $active_plugins;
 }
 
-
 /**
  * Get Total Number of Products with specific timestamp
- * 
+ *
  * @return int $products_count The total number of products
  */
-function knawat_dropshipwc_get_products_count( $timestamp , $hideOutOfStock = true){
+function knawat_dropshipwc_get_products_count( $timestamp, $hideOutOfStock = true ) {
 	// MP request to get total count of synced products with $timestamp
 	$mp_api = new Knawat_Dropshipping_Woocommerce_API();
-	if($hideOutOfStock){
-		$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp);
-	}else{
-		$data 	= $mp_api->get('catalog/products/count?lastUpdate='.$timestamp.'&hideOutOfStock=1');
+	if ( $hideOutOfStock ) {
+		$data = $mp_api->get( 'catalog/products/count?lastUpdate=' . $timestamp );
+	} else {
+		$data = $mp_api->get( 'catalog/products/count?lastUpdate=' . $timestamp . '&hideOutOfStock=1' );
 	}
 	$products_count = $data->total;
 	return $products_count;

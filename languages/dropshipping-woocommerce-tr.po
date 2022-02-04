@@ -1,0 +1,1225 @@
+# Translation of Plugins - Knawat WooCommerce DropShipping - Stable (latest release) in Turkish
+# This file is distributed under the same license as the Plugins - Knawat WooCommerce DropShipping - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-01-28 12:52:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: tr\n"
+"Project-Id-Version: Plugins - Knawat WooCommerce DropShipping - Stable (latest release)\n"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:213
+msgid "if some of your products didn't get updated, you may need to <a href=\""
+msgstr "Ürünlerinizden bazıları güncellenmediyse, tümünü senkronize etmeniz gerekebilir <a href=\""
+
+#: templates/admin/dropshipping-woocommerce-settings.php:211
+msgid "You have <strong>"
+msgstr "Sahip olduğunuz <strong>"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:206
+msgid "<strong>Products Synced</strong>"
+msgstr "<strong>Ürünler Senkronize Edildi</strong>"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:100
+msgid "Select yes to fetch product categories"
+msgstr "Ürün Kategorisini Almak İçin Evet'i Seçin"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:96
+msgid "Yes (Product Tag)"
+msgstr "Evet (Ürün Etiketi)"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:95
+msgid "Yes (Product Category)"
+msgstr "Evet (Ürün Kategorisi)"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:94
+msgid "No"
+msgstr "Hayır"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:90
+msgid "Categorize Products"
+msgstr "Ürünleri Sınıflandır"
+
+#: includes/class-dropshipping-woocommerce-admin.php:808
+msgid "Knawat Update"
+msgstr "Knawat Gencellemesi"
+
+#: includes/class-dropshipping-woocommerce-admin.php:803
+msgid "You have not access to doing this operations."
+msgstr "Bu işlemi yapabilmeniz için erişiminiz yok."
+
+#: includes/class-dropshipping-woocommerce-admin.php:801
+msgid "Invalid request."
+msgstr "Geçersiz İstek."
+
+#: includes/class-dropshipping-woocommerce-admin.php:775
+msgid "Get From Knawat"
+msgstr "Knawat'tan Al"
+
+#: includes/class-dropshipping-woocommerce-admin.php:772
+msgid "Warning: any changes made to the product will be overwritten"
+msgstr "Uyarı: Üründe yapılan herhangi bir değişikliğin üzerine yazılacaktır."
+
+#: includes/class-dropshipping-woocommerce-admin.php:771
+msgid "Update Knawat Product"
+msgstr "Knawat Ürünlerini Güncelle"
+
+#: includes/class-dropshipping-woocommerce-admin.php:438
+msgid "Knawat product has been updated successfully."
+msgstr "Knawat ürünleri başarıyla güncellendi."
+
+#. Author URI of the plugin
+msgid "https://www.knawat.com/?utm_source=wordpress.org&utm_medium=social&utm_campaign=The%20WC%20Plugin"
+msgstr "https://www.knawat.com/?utm_source=wordpress.org&utm_medium=social&utm_campaign=The%20WC%20Plugin"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:119
+msgid "1 Hour"
+msgstr "1 Saat"
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:371
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Aşağıdaki önerilen eklenti şu anda etkin değil:%1$s."
+msgstr[1] "Aşağıdaki önerilen eklentiler şu anda etkin değil: %1$s."
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:365
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Aşağıdaki gerekli eklenti şu anda etkin değil: %1$s."
+msgstr[1] "Aşağıdaki gerekli eklentiler şu anda etkin değil: %1$s."
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:359
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Bir güncelleme mevcut: %1$s."
+msgstr[1] "Aşağıdaki eklentiler için güncellemeler mevcut: %1$s."
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:353
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] "Aşağıdaki eklentinin bu temayla maksimum uyumluluğunu sağlamak için en son sürümüne güncellenmesi gerekiyor: %1$s."
+msgstr[1] "Aşağıdaki eklentilerin bu temayla maksimum uyumluluğunu sağlaması için en son sürümüne güncellenmesi gerekiyor: %1$s."
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:347
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Bu tema aşağıdaki eklentiyi önermektedir: %1$s."
+msgstr[1] "Bu tema aşağıdaki eklentileri önermektedir: %1$s."
+
+#. translators: 1: plugin name(s).
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:341
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Bu tema aşağıdaki eklentiyi gerektirir: %1$s."
+msgstr[1] "Bu tema aşağıdaki eklentileri gerektirir: %1$s."
+
+#: includes/class-dropshipping-woocommerce-importer.php:549
+msgid "Variation cannot be imported: Missing parent ID or parent does not exist yet."
+msgstr "Varyasyon içe aktarılamaz: Eksik üst kimlik sorunu var veya üst öğe henüz mevcut değil."
+
+#: includes/class-dropshipping-wc-mp-orders.php:259
+msgid "(Knawat Payment Method)"
+msgstr "(Knawat Ödeme Şekli)"
+
+#. translators: 1: plugin name(s).
+#: includes/knawat-required-plugins.php:89
+msgid "Knawat Dropshipping recommends the following plugin: %1$s."
+msgid_plural "Knawat Dropshipping recommends the following plugins: %1$s."
+msgstr[0] "Knawat Dropshipping aşağıdaki eklentiyi önermektedir: %1$s."
+msgstr[1] "Knawat Dropshipping aşağıdaki eklentileri önermektedir: %1$s."
+
+#. translators: 1: plugin name(s).
+#: includes/knawat-required-plugins.php:83
+msgid "Knawat Dropshipping requires the following plugin: %1$s."
+msgid_plural "Knawat Dropshipping requires the following plugins: %1$s."
+msgstr[0] "Knawat Dropshipping aşağıdaki eklentiyi gerektirir: %1$s"
+msgstr[1] "Knawat Dropshipping aşağıdaki eklentileri gerektirir: %1$s"
+
+#: includes/knawat-merlin-config.php:69
+msgid "<a href=\""
+msgstr "<a href=\" "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:199
+msgid "Save Settings"
+msgstr "Ayarları Kaydet "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:184
+msgid "Please verify your knawat consumer keys."
+msgstr "Lütfen knawat tüketici anahtarlarınızı doğrulayın. "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:180
+msgid "Not connected"
+msgstr "Bağlı değil  "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:167
+msgid "Knawat Connection status"
+msgstr "Knawat Bağlantı durumu"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:157
+msgid "Select dokan seller for import Knawat products under it."
+msgstr "Altındaki Knawat ürünlerini ithal etmek için dokan satıcısını seçin."
+
+#: templates/admin/dropshipping-woocommerce-settings.php:151
+msgid "Select Dokan Seller"
+msgstr "Dokan Satıcısını Seçin"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:141
+msgid "Dokan Seller"
+msgstr "Dokan Satıcı"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:132
+msgid "Select interval for synchronization orders with Knawat"
+msgstr "Knawat ile senkronizasyon siparişleri için zaman aralığı seçin."
+
+#: templates/admin/dropshipping-woocommerce-settings.php:118
+msgid "3 Hours"
+msgstr "3 Saat     "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:117
+msgid "6 Hours"
+msgstr "6 Saat     "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:116
+msgid "9 Hours"
+msgstr "9 Saat     "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:115
+msgid "12 Hours"
+msgstr "12 Saatler"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:114
+msgid "24 Hours"
+msgstr "24 Saat          "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:113
+msgid "48 Hours"
+msgstr "48 Saat        "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:108
+msgid "Orders Synchronization Interval:"
+msgstr "Siparişlerin Senkronizasyon Aralığı:"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:82
+msgid "Products batch size for import products from knawat.com"
+msgstr "knawat.com'dan içe aktarılan ürünlerin parti boyutu"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:76
+msgid "Products Batch Size:"
+msgstr "Ürünlerin Parti Boyutu: "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:66
+msgid "You can get your Knawat Consumer Secret from your <strong>Dashboard > Store settings</strong>"
+msgstr "Hizmet sağlayıcı tarafından atanan Knawat Tüketici Şifrenizi <strong> Kontrol Paneli > Mağaza Ayarlarınızdan öğrenebilirsiniz </strong>       "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:48
+#: templates/admin/dropshipping-woocommerce-settings.php:67
+msgid "click to see the image"
+msgstr "Resmi görmek için tıklayın "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:47
+msgid "You can get your Knawat Consumer Key from your <strong>Dashboard > Store settings</strong>"
+msgstr "Knawat Tüketici Anahtarınızı <strong>Kontrol Paneli > Mağaza Ayarları ile öğrenebilirsiniz </strong> "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:30
+msgid "You need a Knawat consumer key and consumer secret for import products into your store from knawat.com"
+msgstr "Knawat.com'dan ürünleri kendi mağazanıza aktarmak için Knawat tüketici anahtarınıza ve hizmet sağlayıcı tarafından atanan şifrenize ihtiyacınız vardır.  "
+
+#: templates/admin/dropshipping-woocommerce-settings.php:29
+msgid "Note: Only orders in Processing status will be sent to Knawat to processs."
+msgstr "Not: Sadece işleme alınan siparişler gönderim durumunun ilerlemesi için Knawat'a gönderilecektir."
+
+#: templates/admin/dropshipping-woocommerce-import.php:94
+msgid "Failed:"
+msgstr "Başarısız:"
+
+#: templates/admin/dropshipping-woocommerce-import.php:93
+msgid "Updated:"
+msgstr "Güncellendi:"
+
+#: templates/admin/dropshipping-woocommerce-import.php:92
+#: templates/admin/dropshipping-woocommerce-import.php:93
+#: templates/admin/dropshipping-woocommerce-import.php:94
+msgid "%d Products with variations."
+msgstr "%d Varyasyonlu Ürünler."
+
+#: templates/admin/dropshipping-woocommerce-import.php:92
+msgid "Imported:"
+msgstr "İçe Aktarıldı:"
+
+#: templates/admin/dropshipping-woocommerce-import.php:89
+msgid "Product import is In-progress already. you can't start import now. Please find current import status below."
+msgstr "Ürünün içe aktarma işlemi zaten devam ediyor. Şimdi içe aktarmaya başlayamazsınız. Lütfen aşağıda bulunan mevcut içe aktarma durumunu bulunuz."
+
+#: templates/admin/dropshipping-woocommerce-import.php:86
+msgid "Stop Import"
+msgstr "İçe Aktarımı Durdur"
+
+#: templates/admin/dropshipping-woocommerce-import.php:85
+msgid "Are you sure? do you really want to stop import?"
+msgstr "Emin misiniz? İçe aktarmayı gerçekten durdurmak istiyor musunuz?"
+
+#: templates/admin/dropshipping-woocommerce-import.php:67
+msgid "You're not connected to a knawat.com, please make a connection for start import."
+msgstr "knawat.com'a bağlı değilsiniz, içe aktarmayı başlatmak için lütfen bağlantı kurun."
+
+#: templates/admin/dropshipping-woocommerce-import.php:58
+#: templates/admin/dropshipping-woocommerce-import.php:64
+#: templates/admin/dropshipping-woocommerce-import.php:83
+msgid "Start Import"
+msgstr "İçe Aktarımı Başlat"
+
+#: templates/admin/dropshipping-woocommerce-import.php:50
+msgid "Start product import"
+msgstr "Ürünün içe aktarımını başlat"
+
+#: templates/admin/dropshipping-woocommerce-import.php:43
+msgid "Plugin auto import/update products from knawat.com in background on regular interval. But, if you want then you can manually start import."
+msgstr "Eklenti düzenli aralıklarla arka plandaki ürünleri knawat.com'dan otomatik içe aktarır / günceller. Ancak, isterseniz, içe aktarmayı manuel olarak başlatabilirsiniz.  "
+
+#: templates/admin/dropshipping-woocommerce-import.php:21
+msgid "Please insert Knawat Consumer Key and Consumer Secret in <a href=\"%s\">Settings</a> tab."
+msgstr "Lütfen <a href=\"%s\"> Ayarlar </a> sekmesine Knawat Tüketici Anahtarınızı ve Tüketici Şifrenizi girin.       "
+
+#: includes/lib/wp-background-processing/wp-background-process.php:425
+msgid "Every %d Minutes"
+msgstr "Her %d Dakikada"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:1018
+msgid "Please Insert Knawat Cosumer Secret."
+msgstr "Lütfen hizmet sağlayıcı tarafından atanan Knawat Tüketici Şifrenizi girin."
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:1010
+msgid "Please Insert Knawat Cosumer Key."
+msgstr "Lütfen Knawat Tüketici Anahtarınızı girin."
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:670
+#: templates/admin/dropshipping-woocommerce-settings.php:57
+msgid "Knawat Consumer Secret"
+msgstr "Otomatik Atanan Knawat Tüketici Şifresi                       "
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:665
+#: templates/admin/dropshipping-woocommerce-settings.php:38
+msgid "Knawat Consumer Key"
+msgstr "Knawat Tüketici Anahtarı "
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:657
+msgid "from here"
+msgstr "buradan   "
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:656
+msgid "Please insert Knawat Knawat Consumer Key and Secret. You can get your Knawat keys"
+msgstr "Lütfen hizmet sağlayıcınız tarafından atanan Knawat Tüketici Şifrenizi ve Anahtarınızı girin. Knawat anahtarlarınızı alabilirsiniz.  "
+
+#: includes/knawat-merlin-config.php:51
+msgid "Please insert Knawat Knawat Consumer Key and Secret."
+msgstr "Lütfen hizmet sağlayıcınız tarafından atanan Knawat Tüketici Şifrenizi ve Anahtarınızı girin.             "
+
+#: includes/class-dropshipping-woocommerce-webhook.php:113
+msgid "Knawat Order restored (%s)"
+msgstr "Knawat Siparişi Geri Yüklendi (%s)                                          "
+
+#: includes/class-dropshipping-woocommerce-webhook.php:112
+msgid "Knawat Order deleted (%s)"
+msgstr "Knawat Siparişi Silindi (%s)"
+
+#: includes/class-dropshipping-woocommerce-webhook.php:111
+msgid "Knawat Order updated (%s)"
+msgstr "Knawat Siparişi Güncellendi (%s)  "
+
+#: includes/class-dropshipping-woocommerce-webhook.php:110
+msgid "Knawat Order created (%s)"
+msgstr "Knawat Siparişi Oluşturuldu (%s)    "
+
+#: includes/class-dropshipping-woocommerce-orders.php:1466
+msgid "%1$s stock reduced for \"%2$s\" from %3$s to %4$s."
+msgstr "\"%2$s\" için %1$s stoku %3$s'den %4$s'ye düşürüldü.                                                              "
+
+#: includes/class-dropshipping-woocommerce-orders.php:1077
+msgid "Mark main order refunded when all suborders are refunded."
+msgstr "Tüm alt siparişler geri ödendiğinde ana siparişi geri ödendi olarak işaretleyin."
+
+#: includes/class-dropshipping-woocommerce-orders.php:1071
+msgid "Mark main order completed when all suborders are completed."
+msgstr "Tüm alt siparişler tamamlandığında ana siparişi tamamlandı olarak işaretleyin."
+
+#: includes/class-dropshipping-woocommerce-orders.php:873
+msgid "Return to main order"
+msgstr "Ana siparişe dön"
+
+#: includes/class-dropshipping-woocommerce-orders.php:828
+msgid "Knawat Dropshipper"
+msgstr "Knawat Dropshipper"
+
+#: includes/class-dropshipping-woocommerce-orders.php:822
+msgid "Parent order"
+msgstr "Ana Sipariş"
+
+#: includes/class-dropshipping-woocommerce-orders.php:820
+msgid "Suborders"
+msgstr "Alt Siparişler"
+
+#: includes/class-dropshipping-woocommerce-orders.php:730
+msgctxt "Admin: Order table column"
+msgid "Suborders"
+msgstr "Alt Siparişler"
+
+#: includes/class-dropshipping-woocommerce-orders.php:299
+msgctxt "Order date parsed by strftime"
+msgid "%b %d, %Y @ %I:%M %p"
+msgstr "%b %d, %Y @ %I:%M %p"
+
+#: includes/class-dropshipping-woocommerce-orders.php:299
+msgid "Order &ndash; %s"
+msgstr "Sipariş &ndash; %s"
+
+#: includes/class-dropshipping-woocommerce-importer.php:130
+#: includes/class-dropshipping-woocommerce-importer.php:138
+#: includes/class-dropshipping-woocommerce-importer.php:151
+msgid "Something went wrong during get data from Knawat MP API. Please try again later."
+msgstr "Knawat MP API'den veri alınırken bir sorun oluştu. Lütfen daha sonra tekrar deneyiniz."
+
+#: includes/class-dropshipping-woocommerce-importer.php:113
+msgid "Please provide product sku."
+msgstr "Lütfen ürün sku kodunu girin."
+
+#: includes/class-dropshipping-woocommerce-common.php:454
+msgid "The product will be imported again from Knawat, if you don't want this product, then delete it permanently."
+msgstr "Ürün, Knawat'tan tekrar içe aktarılacaktır, bu ürünü istemiyorsanız kalıcı olarak silin."
+
+#: includes/class-dropshipping-woocommerce-common.php:327
+msgid "<strong>Knawat Dropshipping</strong> > <strong>Settings</strong>."
+msgstr "<strong>Knawat Dropshipping</strong> > <strong>Ayarlar</strong>."
+
+#: includes/class-dropshipping-woocommerce-common.php:326
+msgid "Your connection with knawat.com has been disconnected. Please check and verify your knawat consumer keys from"
+msgstr "knawat.com ile bağlantınız kesildi. Lütfen Knawat tüketici anahtarlarınızı kontrol edin ve doğrulayın."
+
+#: includes/class-dropshipping-woocommerce-common.php:186
+msgid "Settings has been saved successfully."
+msgstr "Ayarlar başarıyla kaydedildi."
+
+#: includes/class-dropshipping-woocommerce-common.php:128
+msgid "Another product import is in process already."
+msgstr "Başka bir ürünün içe aktarımı zaten devam ediyor."
+
+#: includes/class-dropshipping-woocommerce-api.php:123
+#: includes/class-dropshipping-woocommerce-api.php:167
+#: includes/class-dropshipping-woocommerce-api.php:206
+#: includes/class-dropshipping-woocommerce-api.php:246
+msgid "Access token not found for API. Please make sure your store is connected to knawat.com"
+msgstr "API için erişim belirteci bulunamadı. Lütfen mağazanızın knawat.com'a bağlı olduğundan emin olun."
+
+#: includes/class-dropshipping-woocommerce-admin.php:703
+msgid "Dismiss this notice."
+msgstr "Bu uyarıyı görmezden gelin."
+
+#: includes/class-dropshipping-woocommerce-admin.php:703
+msgid "Before you start importing products, it's better to set default category for import Knawat Products. You can set it from <strong>Products > Categories.</strong>  ex: New arrivals, or something else as you want."
+msgstr "Knawat ürünlerini içe aktarmaya başlamadan önce varsayılan kategoriyi ayarlamak daha iyidir. Bunu <strong> Ürünler> Kategoriler </strong> ile ayarlayabilirsiniz. Örneğin: Yeni gelenler veya istediğiniz başka bir şey."
+
+#: includes/class-dropshipping-woocommerce-admin.php:643
+msgid "Enter a quantity of product variant for selected dropshipper."
+msgstr "Seçilen dropshipper için bir ürün çeşidi miktarı girin."
+
+#: includes/class-dropshipping-woocommerce-admin.php:641
+msgid "Stock quantity (Dropshipper)"
+msgstr "Stok Miktarı (Dropshipper)"
+
+#: includes/class-dropshipping-woocommerce-admin.php:633
+msgid "Select Dropshipper for this Product variantion."
+msgstr "Bu ürünün varyasyonu için Dropshipper'ı seçin."
+
+#: includes/class-dropshipping-woocommerce-admin.php:630
+msgid "Dropshipper"
+msgstr "Dropshipper"
+
+#: includes/class-dropshipping-woocommerce-admin.php:575
+msgid "Knawat Cost ($)"
+msgstr "Knawat Maliyeti ($)"
+
+#: includes/class-dropshipping-woocommerce-admin.php:480
+msgid "Import has been stopped successfully."
+msgstr "İçe aktarma başarıyla durduruldu."
+
+#: includes/class-dropshipping-woocommerce-admin.php:420
+msgid "Something went wrong during order synchronization, please try again."
+msgstr "Sipariş senkronizasyonu sırasında bir şeyler ters gitti, lütfen tekrar deneyin."
+
+#: includes/class-dropshipping-woocommerce-admin.php:414
+msgid "Order(s) has been synchronized successfully."
+msgstr "Siparişler başarıyla senkronize edildi."
+
+#: includes/class-dropshipping-woocommerce-admin.php:405
+msgid "Something went wrong during start manual import."
+msgstr "İçe aktarımın manuel olarak başlatılması sırasında bir sorun oluştu."
+
+#: includes/class-dropshipping-woocommerce-admin.php:397
+msgid "Manual import started successfully."
+msgstr "Manuel içe aktarım başarılı bir şekilde başladı."
+
+#: includes/class-dropshipping-woocommerce-admin.php:127
+#: templates/admin/dropshipping-woocommerce-import.php:42
+msgid "Product Import"
+msgstr "Ürün İçe Aktarımı"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:318
+msgid "<strong>%s product</strong> out of stock"
+msgid_plural "<strong>%s products</strong> out of stock"
+msgstr[0] "<strong>%s ürünü</strong> stokta yok."
+msgstr[1] "<strong>%s ürünleri</strong> stokta yok."
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:307
+msgid "<strong>%s product</strong> low in stock"
+msgid_plural "<strong>%s products</strong> low in stock"
+msgstr[0] "<strong>%s ürünü</strong> stokta az"
+msgstr[1] "<strong>%s ürünleri</strong> stokta az"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:248
+msgid "<strong>%s order</strong> on-hold"
+msgid_plural "<strong>%s orders</strong> on-hold"
+msgstr[0] "<strong>%s siparişi</strong> beklemede"
+msgstr[1] "<strong>%s siparişleri</strong> beklemede"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:237
+msgid "<strong>%s order</strong> awaiting processing"
+msgid_plural "<strong>%s orders</strong> awaiting processing"
+msgstr[0] "<strong>%s sipariş</strong> işlenmeyi bekliyor"
+msgstr[1] "<strong>%s siparişler</strong> işlenmeyi bekliyor"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:184
+msgid "%1$s top seller this month (sold %2$d)"
+msgstr "Bu ay en çok satan %1$s (%2$d satıldı)"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:163
+msgid "%s net profit this month"
+msgstr "Bu ay %s net kar"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:147
+msgid "%s net sales this month"
+msgstr "Bu ay %s net satış"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:40
+msgid "Latest News from Knawat"
+msgstr "Knawat'tan Son Haberler"
+
+#: includes/class-dropshipping-woocommerce-admin-dashboard.php:37
+msgid "Knawat status"
+msgstr "Knawat Durumu"
+
+#: includes/class-dropshipping-wc-mp-orders.php:401
+msgid "Nonce failed. Please try again."
+msgstr "Başarısız işlem. Lütfen tekrar deneyin."
+
+#: includes/class-dropshipping-wc-mp-orders.php:355
+msgid "synchronize it now"
+msgstr "Şimdi senkronize et"
+
+#: includes/class-dropshipping-wc-mp-orders.php:354
+msgid "Some orders are not sycronized with knawat.com. Please"
+msgstr "Bazı siparişler knawat.com ile senkronize değil."
+
+#: includes/class-dropshipping-wc-mp-orders.php:97
+#: includes/class-dropshipping-wc-mp-orders.php:109
+#: includes/class-dropshipping-wc-mp-orders.php:166
+#: includes/class-dropshipping-wc-mp-orders.php:178
+msgid "Order synchronize fail. order id: #%d"
+msgstr "Sipariş senkronizasyonu başarısız oldu. Sipariş Kimliği: #%d"
+
+#: includes/class-dropshipping-wc-cron.php:42
+msgid "Knawat Order Sync Interval"
+msgstr "Knawat Sipariş Senkronizasyon Aralığı"
+
+#: dropshipping-woocommerce.php:256
+msgid "Knawat DropShipping (Saudi Arabia)"
+msgstr "Knawat DropShipping (Suudi Arabistan)"
+
+#: dropshipping-woocommerce.php:251
+msgid "Knawat DropShipping"
+msgstr "Knawat DropShipping"
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/dropshipping-woocommerce/"
+msgstr "https://wordpress.org/plugins/dropshipping-woocommerce/"
+
+#. Plugin Name of the plugin
+#. Description of the plugin
+msgid "Knawat WooCommerce DropShipping"
+msgstr "Knawat WooCommerce DropShipping"
+
+#: templates/myaccount/shipment-tracking.php:23
+#: templates/myaccount/shipment-tracking.php:36
+msgid "Date"
+msgstr "Tarih"
+
+#: templates/myaccount/shipment-tracking.php:20
+#: templates/myaccount/shipment-tracking.php:33
+msgid "Tracking Number"
+msgstr "Takip Numarası"
+
+#: templates/myaccount/shipment-tracking.php:17
+#: templates/myaccount/shipment-tracking.php:30
+msgid "Provider"
+msgstr "Sağlayıcı"
+
+#: templates/myaccount/shipment-tracking.php:11
+msgid "Tracking Information"
+msgstr "Takip Bilgileri"
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3613
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Eklenti %1$s yükleniyor (%2$d / %3$d)"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3611
+msgid "All installations have been completed."
+msgstr "Tüm kurulumlar tamamlandı."
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
+msgid "%1$s installed successfully."
+msgstr "%1$s başarıyla kuruldu."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3608
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Kurulum işlemi başlıyor. Bu işlem bazı ana bilgisayarlarda biraz daha fazla zaman alabilir, bu nedenle lütfen sabırlı olun."
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3605
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "%1$s Eklentisini Kurma ve Etkinleştirme (%2$d / %3$d)"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr "Tüm kurulumlar ve etkinleştirmeler tamamlandı."
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
+msgid "Hide Details"
+msgstr "Detayları Gizle"
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3610
+msgid "Show Details"
+msgstr "Detayları Göster"
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3602
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s başarıyla kuruldu ve etkinleştirildi."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3600
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Kurulum ve aktivasyon süreci başlıyor. Bu işlem bazı ana bilgisayarlarda biraz daha fazla zaman alabilir, bu nedenle lütfen sabırlı olun."
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3596
+msgid "The installation of %1$s failed."
+msgstr "%1$s kurulumu başarısız oldu."
+
+#. translators: 1: plugin name, 2: error message.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3594
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "%1$s yüklenirken bir hata oluştu: <strong>%2$s</strong>."
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3591
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Eklenti %1$s güncelleniyor (%2$d / %3$d)"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3251
+msgid "Plugin activation failed."
+msgstr "Eklenti etkinleştirmesi başarısız oldu."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3027
+msgid "No plugins are available to be activated at this time."
+msgstr "Şu anda aktif edilecek eklenti yok."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3001
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Aktifleştirilecek eklenti seçilmedi. Hiçbir işlem yapılmadı."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr "Şu anda güncellenecek eklenti yok."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr "Şu anda yüklenebilecek eklenti yok."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Güncellenecek eklenti seçilmedi. Hiçbir işlem yapılmadı."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Yüklenecek eklenti seçilmedi. Hiçbir işlem yapılmadı."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2777
+msgid "Upgrade message from the plugin author:"
+msgstr "Eklenti yazarından yükseltme mesajı:"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2707
+msgid "Activate %2$s"
+msgstr "Etkinleştir %2$s"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2701
+msgid "Update %2$s"
+msgstr "Güncelle %2$s"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2696
+msgid "Install %2$s"
+msgstr "Yükle %2$s"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2647
+msgid "Status"
+msgstr "Durum"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2646
+msgid "Version"
+msgstr "Sürüm"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2642
+msgid "Type"
+msgstr "Tür"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2641
+msgid "Source"
+msgstr "Kaynak"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2640
+msgid "Plugin"
+msgstr "Eklenti"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2626
+msgid "No plugins to install, update or activate."
+msgstr "Yüklenecek, güncellenecek veya etkinleştirilecek eklenti yok."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2603
+msgid "Available version:"
+msgstr "Mevcut Sürüm:"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2591
+msgid "Minimum required version:"
+msgstr "Gerekli en küçük sürüm:"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2583
+msgid "Installed version:"
+msgstr "Yüklenmiş olan sürüm:"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2575
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "Bilinmeyen"
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2493
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "Etkinleştir <span class=\"count\">(%s)</span>"
+msgstr[1] "Etkinleştir <span class=\"count\">(%s)</span> "
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2489
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Güncelleme Mevcut <span class=\"count\">(%s)</span>"
+msgstr[1] "Güncelleme Mevcut <span class=\"count\">(%s)</span> "
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2485
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Yükle <span class=\"count\">(%s)</span> "
+msgstr[1] "Yükle <span class=\"count\">(%s)</span>"
+
+#. translators: 1: number of plugins.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2481
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Tümü <span class=\"count\">(%s)</span>"
+msgstr[1] "Tümü <span class=\"count\">(%s)</span>"
+
+#. translators: 1: install status, 2: update status
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2435
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s "
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2426
+msgid "Update recommended"
+msgstr "Güncelleme öneriliyor"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2423
+msgid "Requires Update"
+msgstr "Güncelleme gerektiriyor"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2420
+msgid "Required Update not Available"
+msgstr "Gerekli güncelleme mevcut değil"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2414
+msgid "Active"
+msgstr "Aktif"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2412
+msgid "Installed But Not Activated"
+msgstr "Kurulu Ama Etkin Değil"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2408
+msgid "Not Installed"
+msgstr "Kurulu Değil"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2391
+msgid "Pre-Packaged"
+msgstr "Önceden paketlenmiş"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2388
+msgid "External Source"
+msgstr "Harici Kaynak"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2385
+msgid "WordPress Repository"
+msgstr "WordPress Dizini"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2369
+msgid "Recommended"
+msgstr "Önerilen"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2366
+msgid "Required"
+msgstr "Gerekli"
+
+#. translators: %s: version number
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2075
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1214
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3041
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "ve"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1030
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr "Uzaktan eklenti paketinde birden fazla dosya bulunuyor, ancak dosyalar bir klasör altında paket haline getirilmemiş."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1027
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1030
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr "Lütfen eklenti sağlayıcıyla iletişime geçerek, eklenti paketini WordPress kurallarına göre oluşturmasını talep edin."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:1027
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr "Uzak eklenti paketi, istenen bilgileri içeren bir klasör içermiyor ve yeniden adlandırma işe yaramadı."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr "Bunun yerine parent_slug yapılandırma değişkenini ayarlayın."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr "Güncelleme gerekiyor"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr "Temanızla uyum sağlayabilmesi için bu eklentinin güncellenmesi gerekiyor."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr "Lütfen yardım için bu sitenin yöneticisi ile iletişim kurun."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:403
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr "Yüklenmesi, güncellenmesi veya etkinleştirilmesi gerekli veya önerilen bir ya da birden fazla eklenti var."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr "Uyarıyı görmezden gel"
+
+#. translators: 1: dashboard link.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:401
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Tüm eklentiler başarıyla kuruldu ve etkinleştirildi. %1$s"
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:399
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr "Eklenti etkinleştirilmedi. Bu tema için %s eklentisinin daha yüksek bir sürümü gerekiyor. Lütfen eklentiyi güncelleyin."
+
+#. translators: 1: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:397
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "İşlem yapılmadı. %1$s eklentisi zaten etkin durumda."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:395
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Aşağıdaki eklenti başarıyla etkinleştirildi:"
+msgstr[1] "Aşağıdaki eklentiler başarıyla etkinleştirildi:"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:394
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3252
+msgid "Plugin activated successfully."
+msgstr "Eklenti başarıyla aktifleştirildi.."
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:393
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:920
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2626
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:3673
+msgid "Return to the Dashboard"
+msgstr "Gösterge paneline dön"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr "Gerekli eklenti kurucusuna dön"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:387
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Eklentiyi etkinleştirmeye başla"
+msgstr[1] "Eklentileri etkinleştirmeye başla"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:382
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Eklentiyi güncelleştirmeye başla"
+msgstr[1] "Eklentileri güncelleştirmeye başla"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:377
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Eklentiyi kurmaya başla"
+msgstr[1] "Eklentileri kurmaya başla"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr "Eklenti API'siyle ilgili bir şeyler yanlış gitti."
+
+#. translators: %s: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:339
+msgid "Updating Plugin: %s"
+msgstr "Eklenti Güncelleniyor: %s"
+
+#. translators: %s: plugin name.
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:337
+msgid "Installing Plugin: %s"
+msgstr "Eklenti Kuruluyor: %s"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr "Gerekli Eklentileri Kurun"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:992
+#: includes/lib/knawat-merlin/knawat-merlin.php:1035
+msgid "Success"
+msgstr "Başarılı"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:982
+msgid "Installing"
+msgstr "Yükleniyor"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:966
+msgid "Updating"
+msgstr "Güncelleniyor"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:950
+msgid "Activating"
+msgstr "Etkinleştiriliyor"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:806
+msgid "* Developed by third party"
+msgstr "Üçüncü şahıs tarafından geliştirildi"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:795
+msgid "and"
+msgstr "ve"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2816
+#: includes/lib/knawat-merlin/knawat-merlin.php:790
+msgid "Update"
+msgstr "Güncelle"
+
+#: templates/admin/dropshipping-woocommerce-settings.php:174
+msgid "Connected"
+msgstr "Bağlandı"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:505
+msgid "Ready"
+msgstr "Hazır"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:499
+msgid "Plugins"
+msgstr "Eklentiler"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:491
+msgid "Login with Knawat.com"
+msgstr "Knawat.com ile giriş yapın"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:484
+msgid "Welcome"
+msgstr "Hoşgeldiniz"
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:390
+msgid "Please define an SVG icon filename."
+msgstr "Lütfen bir SVG simgesi dosya adı tanımlayın."
+
+#: includes/lib/knawat-merlin/knawat-merlin.php:385
+msgid "Please define default parameters in the form of an array."
+msgstr "Lütfen bir dizi formunda varsayılan parametreleri tanımlayın."
+
+#. Author of the plugin
+#: includes/lib/knawat-merlin/knawat-merlin.php:111
+msgid "Knawat"
+msgstr "Knawat"
+
+#: includes/knawat-required-plugins.php:56
+msgid "qTranslate X"
+msgstr "qTranslate X"
+
+#: includes/knawat-required-plugins.php:48
+msgid "WooCommerce Currency Switcher"
+msgstr "WooCommerce Para Birimi Değiştirici"
+
+#: includes/knawat-required-plugins.php:39
+msgid "Featured Image by URL"
+msgstr "URL'ye Göre Öne Çıkan Resim"
+
+#: includes/knawat-required-plugins.php:33
+msgid "WooCommerce PDF Invoices & Packing Slips"
+msgstr "WooCommerce PDF Faturaları ve Paketleme Fişleri"
+
+#: includes/knawat-required-plugins.php:27
+msgid "WooCoomerce"
+msgstr "WooCoomerce"
+
+#: includes/knawat-merlin-config.php:68
+msgid "<a href=\"https://help.knawat.com/hc/en-us/\" target=\"_blank\">%s</a>"
+msgstr "<a href=\"https://help.knawat.com/hc/en-us/\" target=\"_blank\">%s</a>"
+
+#: includes/knawat-merlin-config.php:67
+msgid "<a href=\"https://knawat.com/\" target=\"_blank\">%s</a>"
+msgstr "<a href=\"https://knawat.com/\" target=\"_blank\">%s</a>"
+
+#: includes/knawat-merlin-config.php:65
+msgid "Start Adding Products"
+msgstr "Ürünleri Eklemeye Başlayın"
+
+#: includes/knawat-merlin-config.php:64
+msgid "Extras"
+msgstr "Ekstralar"
+
+#: includes/knawat-merlin-config.php:63
+msgid "Your store has been all set up."
+msgstr "Mağazanız kuruldu."
+
+#: includes/knawat-merlin-config.php:62
+msgid "All done. Have fun!"
+msgstr "Hepsi tamam. İyi eğlenceler!"
+
+#: includes/knawat-merlin-config.php:59
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: includes/knawat-merlin-config.php:58
+msgid "The required WordPress plugins are all installed and up to date. Press \"Next\" to continue the setup wizard."
+msgstr "Gerekli WordPress eklentilerinin tümü yüklü ve güncel. Kurulum sihirbazına devam etmek için \"İleri\" ye basın."
+
+#: includes/knawat-merlin-config.php:57
+msgid "Let’s install some essential WordPress plugins to get your site up to speed."
+msgstr "Sitenizi hızlandırmak için bazı temel WordPress eklentilerini yükleyin."
+
+#: includes/knawat-merlin-config.php:56
+msgid "You're up to speed!"
+msgstr "Hızlanacaksınız!"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:335
+#: includes/knawat-merlin-config.php:55
+msgid "Install Plugins"
+msgstr "Eklentileri Yükle"
+
+#: includes/knawat-merlin-config.php:53
+msgid "Learn about child themes"
+msgstr "Alt temalar hakkında bilgi edinin"
+
+#: includes/knawat-merlin-config.php:52
+msgid "Your store has already connected to Knawat."
+msgstr "Mağazanız zaten Knawat'a bağlı."
+
+#: includes/knawat-merlin-config.php:50
+msgid "You're good to go!"
+msgstr "Hazırsın başlayabilirsin!"
+
+#: includes/knawat-merlin-config.php:49
+msgid "Connect Your store with Knawat"
+msgstr "Mağazanızı Knawat ile Bağlayın"
+
+#: includes/knawat-merlin-config.php:46
+msgid "You may have already run this knawat setup wizard. If you would like to proceed anyway, click on the \"Start\" button below."
+msgstr "Bu knawat kurulum sihirbazını zaten çalıştırmış olabilirsiniz. Yine de devam etmek istiyorsanız, aşağıdaki \"Başlat\" düğmesine tıklayın."
+
+#: includes/knawat-merlin-config.php:45
+msgid "This wizard will connect your store with Knawat and install plugins. It is optional & should take only a few minutes."
+msgstr "Bu sihirbaz, mağazanızı Knawat'a bağlayacak ve eklentileri kuracaktır. İsteğe bağlı bir eylemdir ve yalnızca birkaç dakika sürecektir."
+
+#: includes/knawat-merlin-config.php:44
+msgid "Hi. Welcome back"
+msgstr "Selam. Tekrar Hoşgeldiniz"
+
+#: includes/knawat-merlin-config.php:43
+msgid "Welcome to %s"
+msgstr "Hoşgeldiniz %s"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2819
+#: includes/lib/knawat-merlin/knawat-merlin.php:793
+#: includes/knawat-merlin-config.php:41
+msgid "Activate"
+msgstr "Etkinleştir"
+
+#: includes/lib/tgmpa/class-tgm-plugin-activation.php:2810
+#: includes/lib/knawat-merlin/knawat-merlin.php:787
+#: includes/knawat-merlin-config.php:38 includes/knawat-merlin-config.php:40
+msgid "Install"
+msgstr "Yükle"
+
+#: includes/knawat-merlin-config.php:37
+msgid "Cancel"
+msgstr "İptal Et"
+
+#: includes/knawat-merlin-config.php:36
+msgid "Start"
+msgstr "Başlat"
+
+#: includes/knawat-merlin-config.php:35 includes/knawat-merlin-config.php:39
+msgid "Next"
+msgstr "Sonraki"
+
+#: includes/knawat-merlin-config.php:34
+msgid "Skip"
+msgstr "Atla"
+
+#: includes/knawat-merlin-config.php:32
+msgid "Return to the dashboard"
+msgstr "Gösterge paneline dön"
+
+#: includes/knawat-merlin-config.php:30
+msgid "%s%s Knawat &lsaquo; Knawat Setup %s"
+msgstr " %s%s Knawat Kurulumu %s"
+
+#: includes/knawat-merlin-config.php:29
+msgid "Knawat Setup"
+msgstr "Knawat Kurulumu"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:119
+msgid "Save Tracking"
+msgstr "Takibi Kaydet"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:114
+msgid "Y-m-d"
+msgstr "Y-m-d"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:106
+msgid "Tracking link:"
+msgstr "Takip Bağlantısı:"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:82
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:113
+msgid "Date shipped:"
+msgstr "Gönderim Tarihi:"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:77
+#: templates/myaccount/shipment-tracking.php:45
+msgid "Track"
+msgstr "Takip"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:76
+msgid "Tracking Link:"
+msgstr "Takip Linki:"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:71
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:99
+msgid "Tracking number:"
+msgstr "Takip Numarası:"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:67
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:92
+msgid "Provider Name:"
+msgstr "Sağlayıcı Adı:"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:65
+msgid "Edit"
+msgstr "Düzenle"
+
+#: includes/class-dropshipping-woocommerce-shipment-tracking.php:43
+msgid "Knawat Shipment Tracking"
+msgstr "Knawat Gönderi Takibi"
+
+#: includes/class-dropshipping-woocommerce-pdf-invoice.php:91
+msgid "Invoice for the selected order(s) could not be generated"
+msgstr "Seçilen sipariş(ler) için fatura oluşturulamadı"
+
+#: includes/class-dropshipping-woocommerce-pdf-invoice.php:61
+msgid "Woocommece PDF Invoice Plugin is not installed."
+msgstr "Woocommerce PDF fatura eklentisi yüklü değil."
+
+#: includes/class-dropshipping-woocommerce-pdf-invoice.php:57
+msgid "Order key not matching. better luck next time :)"
+msgstr "Sipariş anahtarı eşleşmiyor. Bir dahaki sefere iyi şanslar :)"
+
+#: includes/class-dropshipping-woocommerce-pdf-invoice.php:48
+msgid "Something went wrong during PDF generation."
+msgstr "PDF oluşturma sırasında bir sorun oluştu."
+
+#: includes/class-dropshipping-woocommerce-admin.php:524
+msgid "Knawat Status"
+msgstr "Knawat Durumu"
+
+#: includes/class-dropshipping-woocommerce-admin.php:509
+msgid "Knawat Order Status:"
+msgstr "Knawat Sipariş Durumu"
+
+#: includes/class-dropshipping-woocommerce-admin.php:313
+msgid " Rate %1$s Dropshipping Woocommerce%2$s %3$s"
+msgstr "Oran %1$s Dropshipping Woocommerce%2$s %3$s"
+
+#: includes/class-dropshipping-woocommerce-admin.php:262
+msgid "Knawat Products"
+msgstr "Knawat Ürünleri"
+
+#: includes/class-dropshipping-woocommerce-admin.php:184
+msgid "Knawat Orders"
+msgstr "Knawat Siparişleri"
+
+#: includes/class-dropshipping-woocommerce-admin.php:131
+#: templates/admin/dropshipping-woocommerce-settings.php:28
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: includes/class-dropshipping-woocommerce-admin.php:85
+msgid "Dropshipping"
+msgstr "Dropshipping"
+
+#: includes/class-dropshipping-woocommerce-admin.php:85
+#: includes/class-dropshipping-woocommerce-admin.php:108
+#: includes/class-dropshipping-woocommerce-admin.php:755
+msgid "Knawat Dropshipping"
+msgstr "Knawat Dropshipping"
+
+#: dropshipping-woocommerce.php:105 dropshipping-woocommerce.php:112
+msgid "Cheatin&#8217; huh?"
+msgstr "Cheatin&#8217; huh?"
