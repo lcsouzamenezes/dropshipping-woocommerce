@@ -11,7 +11,7 @@ If you are not a developer, please use the [Knawat plugin page](https://wordpres
 To disclose a security issue to our team, [please submit a report here](https://knawat.com/contact/).
 
 ## Support & Chat
-Developers are welcome here, please create issue or [chat with us https://gitter.im/Knawat/Lobby](https://gitter.im/Knawat/Lobby). This repository is not suitable for Knawat customers support. Please don't use our issue tracker for support requests, but for core Knawat dropshipping plugin issues only. Support can take place through [Knawat support portal](https://help.knawat.com/hc/en-us/requests/new/) which is available for free.
+Developers are welcome here, please create issue or [chat with us https://gitter.im/Knawat/Lobby](https://gitter.im/Knawat/Lobby). This repository is not suitable for Knawat customers support. Please don't use our issue tracker for support requests, but for core Knawat dropshipping plugin issues only. Support can take place through [Knawat support portal](https://support.knawat.com/portal/en/community/help-and-support-center) which is available for free.
 
 Support requests in issues on this repository will be closed on sight.
 

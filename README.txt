@@ -88,6 +88,9 @@ More Feature to Choose From
 
 == Changelog ==
 
+= 3.0.1 =
+* FIX: import products is not working with a huge count of products
+
 = 3.0.0 =
 * Tested with latest versions of both WordPress 5.8.3 and WooCommece 6.1.0.
 * ADDED: qTranslate-XT Support

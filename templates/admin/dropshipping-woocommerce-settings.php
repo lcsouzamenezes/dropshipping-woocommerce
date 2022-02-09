@@ -43,7 +43,7 @@ endif;
 					<p class="description" id="mp_consumer_key-description">
 						<?php
 						printf(
-							'%s <a href="https://knawat.com/wp-content/uploads/2018/09/knawat_api_key_and_secret.png" target="_blank">%s</a>',
+							'%s <a href="https://user-images.githubusercontent.com/4643935/153250029-81fc8acb-8c1b-4ab4-87b5-374f8e6ee387.png" target="_blank">%s</a>',
 							__( 'You can get your Knawat Consumer Key from your <strong>Dashboard > Store settings</strong>', 'dropshipping-woocommerce' ),
 							__( 'click to see the image', 'dropshipping-woocommerce' )
 						);
@@ -61,7 +61,7 @@ endif;
 					<p class="description" id="mp_consumer_secret-description">
 						<?php
 						printf(
-							'%s <a href="https://knawat.com/wp-content/uploads/2018/09/knawat_api_key_and_secret.png" target="_blank">%s</a>',
+							'%s <a href="https://user-images.githubusercontent.com/4643935/153250029-81fc8acb-8c1b-4ab4-87b5-374f8e6ee387.png" target="_blank">%s</a>',
 							__( 'You can get your Knawat Consumer Secret from your <strong>Dashboard > Store settings</strong>', 'dropshipping-woocommerce' ),
 							__( 'click to see the image', 'dropshipping-woocommerce' )
 						);

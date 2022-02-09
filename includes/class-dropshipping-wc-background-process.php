@@ -80,6 +80,7 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 
 			$is_stop_import = get_transient( 'knawat_stop_import' );
 			if ( $is_stop_import === 'product_import' ) {
+                knawat_dropshipwc_logger("stop importing products ", 'info');
 				delete_transient( 'knawat_stop_import' );
 				$params['is_complete']   = true;
 				$params['force_stopped'] = true;
@@ -101,8 +102,9 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 
 				// Logs import data
 				knawat_dropshipwc_logger( '[IMPORT_STATS_FINAL]' . print_r( $item, true ), 'info' );
-				knawat_dropshipwc_logger( '[FAILED_IMPORTS]' . print_r( $error_log, true ) );
-
+                if($error_log){
+				    knawat_dropshipwc_logger( '[FAILED_IMPORTS]' . print_r( $error_log, true ) );
+                }
 				// Return false to complete background import.
 				return false;
 
