@@ -80,7 +80,7 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 
 			$is_stop_import = get_transient( 'knawat_stop_import' );
 			if ( $is_stop_import === 'product_import' ) {
-					knawat_dropshipwc_logger( 'stop importing products', 'info' );
+				knawat_dropshipwc_logger( 'stop importing products', 'info' );
 				delete_transient( 'knawat_stop_import' );
 				$params['is_complete']   = true;
 				$params['force_stopped'] = true;
