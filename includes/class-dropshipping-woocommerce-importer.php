@@ -159,7 +159,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$products = $response->products;
 
 			}
-			knawat_dropshipwc_logger( 'fetched products: ' . count($products), 'info' );
+			knawat_dropshipwc_logger( 'fetched products: ' . count( $products ), 'info' );
 			// Handle errors
 			if ( isset( $products->code ) || ! is_array( $products ) ) {
 				return array(
@@ -295,14 +295,14 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$this->params['is_complete'] = $this->params['products_total'] === 0;
 
-			$lastUpdateTime = strtotime( $lastUpdateDate ) * 1000;
-			// if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $lastUpdateTime){
+			$last_update_time = strtotime( $lastUpdateDate ) * 1000;
+			// if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $last_update_time){
 			// 	$this->params['is_complete'] = true;
 			// }
 
-			if(!empty($lastUpdateDate) && $knawat_last_imported != $lastUpdateTime){
+			if(!empty($lastUpdateDate) && $knawat_last_imported != $last_update_time){
 				//update product import date 			
-				update_option( 'knawat_last_imported', $lastUpdateTime , false );
+				update_option( 'knawat_last_imported', $last_update_time , false );
 				$this->params['page'] = 1;
 				$this->params['product_index'] = -1;
 			} else if( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ){
