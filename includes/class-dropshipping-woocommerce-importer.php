@@ -108,7 +108,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					if (!empty( $knawat_last_imported)) {
 						$api_url .= '&lastupdate='.$knawat_last_imported;
 					}
-					knawat_dropshipwc_logger( "[API Call] $api_url",'info' );
+					knawat_dropshipwc_logger( "[API Call] $api_url", 'info' );
 					$this->data = $this->mp_api->get( $api_url );
 					break;
 
@@ -159,7 +159,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$products = $response->products;
 
 			}
-			knawat_dropshipwc_logger( 'fetched products: ' . count($products),'info' );
+			knawat_dropshipwc_logger( 'fetched products: ' . count($products), 'info' );
 			// Handle errors
 			if ( isset( $products->code ) || ! is_array( $products ) ) {
 				return array(
@@ -295,7 +295,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$this->params['is_complete'] = $this->params['products_total'] === 0;
 
-			$lastUpdateTime = strtotime($lastUpdateDate) * 1000;
+			$lastUpdateTime = strtotime( $lastUpdateDate ) * 1000;
 			// if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $lastUpdateTime){
 			// 	$this->params['is_complete'] = true;
 			// }
