@@ -103,7 +103,7 @@ if ( class_exists( 'WP_Background_Process', false ) ) :
 				// Logs import data
 				knawat_dropshipwc_logger( '[IMPORT_STATS_FINAL]' . print_r( $item, true ), 'info' );
 				if ( $error_log ) {
-					knawat_dropshipwc_logger( '[FAILED_IMPORTS]' . print_r( $error_log, true ) );
+					knawat_dropshipwc_logger( '[FAILED_IMPORTS]' . print_r( $error_log, true ), 'error' );
 				}
 				// Return false to complete background import.
 				return false;
