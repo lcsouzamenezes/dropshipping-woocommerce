@@ -108,6 +108,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					if (!empty( $knawat_last_imported)) {
 						$api_url .= '&lastupdate='.$knawat_last_imported;
 					}
+					knawat_dropshipwc_logger( "[API Call] $api_url", 'info' );
 					$this->data = $this->mp_api->get( $api_url );
 					break;
 
@@ -158,7 +159,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$products = $response->products;
 
 			}
-
+			knawat_dropshipwc_logger( 'fetched products: ' . count( $products ), 'info' );
 			// Handle errors
 			if ( isset( $products->code ) || ! is_array( $products ) ) {
 				return array(
@@ -171,7 +172,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			$this->params['products_total'] = count( $products );
 			if ( empty( $products ) ) {
 				$this->params['is_complete'] = true;
-
+				knawat_dropshipwc_logger( 'No more products to import', 'info' );
 				return $data;
 			}
 
@@ -230,6 +231,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					}
 				} else {
 					if ( $total_qty > 0 ) {
+						knawat_dropshipwc_logger( "[import product]: {$formated_data['sku']}", 'info' );
 						add_filter( 'woocommerce_new_product_data', array( $this, 'set_dokan_seller' ) );
 						$result = $this->process_item( $formated_data );
 						remove_filter( 'woocommerce_new_product_data', array( $this, 'set_dokan_seller' ) );
@@ -293,17 +295,14 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 
 			$this->params['is_complete'] = $this->params['products_total'] === 0;
 
-			$datetime = new DateTime($lastUpdateDate);
-			$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
-			// if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $lastUpdateTime){
+			$last_update_time = strtotime( $lastUpdateDate ) * 1000;
+			// if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $last_update_time){
 			// 	$this->params['is_complete'] = true;
 			// }
 
-			if(!empty($lastUpdateDate) && $knawat_last_imported != $lastUpdateTime){
+			if(!empty($lastUpdateDate) && $knawat_last_imported != $last_update_time){
 				//update product import date 			
-				$datetime = new DateTime($lastUpdateDate);
-				$lastUpdateTime = (int) ($datetime->getTimestamp().$datetime->format('u')/ 1000);
-				update_option( 'knawat_last_imported', $lastUpdateTime , false );
+				update_option( 'knawat_last_imported', $last_update_time , false );
 				$this->params['page'] = 1;
 				$this->params['product_index'] = -1;
 			} else if( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ){

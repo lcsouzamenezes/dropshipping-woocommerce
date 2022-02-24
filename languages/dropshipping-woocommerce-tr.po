@@ -1009,8 +1009,8 @@ msgid "WooCoomerce"
 msgstr "WooCoomerce"
 
 #: includes/knawat-merlin-config.php:68
-msgid "<a href=\"https://help.knawat.com/hc/en-us/\" target=\"_blank\">%s</a>"
-msgstr "<a href=\"https://help.knawat.com/hc/en-us/\" target=\"_blank\">%s</a>"
+msgid "<a href=\"https://support.knawat.com/portal/en/kb/help-and-support-center/\" target=\"_blank\">%s</a>"
+msgstr "<a href=\"https://support.knawat.com/portal/en/kb/help-and-support-center/\" target=\"_blank\">%s</a>"
 
 #: includes/knawat-merlin-config.php:67
 msgid "<a href=\"https://knawat.com/\" target=\"_blank\">%s</a>"

@@ -72,7 +72,7 @@ $knawat_setup = new Knawat_Merlin(
 			)
 		),
 		'ready-link-2'             => wp_kses(
-			sprintf( __( '<a href="https://help.knawat.com/hc/en-us/" target="_blank">%s</a>', 'dropshipping-woocommerce' ), 'Help Center' ),
+			sprintf( __( '<a href="https://support.knawat.com/portal/en/kb/help-and-support-center/" target="_blank">%s</a>', 'dropshipping-woocommerce' ), 'Help Center' ),
 			array(
 				'a' => array(
 					'href'   => array(),
