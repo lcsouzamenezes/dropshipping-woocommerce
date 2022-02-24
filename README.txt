@@ -4,7 +4,7 @@ Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshi
 Requires PHP: 7.0
 Requires at least: 4.0
 Tested up to: 5.8.3
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 WC tested up to: 6.1.0
 
 == Description ==
@@ -88,7 +88,7 @@ More Feature to Choose From
 
 == Changelog ==
 
-= 3.0.1 =
+= 3.0.2 =
 * FIX: import products is not working with a huge count of products
 
 = 3.0.0 =
