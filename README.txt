@@ -4,7 +4,7 @@ Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshi
 Requires PHP: 7.0
 Requires at least: 4.0
 Tested up to: 5.8.3
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 WC tested up to: 6.1.0
 
 == Description ==
