@@ -203,7 +203,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$knawat_options      = knawat_dropshipwc_get_options();
 				$remove_outofstock 	 = isset( $knawat_options['remove_outofstock'] ) ? esc_attr( $knawat_options['remove_outofstock'] ) : 'no';
 			
-				if($total_qty == 0 && $remove_outofstock == 'yes'){
+				if($total_qty === 0 && $remove_outofstock === 'yes'){
 					$this->remove_zero_variation_product($formated_data['id'],$product->sku);
 				}
 
@@ -394,6 +394,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					}
 				}
 
+				// Formatting product attributes
 				if ( isset( $product->attributes ) && ! empty( $product->attributes ) ) {
 					foreach ( $product->attributes as $attribute ) {
 						$attribute_name    = isset( $attribute->name ) ? $this->attribute_languagfy( $attribute->name ) : '';

@@ -567,9 +567,9 @@ function knawat_dropshipwc_get_dropshippers() {
  * @return array
  * @since 2.0.0
  */
-function knawat_dropshipwc_get_options( $key = '' ) {
+function knawat_dropshipwc_get_options( $key = null ) {
 	$knawat_options = get_option( KNAWAT_DROPWC_OPTIONS, array() );
-	if ( $key != '' ) {
+	if ( $key ) {
 		$knawat_options = isset( $knawat_options[ $key ] ) ? $knawat_options[ $key ] : '';
 	}
 

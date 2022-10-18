@@ -75,8 +75,8 @@ class Knawat_Dropshipping_WC_MP_Orders {
 				if ( $korder_id != '' ) {
 
 					$order_status       = $order->get_status();
-					$whilelisted_status = array( 'pending', 'processing', 'cancelled' );
-					if ( ! in_array( $order_status, $whilelisted_status ) ) {
+					$whitelisted_status = array( 'pending', 'processing', 'cancelled' );
+					if ( ! in_array( $order_status, $whitelisted_status ) ) {
 						// Return as order status is not allowed to push order
 						delete_post_meta( $order_id, '_knawat_sync_failed' ); // Clear
 						return;
@@ -95,20 +95,24 @@ class Knawat_Dropshipping_WC_MP_Orders {
 							} else {
 								// WC log error.
 								$order_sync_error = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
+								$reason = '';
 								if ( isset( $result->message ) ) {
-									$order_sync_error .= ' REASON: ';
-									$order_sync_error .= isset( $result->name ) ? $result->name . ':' . $result->message : $result->message;
-									$order_sync_error .= isset( $result->code ) ? '(' . $result->code . ')' : '';
+									$reason .= 'REASON: ';
+									$reason .= isset( $result->name ) ? $result->name . ':' . $result->message : $result->message;
+									$reason .= isset( $result->code ) ? '(' . $result->code . ')' : '';
 								}
-								$knawatdswc_errors['order_sync'] = $order_sync_error;
-								knawat_dropshipwc_logger( $order_sync_error );
+								if(!$reason && isset($result->errors[0]->message)){
+									$reason .= 'REASON: '.$result->errors[0]->message;
+								}
+								$knawatdswc_errors['order_sync'] = "$order_sync_error $reason";
+								knawat_dropshipwc_logger( "[001] $order_sync_error $reason".print_r($update_order_json,true) );
 								update_post_meta( $order_id, '_knawat_sync_failed', true );
 							}
 						} else {
 							// WC log error.
 							$order_sync_error                = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
 							$knawatdswc_errors['order_sync'] = $order_sync_error;
-							knawat_dropshipwc_logger( $order_sync_error );
+							knawat_dropshipwc_logger( "[002] $order_sync_error" );
 							update_post_meta( $order_id, '_knawat_sync_failed', true );
 						}
 					}
@@ -145,7 +149,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 				$push_status  = 'processing';
 				$order_status = $order->get_status();
 
-				if ( $push_status != $order_status ) {
+				if ( $push_status !== $order_status ) {
 					// Return as order status is not allowed to push order
 					delete_post_meta( $order_id, '_knawat_sync_failed' );
 					return;
@@ -161,23 +165,27 @@ class Knawat_Dropshipping_WC_MP_Orders {
 							$korder_id = $result->data->id;
 							update_post_meta( $order_id, '_knawat_order_id', $korder_id );
 							delete_post_meta( $order_id, '_knawat_sync_failed' );
-						} else {
-							// WC log error.
-							$order_sync_error = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
-							if ( isset( $result->message ) ) {
-								$order_sync_error .= ' REASON: ';
-								$order_sync_error .= isset( $result->name ) ? $result->name . ':' . $result->message : $result->message;
-								$order_sync_error .= isset( $result->code ) ? '(' . $result->code . ')' : '';
-							}
-							$knawatdswc_errors['order_sync'] = $order_sync_error;
-							knawat_dropshipwc_logger( $order_sync_error );
+                        } else {
+                            // WC log error.
+                        $order_sync_error = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
+                        $reason = '';
+                        if ( isset( $result->message ) ) {
+                            $reason .= ' REASON: ';
+                            $reason .= isset( $result->name ) ? $result->name . ':' . $result->message : $result->message;
+                            $reason .= isset( $result->code ) ? '(' . $result->code . ')' : '';
+                        }
+                        if(!$reason && isset($result->errors[0]->message)){
+                            $reason .= 'REASON: '.$result->errors[0]->message;
+                        }
+                            $knawatdswc_errors['order_sync'] = $order_sync_error;
+                            knawat_dropshipwc_logger( "[003] $order_sync_error $reason" );
 							update_post_meta( $order_id, '_knawat_sync_failed', true );
 						}
 					} else {
 						// WC log error.
 						$order_sync_error                = sprintf( esc_attr__( 'Order synchronize fail. order id: #%d', 'dropshipping-woocommerce' ), $order_id );
 						$knawatdswc_errors['order_sync'] = $order_sync_error;
-						knawat_dropshipwc_logger( $order_sync_error );
+						knawat_dropshipwc_logger( "[004] $order_sync_error" );
 						update_post_meta( $order_id, '_knawat_sync_failed', true );
 					}
 				}
@@ -352,7 +360,7 @@ class Knawat_Dropshipping_WC_MP_Orders {
 			if ( ! empty( $sync_fail ) ) {
 				$knawatdswc_warnings[] = sprintf(
 					'%s <a href="' . wp_nonce_url( admin_url( 'admin-post.php?action=knawatds_order_fail_sync' ), 'knawatds_order_fail_sync_action', 'order_fail_nonce' ) . '">%s</a>',
-					__( 'Some orders are not sycronized with knawat.com. Please', 'dropshipping-woocommerce' ),
+					__( 'Some orders are not synchronized with knawat.com. Please', 'dropshipping-woocommerce' ),
 					__( 'synchronize it now', 'dropshipping-woocommerce' )
 				);
 			}
