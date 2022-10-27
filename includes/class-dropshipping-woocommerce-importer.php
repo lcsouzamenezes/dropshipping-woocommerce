@@ -648,7 +648,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				return new WP_Error( 'woocommerce_product_importer_missing_variation_parent_id', __( 'Variation cannot be imported: Missing parent ID or parent does not exist yet.', 'dropshipping-woocommerce' ), array( 'status' => 401 ) );
 			}
 
-			if ( isset( $data['raw_attributes'] )  && is_object($data['raw_attributes'])) {
+			if ( isset( $data['raw_attributes'] ) ) {
 				$attributes        = array();
 				$parent_attributes = $this->get_variation_parent_attributes( $data['raw_attributes'], $parent );
 
@@ -668,7 +668,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 						$attribute_name     = sanitize_title( $attribute['name'] );
 					}
 
-					if ( ! isset( $parent_attributes[ $attribute_name ] ) || is_string( $parent_attributes[ $attribute_name ] ) || ! $parent_attributes[ $attribute_name ]->get_variation() ) {
+					if ( ! isset( $parent_attributes[ $attribute_name ] ) || ! $parent_attributes[ $attribute_name ]->get_variation() ) {
 						continue;
 					}
 

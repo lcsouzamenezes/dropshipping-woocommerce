@@ -672,7 +672,7 @@ function knawat_dropshipwc_get_products_count( $timestamp, $hideOutOfStock = tru
 	} else {
 		$data = $mp_api->get( 'catalog/products/count?lastUpdate=' . $timestamp . '&hideOutOfStock=1' );
 	}
-	$products_count = $data->total;
+	$products_count = $data->total?? 0;
 	return $products_count;
 }
 

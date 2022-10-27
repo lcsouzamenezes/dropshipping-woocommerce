@@ -3,7 +3,7 @@
  * Plugin Name:       Knawat WooCommerce DropShipping
  * Plugin URI:        https://wordpress.org/plugins/dropshipping-woocommerce/
  * Description:       Knawat WooCommerce DropShipping
- * Version:           3.0.2
+ * Version:           3.0.3
  * Author:            Knawat
  * Author URI:        https://www.knawat.com/?utm_source=wordpress.org&utm_medium=social&utm_campaign=The%20WC%20Plugin
  * License:           GPL-2.0+
@@ -120,7 +120,7 @@ if ( ! class_exists( 'Knawat_Dropshipping_Woocommerce' ) ) :
 		 * @since 1.0.0
 		 */
 		public function __clone() {
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '3.0.2' ); }
+			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '3.0.3' ); }
 
 		/**
 		 * A dummy magic method to prevent Knawat_Dropshipping_Woocommerce from being unserialized.
@@ -128,7 +128,7 @@ if ( ! class_exists( 'Knawat_Dropshipping_Woocommerce' ) ) :
 		 * @since 1.0.0
 		 */
 		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '3.0.2' ); }
+			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'dropshipping-woocommerce' ), '3.0.3' ); }
 
 		/**
 		 * Setup plugins constants.
@@ -141,7 +141,7 @@ if ( ! class_exists( 'Knawat_Dropshipping_Woocommerce' ) ) :
 
 			// Plugin version.
 			if ( ! defined( 'KNAWAT_DROPWC_VERSION' ) ) {
-				define( 'KNAWAT_DROPWC_VERSION', '3.0.2' );
+				define( 'KNAWAT_DROPWC_VERSION', '3.0.3' );
 			}
 
 			// Plugin folder Path.
