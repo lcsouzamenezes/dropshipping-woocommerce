@@ -1,11 +1,11 @@
 === Knawat WooCommerce DropShipping ===
 Contributors: dharm1025,esl4m,firstanonymous,surajrathod,hazemkhaled
 Tags: dropshipping, woocommerce, woocommerce dropshipping, dropship, woo dropshipping, knawat, knawat dropshipping, multivendor marketplace, WCFM Marketplace, Multi seller, Marketplace, Appmaker
-Requires PHP: 7.0
+Requires PHP: 7.4
 Requires at least: 4.0
-Tested up to: 5.8.3
-Stable tag: 3.0.2
-WC tested up to: 6.1.0
+Tested up to: 6.0.3
+Stable tag: 2.2.1
+WC tested up to: 7.0.0
 
 == Description ==
 
@@ -87,6 +87,9 @@ More Feature to Choose From
 2. ![Alt text](https://knawat.com/wp-content/uploads/2019/05/sc11.png?raw=true "Settings")
 
 == Changelog ==
+
+= 3.0.3 =
+* FIX: Invalid variations are sent to knawat when placing a new orders.
 
 = 3.0.2 =
 * FIX: import products is not working with a huge count of products

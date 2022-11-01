@@ -567,9 +567,9 @@ function knawat_dropshipwc_get_dropshippers() {
  * @return array
  * @since 2.0.0
  */
-function knawat_dropshipwc_get_options( $key = '' ) {
+function knawat_dropshipwc_get_options( $key = null ) {
 	$knawat_options = get_option( KNAWAT_DROPWC_OPTIONS, array() );
-	if ( $key != '' ) {
+	if ( $key ) {
 		$knawat_options = isset( $knawat_options[ $key ] ) ? $knawat_options[ $key ] : '';
 	}
 
@@ -672,7 +672,7 @@ function knawat_dropshipwc_get_products_count( $timestamp, $hideOutOfStock = tru
 	} else {
 		$data = $mp_api->get( 'catalog/products/count?lastUpdate=' . $timestamp . '&hideOutOfStock=1' );
 	}
-	$products_count = $data->total;
+	$products_count = $data->total?? 0;
 	return $products_count;
 }
 

@@ -203,7 +203,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 				$knawat_options      = knawat_dropshipwc_get_options();
 				$remove_outofstock 	 = isset( $knawat_options['remove_outofstock'] ) ? esc_attr( $knawat_options['remove_outofstock'] ) : 'no';
 			
-				if($total_qty == 0 && $remove_outofstock == 'yes'){
+				if($total_qty === 0 && $remove_outofstock === 'yes'){
 					$this->remove_zero_variation_product($formated_data['id'],$product->sku);
 				}
 
@@ -258,42 +258,38 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					/**
 					 *  Pass Products Data to Knawat WooCommerce DropShipping WPML Support Plugin
 					 */
-					if(!empty($product_id)):
+					if(!empty($product_id)){
 						do_action('wpml_import_translation_product',$product_id,$product);
-					endif;
+					}
 
 					if ( ! empty( $variations ) ) {
 
-						foreach ( $variations as $vindex => $variation ) {
-							$variation['parent_id'] = $product_id;
-							add_filter( 'woocommerce_new_product_variation_data', array( $this, 'set_dokan_seller' ) );
-							$variation_result = $this->process_item( $variation );
-							remove_filter( 'woocommerce_new_product_variation_data', array( $this, 'set_dokan_seller' ) );
-							if ( is_wp_error( $variation_result ) ) {
-								$variation_result->add_data( array( 'data' => $formated_data ) );
-								$variation_result->add_data( array( 'variation' => 1 ) );
-								$data['failed'][] = $variation_result;
+							foreach ( $variations as $vindex => $variation ) {
+								$variation['parent_id'] = $product_id;
+								add_filter( 'woocommerce_new_product_variation_data', array( $this, 'set_dokan_seller' ) );
+								$variation_result = $this->process_item( $variation );
+								remove_filter( 'woocommerce_new_product_variation_data', array( $this, 'set_dokan_seller' ) );
+								if ( is_wp_error( $variation_result ) ) {
+									$variation_result->add_data( array( 'data' => $formated_data ) );
+									$variation_result->add_data( array( 'variation' => 1 ) );
+									$data['failed'][] = $variation_result;
+								}
 							}
-						}
 					}
 				}
 				$this->params['product_index'] = $index;
 
 				if ( $this->params['prevent_timeouts'] && ( $this->time_exceeded() || $this->memory_exceeded() ) ) {
+					knawat_dropshipwc_logger( "Time exceeded: ".$result['id'], 'error' );
 					break;
 				}
 			}
 
-			/*
-			if( $this->params['products_total'] === 0 ){
-				$this->params['is_complete'] = true;
-			}elseif( ( $this->params['products_total'] < $this->params['limit'] ) && ( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ) ){
+			if( $this->params['products_total'] === 0 || ( ( $this->params['products_total'] < $this->params['limit'] ) && ( $this->params['products_total'] == ( $this->params['product_index'] + 1 ) ) )){
 				$this->params['is_complete'] = true;
 			}else{
 				$this->params['is_complete'] = false;
-			}*/
-
-			$this->params['is_complete'] = $this->params['products_total'] === 0;
+			}
 
 			$last_update_time = strtotime( $lastUpdateDate ) * 1000;
 			// if($this->params['products_total'] < $this->params['limit'] && $knawat_last_imported == $last_update_time){
@@ -398,6 +394,7 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 					}
 				}
 
+				// Formatting product attributes
 				if ( isset( $product->attributes ) && ! empty( $product->attributes ) ) {
 					foreach ( $product->attributes as $attribute ) {
 						$attribute_name    = isset( $attribute->name ) ? $this->attribute_languagfy( $attribute->name ) : '';
@@ -806,7 +803,8 @@ if ( class_exists( 'WC_Product_Importer', false ) ) :
 			$existing_attributes = $product->get_attributes();
 			if ( ! empty( $existing_attributes ) && ! empty( $product ) ) {
 				foreach ( $existing_attributes as $existing_attribute ) {
-					if ( $existing_attribute->get_name() === $attribute_name ) {
+					$exist_name= is_string($existing_attribute) ? $existing_attribute : $existing_attribute->get_name();
+					if ( $exist_name === $attribute_name ) {
 						if ( taxonomy_exists( $attribute_name ) ) {
 							foreach ( $existing_attribute->get_options() as $option ) {
 								if ( is_int( $option ) ) {
